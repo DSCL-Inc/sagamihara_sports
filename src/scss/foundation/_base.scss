@@ -1,0 +1,28 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  color: #0e1642;
+  font-size: 10px;
+  font-feature-settings: "palt";
+  font-weight: 200;
+}
+.l-container {
+  width: 100%;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  width: 100%;
+  display: block;
+}

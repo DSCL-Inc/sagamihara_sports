@@ -1,0 +1,18 @@
+.c-text-box {
+  background-color: #f1f1f1;
+  padding: 32px;
+}
+
+.c-text-box__title {
+  font-size: 17px;
+  font-weight: 700;
+}
+.c-text-box__desc {
+  margin-top: 20px;
+  @include desc-md;
+}
+@media screen and (max-width: 480px) {
+  .c-text-box__title {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,5 @@
+#redume
+・Site
+サイトデータ
+・src
+Sass/バンドル前のjs/圧縮前の画像

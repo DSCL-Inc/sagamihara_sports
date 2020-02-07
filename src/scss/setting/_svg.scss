@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?lv4mq8");
+  src: url("../fonts/icomoon.eot?lv4mq8#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?lv4mq8") format("truetype"), url("fonts/icomoon.woff?lv4mq8") format("woff"),
+    url("../fonts/icomoon.svg?lv4mq8#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: block;
+}
+
+.icon-video:before {
+  content: "\e906";
+  color: #fff;
+}
+.icon-contact-check:before {
+  content: "\e907";
+  color: #adadad;
+}
+.icon-faq-close:before {
+  content: "\e908";
+  font-size: 28px;
+}
+.icon-faq-open:before {
+  content: "\e909";
+  color: #c7c7c7;
+}
+
+.icon-fixed-logo--sp:before {
+  content: "\e900";
+}
+.icon-fixed-logo {
+  &:before {
+    content: "\e901";
+    font-size: 395px;
+  }
+}
+.icon-left-angle-black:before {
+  content: "\e902";
+}
+.icon-right-angle-black:before {
+  content: "\e903";
+}
+.icon-right-angle-white:before {
+  content: "\e904";
+  color: #fff;
+  font-size: 20px;
+}
+.icon-scroll:before {
+  content: "\e905";
+  font-size: 15px;
+}
+
+$icon-fixed-logo--sp: "\e900";
+$icon-right-angle-white: "\e904";

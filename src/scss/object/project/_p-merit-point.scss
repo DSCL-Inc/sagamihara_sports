@@ -1,0 +1,121 @@
+.p-merit-point {
+  margin-top: 60px;
+}
+.p-merit-point__item {
+  padding-left: 20px;
+  border-left: 12px solid;
+  .l-row {
+    margin-top: 40px;
+  }
+
+  & + .p-merit-point__item {
+    margin-top: 40px;
+  }
+  &.p-merit-point__item--blue {
+    border-color: #82beef;
+    .p-merit-point__head-num {
+      color: #0a73ca;
+    }
+  }
+  &.p-merit-point__item--red {
+    border-color: #efb3cb;
+    .p-merit-point__head-num {
+      color: #ca105c;
+    }
+  }
+  &.p-merit-point__item--yellow {
+    border-color: #f3e8bf;
+    .p-merit-point__head-num {
+      color: #bcab6b;
+    }
+  }
+}
+.p-merit-point__head {
+  font-weight: 100;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  @include headding-font;
+}
+.p-merit-point__head-num {
+  font-size: 160px;
+  margin-right: 12px;
+  display: inline-block;
+  font-weight: 100;
+}
+.p-merit-point__head-title {
+  font-weight: 100;
+  font-size: 56px;
+  span {
+    font-size: 96px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .p-merit-point {
+    .c-card--3col {
+      width: calc(50% - 30px);
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .p-merit-point__item {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .p-merit-point__head {
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+  }
+  .p-merit-point__head {
+    display: block;
+  }
+  .p-merit-point__head-num {
+    font-size: 80px;
+  }
+  .p-merit-point__head-title {
+    font-size: 24px;
+    margin-top: 12px;
+    span {
+      font-size: 24px;
+    }
+  }
+  .p-merit-point__item {
+    .l-row {
+      margin-top: 40px;
+    }
+
+    & + .p-merit-point__item {
+      margin-top: 80px;
+    }
+    &.p-merit-point__item--blue {
+      .p-merit-point__head:before {
+        background-color: #c5e1f8;
+      }
+    }
+    &.p-merit-point__item--red {
+      .p-merit-point__head:before {
+        background-color: #efb3cb;
+      }
+    }
+    &.p-merit-point__item--yellow {
+      .p-merit-point__head:before {
+        background-color: #f3e8bf;
+      }
+    }
+  }
+  .p-merit-point .c-card--3col {
+    width: 100%;
+    &.c-card--3col {
+      margin-top: 60px;
+    }
+  }
+}

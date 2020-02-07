@@ -1,0 +1,12 @@
+.c-page-bottom-img {
+  @include background-cover("c-page-bottom-img.jpg");
+  height: 736px;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .c-page-bottom-img {
+    background-image: url(../image/c-page-bottom-img_sp.jpg);
+    height: 414px;
+  }
+}

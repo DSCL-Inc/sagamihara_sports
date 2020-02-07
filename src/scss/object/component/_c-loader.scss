@@ -1,0 +1,90 @@
+@keyframes loader {
+  0% {
+    width: 0%;
+    right: 0;
+    left: auto;
+  }
+  1% {
+    right: auto;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    right: auto;
+    left: 0;
+  }
+  51% {
+    width: 100%;
+    right: 0;
+    left: auto;
+  }
+  100% {
+    width: 0%;
+    right: 0;
+    left: auto;
+  }
+}
+.c-loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  &.is-loaded {
+    .c-loader__bg span {
+      width: 0;
+    }
+    .c-loader__gage {
+      display: none;
+    }
+  }
+}
+.c-loader__gage {
+  width: 180px;
+  z-index: 2;
+  @include absolute-center-xy;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    height: 1px;
+  }
+  &:before {
+    width: 100%;
+    background-color: #dddddd;
+    left: 0;
+  }
+  &:after {
+    background-color: $color-hover;
+    right: 0;
+    animation: 1.4s loader $easeOut infinite;
+    position: absolute;
+  }
+}
+.c-loader__bg {
+  width: 100%;
+  height: 100%;
+  @include absolute-center-xy;
+  span {
+    width: calc(100vw / 3);
+    height: 100vh;
+    display: block;
+    background-color: #fff;
+    top: 0;
+    position: absolute;
+    @include transition($duration: 0.5s, $propaty: width);
+  }
+  span:first-child {
+    left: 0;
+    top: 0;
+  }
+  span:nth-child(2) {
+    left: 33.33vw;
+    transition-delay: 0.1s;
+  }
+  span:nth-child(3) {
+    left: 66.67vw;
+    transition-delay: 0.2s;
+  }
+}

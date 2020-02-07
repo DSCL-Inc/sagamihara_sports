@@ -1,0 +1,14 @@
+//-1024px
+.sp-only{
+    display: none;
+}
+
+@media screen and (max-width:414px){
+    .pc-only{
+        display: none!important;
+    }
+    .sp-only{
+        display: block;
+    }
+}
+
