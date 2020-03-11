@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("../icon/icomoon.eot?yj5zma");
+  src: url("../icon/icomoon.eot?yj5zma#iefix") format("embedded-opentype"),
+    url("../icon/icomoon.ttf?yj5zma") format("truetype"),
+    url("fonts/icomoon.woff?yj5zma") format("woff"),
+    url("../icon/icomoon.svg?yj5zma#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="u-icon-"],
+[class*=" u-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: block;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.u-icon-header-menu--about:before {
+  content: "\e900";
+}
+
+.u-icon-header-menu--event:before {
+  content: "\e903";
+}
+.u-icon-header-menu--junior:before {
+  content: "\e904";
+}
+.u-icon-header-menu--member:before {
+  content: "\e906";
+}
+.u-icon-header-submenu--access:before {
+  content: "\e901";
+}
+.u-icon-header-submenu--login:before {
+  content: "\e905";
+}
+.u-icon-header-submenu--contact:before {
+  content: "\e902";
+}
+
+.u-icon-top-banner—prev {
+  @include background-cover("u-icon-top-banner—prev.svg");
+}
+.u-icon-top-banner—next {
+  @include background-cover("u-icon-top-banner—prev.svg");
+}
+
+.u-icon-link--blue {
+  @include background-cover("u-icon-link--blue.svg");
+  width: 14px;
+  height: 14px;
+}
+.u-icon-link--white {
+  @include background-cover("u-icon-link--white.svg");
+  width: 20px;
+  height: 20px;
+}
+
+[class^="u-icon-activity"] {
+  width: 38px;
+  height: 38px;
+  display: block;
+}
+.u-icon-activity--support {
+  @include background-cover("u-icon-activity--support.png");
+}
+.u-icon-activity--award {
+  @include background-cover("u-icon-activity--award.png");
+}
+.u-icon-activity--character {
+  @include background-cover("u-icon-activity--character.png");
+}
+.u-icon-activity--commendation {
+  @include background-cover("u-icon-activity--commendation.png");
+}
+.u-icon-activity--character {
+  @include background-cover("u-icon-activity--character.png");
+}
+.u-icon-activity--facility {
+  @include background-cover("u-icon-activity--facility.png");
+}
+.u-icon-activity--volunteer {
+  @include background-cover("u-icon-activity--volunteer.png");
+}
+.u-icon-activity--badge {
+  @include background-cover("u-icon-activity--badge.png");
+}
+.u-icon-activity--cooperation {
+  @include background-cover("u-icon-activity--cooperation.png");
+}
+.u-icon-activity--magazine {
+  @include background-cover("u-icon-activity--magazine.png");
+}
+
+.u-icon-facebook {
+  @include background-cover("u-icon-facebook.svg");
+}
+.u-icon-facility {
+  @include background-cover("u-icon-facility.svg");
+}
+.u-icon-external {
+  @include background-cover("u-icon-external.svg");
+}
+
+.u-icon-top-angle {
+  @include background-cover("u-icon-top-angle.svg");
+}
+.u-icon-under-angle {
+  @include background-cover("u-icon-under-angle.svg");
+}
+
+.u-icon-left-angle--black {
+  @include background-cover("u-icon-left-angle--black.svg");
+}
+.u-icon-right-angle--black {
+  @include background-cover("u-icon-right-angle--black.svg");
+}
+
+.u-icon-pdf {
+  @include background-cover("u-icon-pdf.svg");
+}
+.u-icon-excel {
+  @include background-cover("u-icon-excel.svg");
+}
+.u-icon-word {
+  @include background-cover("u-icon-word.svg");
+}
+
+.u-icon-back-link--blue {
+  @include background-cover("u-icon-back-link--blue.svg");
+}
+
+.u-icon-gallery-zoom {
+  @include background-cover("u-icon-gallery-zoom.svg");
+}
+
+.u-icon-close {
+  @include background-cover("u-icon-close.svg");
+}
+
+.u-icon-external--blue {
+  @include background-cover("u-icon-external--blue.svg");
+}

@@ -1,0 +1,13 @@
+.l-flex {
+  display: flex;
+}
+.l-flex__left {
+  width: 40%;
+  flex-shrink: 0;
+  img {
+    width: 100%;
+  }
+}
+.l-flex__right {
+  margin-left: 40px;
+}

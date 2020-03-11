@@ -1,0 +1,12 @@
+.c-caption {
+  margin-top: 40px;
+  font-size: 12px;
+  line-height: 1.6;
+  a {
+    color: $color-link;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

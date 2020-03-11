@@ -1,56 +1,175 @@
 .l-footer {
-  background-color: $color-theme;
-}
-.l-footer-container {
-  padding: 60px 0;
-}
-.l-footer-main-nav__item-line {
-  border-left: 1px solid #fff;
-  padding-left: 20px;
-  margin-left: 20px;
-}
-.l-footer-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.l-footer-nav__list {
-  display: flex;
-}
-.l-footer-nav__list--sub {
-  margin-top: 40px;
-}
-.l-footer-nav__item + .l-footer-nav__item {
-  @extend .l-footer-main-nav__item-line;
-}
-
-.l-footer-nav__link {
+  background-color: $color-sub;
   position: relative;
-  color: #fff;
-  font-weight: bold;
-  @include transition($propaty: color);
-  &:hover {
-    color: $color-hover;
+  &:after {
+    top: -14px;
+    content: "";
+    position: absolute;
+    background: linear-gradient(45deg, $color-sub 50%, transparent 52%),
+      linear-gradient(315deg, $color-sub 50%, transparent 52%);
+    background-size: 30px 30px;
+    height: 14px;
+    width: 100%;
+    bottom: 0;
+  }
+  .l-footer-top {
+    padding: 80px 0 100px;
+  }
+  .l-footer-top__column {
+    display: flex;
+  }
+  .l-footer-top__column__item {
+    width: 25%;
+    padding: 0px 32px 12px;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+    + .l-footer-top__column__item {
+      background-image: linear-gradient(
+        to bottom,
+        #fff,
+        #fff 1px,
+        transparent 1px,
+        transparent 4px
+      );
+      background-size: 1px 5px;
+      background-position: left;
+      background-repeat: repeat-y;
+    }
+  }
+  .l-footer-top__list + .l-footer-top__list {
+    margin-top: 20px;
+    background-image: linear-gradient(
+      to right,
+      #fff,
+      #ffffff 1px,
+      transparent 1px,
+      transparent 4px
+    );
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+
+    background-position: top;
+    background-repeat: repeat-x;
+    padding-top: 20px;
+  }
+  .l-footer-top__list__item {
+    color: #fff;
+    &:first-child {
+      font-size: 16px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      opacity: 1;
+      span {
+        font-size: 32px;
+        margin-right: 4px;
+      }
+    }
+    + .l-footer-top__list__item {
+      margin-top: 12px;
+    }
+    .l-footer-top__list__link {
+      font-size: 14px;
+      opacity: 0.9;
+    }
   }
 }
-.l-footer-nav__list--main .l-footer-nav__link {
-  font-size: 20px;
+.l-footer-top__btn {
+  border-radius: 10px;
+  height: 56px;
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  & + .l-footer-top__btn {
+    margin-top: 12px;
+  }
+  .u-icon-external {
+    width: 20px;
+    height: 20px;
+  }
 }
-.l-footer-nav__list--sub .l-footer-nav__link {
-  font-size: 15px;
+.l-footer-top__btn__title {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+
+  span {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    display: block;
+  }
 }
 
-.copyright {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  font-style: italic;
-  margin-top: 160px;
-  color: #fff;
-  text-align: center;
+.l-footer-bottom {
+  padding: 40px 0;
+  background-color: $color-theme;
+  display: flex;
+
+  & > div {
+    position: relative;
+    justify-content: space-between;
+  }
 }
-.l-footer .c-btn-contact {
-  display: none;
+.l-footer-bottom__left {
+  display: flex;
+  align-items: center;
+}
+.l-footer-bottom__logo {
+  width: 220px;
+
+  img {
+    width: 100%;
+  }
+}
+.l-footer-bottom__address {
+  font-size: 12px;
+  margin-left: 32px;
+  color: #fff;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+.c-backtotop {
+  background-color: $color-theme;
+  width: 126px;
+  height: 40px;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  right: 0;
+  top: -80px;
+  .u-icon-top-angle {
+    @include absolute-center-xy;
+    width: 32px;
+    height: 32px;
+  }
+}
+.l-footer-bottom__nav {
+  display: flex;
+}
+.l-footer-bottom__nav__item + .l-footer-bottom__nav__item {
+  margin-left: 20px;
+}
+.l-footer-bottom__nav__item__link {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.l-footer-bottom__copyright {
+  font-size: 11px;
+  margin-top: 20px;
+  color: #fff;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 480px) {

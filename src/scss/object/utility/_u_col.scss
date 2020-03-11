@@ -1,0 +1,19 @@
+.u-col-wrap {
+  display: flex;
+  margin: 0 -20px;
+}
+.u-col {
+  padding: 0 20px;
+}
+.u-col-8 {
+  width: calc(100% / 12 * 8);
+}
+.u-col-6 {
+  width: calc(100% / 12 * 6);
+}
+.u-col-4 {
+  width: calc(100% / 12 * 4);
+}
+.u-col-3 {
+  width: calc(100% / 12 * 3);
+}

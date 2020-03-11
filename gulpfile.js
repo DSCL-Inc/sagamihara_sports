@@ -20,6 +20,7 @@ var connect = require("gulp-connect");
 var browserSync = require("browser-sync");
 var sassGlob = require("gulp-sass-glob");
 //var scsslint = require("gulp-scss-lint");
+var connectSSI = require("connect-ssi");
 
 /*scss*/
 const paths = {
@@ -84,7 +85,7 @@ gulp.task("js", function() {
   return gulp
     .src(paths.src.js)
     .pipe(jshint())
-    .pipe(concat("common.js"))
+    .pipe(concat("app.js"))
     .pipe(uglify())
     .pipe(gulp.dest(paths.dist.js));
 });
@@ -98,9 +99,13 @@ gulp.task("serve", function() {
 gulp.task("bs", function() {
   browserSync({
     server: {
-      // 1
-      baseDir: "./site/",
-      index: "index.html"
+      baseDir: "./site",
+      middleware: [
+        connectSSI({
+          baseDir: __dirname + "/site",
+          ext: ".html"
+        })
+      ]
     }
   });
 });

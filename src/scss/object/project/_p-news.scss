@@ -1,37 +1,84 @@
 .p-news-list {
-  .p-news-list__item {
-    width: 100%;
-    &:hover {
-      border-color: $color-hover;
-      .p-news__title {
-        color: $color-hover;
-      }
-    }
-  }
-  .p-news-list__item + .p-news-list__item {
-    margin-top: 10px;
-  }
+  width: calc(100% - 180px);
+  margin-left: 40px;
 }
 .p-news-list__item {
-  border: 1px solid $border-gray;
   background-color: #fff;
-  padding: 20px;
   box-sizing: border-box;
+  padding: 16px 0;
   @include transition;
-  &:hover {
-    border-color: $color-hover;
-    .p-news__title {
-      color: $color-hover;
-    }
+  border-top: 1px dotted #dddddd;
+  &:last-child {
+    border-bottom: 1px dotted #dddddd;
   }
 }
-.p-news__date {
-  font-size: 17px;
-  font-weight: 100;
-  margin-bottom: 32px;
-  text-align: center;
+.p-news-list__item-date {
+  font-size: 12px;
+  display: inline-block;
+  color: #888888;
 }
-.p-news__title {
-  font-size: 17px;
-  line-height: 2;
+.p-news-list__item-tag {
+  font-size: 10px;
+  padding: 6px 8px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-weight: bold;
+  color: $color-theme;
+  border-color: $color-theme;
+  display: inline-block;
+  margin-left: 4px;
+  &.p-news-list__item-tag--news {
+    color: $color-news;
+    border-color: $color-news;
+  }
+  &.p-news-list__item-tag--event {
+    color: $color-event;
+    border-color: $color-event;
+  }
+  &.p-news-list__item-tag--junior {
+    color: $color-junior;
+    border-color: $color-junior;
+  }
+  &.p-news-list__item-tag--member {
+    color: $color-member;
+    border-color: $color-member;
+  }
+  &.p-news-list__item-tag--magazine {
+    color: $color-magazine;
+    border-color: $color-magazine;
+  }
+}
+.p-news-list__item-title {
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.p-pagenation {
+  display: flex;
+  @include justify-center;
+  margin-top: 40px;
+  a {
+    @include transition($property: background-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+  span {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+  li:nth-child(2) {
+    margin: 0 16px;
+    font-size: 14px;
+  }
 }

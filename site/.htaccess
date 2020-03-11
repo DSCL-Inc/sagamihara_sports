@@ -1,0 +1,3 @@
+AddOutputFilter INCLUDES .shtml
+　　AddOutputFilter INCLUDES .html
+　　AddOutputFilter INCLUDES .htm

@@ -1,112 +1,63 @@
 .c-btn {
-  width: 312px;
-  height: 54px;
+  height: 80px;
+  width: 100%;
+  max-width: 240px;
+  background-color: #f5f5f5;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  font-size: 16px;
-  color: #fff;
-  text-align: center;
-  background-color: $color_theme;
-  border: 5px solid rgba(255, 255, 255, 0.2);
-  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 0 16px;
+  margin: 6px;
+  max-width: 320px;
+  font-weight: bold;
   position: relative;
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    height: calc(100% + 10px);
-    width: 0;
-    z-index: 0;
-    background-color: $color-hover;
-    @include transition($propaty: width);
-    box-sizing: border-box;
-  }
-  &:hover:after {
-    left: -5px;
-    width: calc(100% + 10px);
-    border: 5px solid rgba(255, 255, 255, 0.2);
+  &:nth-child(n + 5) {
+    margin-top: 12px;
   }
   span {
-    display: block;
-    z-index: 2;
+    width: 32px;
+    height: 32px;
+    @include absolute-center-y;
+    right: 12px;
+  }
+  .u-icon-link--blue,
+  .u-icon-link--white {
+    width: 16px;
+    height: 16px;
   }
 }
-.c-btn-icon {
-  display: block;
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: auto;
-  z-index: 2;
+.c-btn-wrap {
+  margin: 0 -6px;
+  display: flex;
+  flex-wrap: wrap;
+  .c-btn {
+    width: calc(100% / 4 - 12px);
+    text-align: left;
+  }
+}
+.c-btn--primary {
+  @extend .c-btn;
+  background-color: $color-theme;
+  color: #fff;
+  justify-content: center;
 }
 
-.c-btn-primary {
-  @extend .c-btn;
-  &::before {
-    @extend .c-btn-icon;
-    content: "\e904";
-    font-size: 20px;
-  }
-}
-.c-btn-contact {
-  @extend .c-btn;
-  background-color: #fff;
-  border-color: #d5e0e7;
-  color: $color-theme;
-  &::before {
-    @extend .c-btn-icon;
-    background-image: url(../image/icon_right-angle-black.svg);
-  }
-}
-.c-btn-text {
-  font-size: 17px;
-  position: relative;
-  padding-right: 20px;
-  font-weight: bold;
-  min-width: 30px;
-  display: table;
-  @include transition($propaty: color);
-  &::before {
-    @extend .c-btn-icon;
-    right: 0;
-    font-size: 16px;
-  }
+.c-text-btn {
+  display: flex;
+  @include transition($property: opacity);
   &:hover {
-    color: $color-hover;
+    opacity: 0.7;
+    .u-icon-back-link--blue {
+      transform: translateX(-4px);
+    }
   }
-  &:hover:before {
-    color: $color-hover;
+  .u-icon-back-link--blue {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    @include transition($property: transform);
   }
-}
-.c-btn-text--back {
-  @extend .c-btn-text;
-  margin: auto;
-  padding-right: 0;
-  padding-left: 20px;
-  &::before {
-    background-image: url(../image/icon_left-angle-black.svg);
-    left: 0;
-    right: auto;
-  }
-  &:hover:before {
-    left: -4px;
-    right: auto;
-  }
-}
-.btn:hover {
-  background-color: $c_theme;
-  color: #fff;
-}
-.btn-fee {
-  width: 250px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  color: #ffffff;
 }

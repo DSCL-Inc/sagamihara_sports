@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "connect-ssi": "^1.1.1",
     "eslint": "^6.8.0",
     "ftp-deploy": "^2.3.6",
     "gulp": "^4.0.2",

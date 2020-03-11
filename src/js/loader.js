@@ -1,11 +1,8 @@
 $(window).on("load", function() {
   $(function() {
-    //clearInterval(timer);
-
     $("html,body").css({
       overflow: "initial"
     });
-
     $(".l-loader")
       .delay(1000)
       .queue(function() {

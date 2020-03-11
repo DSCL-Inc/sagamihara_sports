@@ -1,0 +1,190 @@
+/*====================================
+    Junior Sports
+	----------------------------------
+  		index
+  	----------------------------------
+
+    1. junior__register
+    2. junior__type
+    3. top-activity
+    4. top-advertisement
+
+====================================*/
+
+/*
+ 	1. junior__register
+====================================*/
+.p-junior__register {
+  display: flex;
+  border: 2px solid $color-junior;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+.p-junior__register__col {
+  width: 50%;
+  padding: 52px 40px 40px;
+  position: relative;
+}
+.p-junior__register__title {
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: auto;
+  padding: 12px 16px;
+  font-size: 16px;
+  display: inline-block;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+.p-junior__register__title--orange {
+  @extend .p-junior__register__title;
+  color: #fff;
+  background-color: $color-junior;
+}
+.p-junior__register__title--white {
+  @extend .p-junior__register__title;
+  color: $color-junior;
+  border: 2px solid $color-junior;
+}
+.p-junior__register__procedure {
+}
+.p-junior__register__procedure__item__head {
+  font-size: 16px;
+  font-weight: bold;
+
+  & > strong {
+    font-size: 20px;
+    color: $color-junior;
+    font-weight: bold;
+    margin-right: 4px;
+  }
+}
+.p-junior__register__procedure__item {
+  border-top: 1px solid #dddddd;
+  &:last-child {
+    border-bottom: 1px solid #dddddd;
+  }
+  &.p-junior__register__procedure__item {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+}
+.p-junior__register__procedure__item__body {
+  margin-top: 16px;
+  display: block;
+  li {
+    line-height: 1.6;
+  }
+  li + li {
+    margin-top: 8px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    span {
+      width: 20px;
+      height: 20px;
+      margin-left: 4px;
+    }
+  }
+}
+
+/*
+ 	2. junior__type
+====================================*/
+
+.c-junior__type__mordal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  &.is-show {
+    display: block;
+    .c-junior__type__mordal__bg {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .c-junior__type__img {
+    background-color: #f4f4f4;
+    position: relative;
+    height: 100%;
+    img {
+      width: 60%;
+      @include absolute-center-xy;
+    }
+  }
+}
+
+.c-junior__type__mordal__bg {
+  width: 100%;
+  height: 100%;
+  @include absolute-center-xy;
+  @include transition($property: background-color);
+}
+.c-junior__type__mordal__container {
+  height: 540px;
+  max-width: 980px;
+  width: 100%;
+  border-radius: 10px;
+  @include absolute-center-xy;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.c-junior__type__mordal__inner {
+  overflow: scroll;
+  height: 100%;
+  padding: 40px;
+}
+.c-junior__type__mordal__close-btn {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  position: fixed;
+  right: 12px;
+  top: 12px;
+  @include transition($property: background-color);
+  &:hover {
+    background-color: #bbb;
+  }
+  .u-icon-close {
+    width: 20px;
+    height: 20px;
+    @include absolute-center-xy;
+  }
+}
+.c-card__img {
+  position: relative;
+  height: 0;
+  padding-top: 60%;
+  width: 100%;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  img {
+    height: 100%;
+    @include absolute-center-xy;
+  }
+}
+.c-junior__type__event-table {
+  margin-top: 40px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.c-junior__type__event-table__head {
+  font-size: 16px;
+  text-align: center;
+  padding: 20px 32px;
+  background-color: $color-theme;
+  color: #fff;
+}
+.c-junior__type__event-table__body {
+  background-color: #f4f4f4;
+  padding: 32px;
+}
