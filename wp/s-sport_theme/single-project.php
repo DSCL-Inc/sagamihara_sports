@@ -114,6 +114,7 @@ if( $images ):
             ><span class="u-icon-back-link--blue"></span>協会事業一覧へ戻る</a
           >
         </div>
+        <?php get_template_part('advertise_banner'); ?>
       </main>
    
 

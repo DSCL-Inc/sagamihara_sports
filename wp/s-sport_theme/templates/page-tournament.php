@@ -177,6 +177,7 @@ endif;
 	     <?php endforeach; ?>
 	<?php endif; ?>
     <?php wp_reset_postdata(); //クエリのリセット ?>
+    <?php get_template_part('advertise_banner'); ?>
       </main>
    
 

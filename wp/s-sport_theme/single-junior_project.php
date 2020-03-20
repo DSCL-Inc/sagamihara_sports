@@ -115,6 +115,7 @@ if( $images ):
             ><span class="u-icon-back-link--blue"></span>スポ少年間行事予定一覧へ戻る</a
           >
         </div>
+        <?php get_template_part('advertise_banner'); ?>
       </main>
    
 

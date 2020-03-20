@@ -71,6 +71,7 @@ $the_query = new WP_Query( array(
 				 <?php endif; ?>
 			</div>
         </div>
+        <?php get_template_part('advertise_banner'); ?>
       </main>
 
 <?php

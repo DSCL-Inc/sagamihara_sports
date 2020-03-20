@@ -15,7 +15,8 @@ get_header();
           <?php the_content(); ?>
             </div>
           </div>
-     
+       
+          <?php get_template_part('advertise_banner'); ?>
       </main>
       <?php endwhile;?>
 <?php endif; ?>

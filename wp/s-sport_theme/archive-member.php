@@ -41,6 +41,7 @@ get_header();
     </div>
             </div>
         </div>
+        <?php get_template_part('advertise_banner'); ?>
       </main>
       <div class="p-member__modal p-member__modal--member js-modal-content">
                 <div class="p-member__modal__bg"></div>
