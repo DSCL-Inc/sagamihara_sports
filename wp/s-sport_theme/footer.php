@@ -109,7 +109,7 @@
         </li>
         <li class="l-footer-bottom__nav__item">
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>policy" class="l-footer-bottom__nav__item__link"
-            >サイトポリシー・プライバシーポリシー</a
+            >個人情報保護方針</a
           >
         </li>
         <li class="l-footer-bottom__nav__item">
