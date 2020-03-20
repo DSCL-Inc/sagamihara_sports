@@ -48,7 +48,7 @@ get_header();
                   
                  
                 </ul>
-              <ul class="p-pagenation">
+              <ul class="p-news-list__pagenation">
                 <li>
                   <a href=""><span class="u-icon-left-angle--black"></span></a>
                 </li>

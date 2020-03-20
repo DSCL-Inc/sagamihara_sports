@@ -1,0 +1,65 @@
+.p-contact {
+  input[type="text"] {
+    //width: 300px;
+  }
+  tr:last-child {
+    border-bottom: none;
+  }
+  td {
+    line-height: 1;
+    vertical-align: middle;
+  }
+  td:first-child {
+    width: 240px;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  select {
+    border: 1px solid #ddd;
+    display: block;
+    height: 40px;
+    padding: 8px 12px;
+  }
+  .mwform-tel-field {
+    input[type="text"] {
+      width: 80px;
+    }
+  }
+  strong {
+    border-radius: 30px;
+    padding: 4px 12px;
+    border: 2px solid #cd2f2f;
+    color: #cd2f2f;
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 8px;
+  }
+  input[type="submit"] {
+    height: 80px;
+    width: 100%;
+    max-width: 240px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 0 16px;
+    max-width: 320px;
+    font-weight: bold;
+    position: relative;
+    background-color: $color-theme;
+    color: #fff;
+    justify-content: center;
+  }
+}
+.p-contact__caption {
+  margin-top: 20px;
+  font-size: 14px;
+}

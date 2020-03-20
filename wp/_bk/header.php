@@ -1,9 +1,18 @@
+<?php
+/*
+	if(is_page() == 'junior-stakeholder'): 
+		$userArray = array("admin" => "password");
+		basic_auth($userArray); 
+elseif(is_page() == 'member-stakeholder'):
+	   $userArray = array("admin" => "password");
+		basic_auth($userArray); 
+	endif;
+*/
+?>
 <!DOCTYPE html>
 
 <html>
-
-	<head>
-    
+	<head> 
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,8 +29,13 @@
 <link href="" rel="apple-touch-icon" />
 <link rel="shortcut icon" href="../../../favicon.ico" />
 <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" rel="stylesheet" type="text/css" />
-<script
+		<script
   src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+  type="text/javascript"
+  defer
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
   type="text/javascript"
   defer
 ></script>
@@ -30,9 +44,7 @@
 		<?php wp_head(); ?>
 	</head>
 <div class="l-container">
-	
-	<body <?php body_class(); ?>>
-
+	<body <?php body_class(); ?> id="backtotop">
 		<?php
 		wp_body_open();
 		?>
@@ -46,7 +58,7 @@
     </a>
     <ul class="l-header__menu">
       <li class="l-header__menu__item l-header__menu__item--about">
-        <a class="l-header__menu__item__link">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>about" class="l-header__menu__item__link">
           <span class="u-icon-header-menu--about"></span>
           <p class="l-header__menu__item-name">スポーツ協会</p>
           <ul class="l-header__dropdown-menu">
@@ -57,7 +69,7 @@
             </li>
             <li class="l-header__dropdown-menu__item">
               <a href="<?php echo esc_url( home_url( '/' ) ); ?>facility" class="l-header__dropdown-menu__item__link"
-                >指定管理施設</a
+                >指定管理者施設</a
               >
             </li>
             <li class="l-header__dropdown-menu__item">
@@ -117,25 +129,40 @@
         </a>
       </li>
     </ul>
-    <div class="l-header__submenu">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>access" class="l-header__submenu__item">
+    <ul class="l-header__submenu">
+    <li class="l-header__submenu__item">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>access" class="l-header__submenu__item__link">
         <span class="u-icon-header-submenu--access"></span>
         <p class="l-header__menu__item-name">営業・アクセス</p>
       </a>
-      <a href="" class="l-header__submenu__item">
+      </li>
+      <li class="l-header__submenu__item">
+      <a href="" class="l-header__submenu__item__link">
         <span class="u-icon-header-submenu--login"></span>
         <p class="l-header__menu__item-name">関係者専用</p>
+        
       </a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" class="l-header__submenu__item">
+      <ul class="l-header__dropdown-menu">
+            <li class="l-header__dropdown-menu__item">
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>junior-stakeholder" class="l-header__dropdown-menu__item__link"
+                >スポーツ少年団</a
+              >
+            </li>
+            <li class="l-header__dropdown-menu__item">
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>member-stakeholder" class="l-header__dropdown-menu__item__link"
+                >加盟団体</a
+              >
+            </li>
+          </ul>
+      <li class="l-header__submenu__item">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" class="l-header__submenu__item__link">
         <span class="u-icon-header-submenu--contact"></span>
         <p class="l-header__menu__item-name">お問い合わせ</p>
       </a>
-    </div>
+      </li>
+    </ul>
   </div>
 </header>
 
 		<!-- #site-header -->
 
-		<?php
-		// Output the menu modal.
-		//get_template_part( 'template-parts/modal-menu' );

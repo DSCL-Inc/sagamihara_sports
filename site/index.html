@@ -5,14 +5,21 @@
     <!--#include virtual="/assets/inc/meta.html"-->
   </head>
   <body>
-    <div class="l-container">
+    <div class="l-container" id="backtotop">
       <!--#include virtual="/assets/inc/header.html"-->
       <main class="l-main">
         <section class="p-top-mv">
-          <img
-            src="/assets/image/p-top_mv.png"
-            alt="公益社団法人 相模原市体育協会"
-          />
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcset="/assets/image/p-top_mv.jpg"
+              alt="公益社団法人 相模原市体育協会"
+            />
+            <img
+              src="/assets/image/p-top_mv_sp.jpg"
+              alt="公益社団法人 相模原市体育協会"
+            />
+          </picture>
           <div class="p-top-mv-slide__cover"></div>
         </section>
         <section class="p-top-banner">
@@ -57,7 +64,7 @@
         </section>
         <div class="l-wrap">
           <section class="p-top-info p-top__section u-flex">
-            <div class="p-news">
+            <div class="p-top-news">
               <div class="p-top-section__head">
                 <h2 class="p-top-section__head__title">
                   <span
@@ -69,27 +76,37 @@
                   >一覧を見る<span class="u-icon-right-angle"></span
                 ></a>
               </div>
-              <div class="l-content u-flex u-shadow">
+
+              <div class="l-content u-shadow">
                 <ul class="p-news-nav">
-                  <li class="p-news-nav__item p-news-nav__item--all">全て</li>
-                  <li class="p-news-nav__item p-news-nav__item--news is-active">
+                  <li
+                    class="p-news-nav__item p-news-nav__item--all js-news-category is-active"
+                  >
+                    全て
+                  </li>
+                  <li
+                    class="p-news-nav__item p-news-nav__item--news js-news-category"
+                  >
                     お知らせ
                   </li>
-                  <li class="p-news-nav__item p-news-nav__item--event">
+                  <li
+                    class="p-news-nav__item p-news-nav__item--event js-news-category"
+                  >
                     イベント情報
                   </li>
-                  <li class="p-news-nav__item p-news-nav__item--boys">
+                  <li
+                    class="p-news-nav__item p-news-nav__item--junior js-news-category"
+                  >
                     スポーツ少年団
                   </li>
-                  <li class="p-news-nav__item p-news-nav__item--member">
-                    加盟団体
-                  </li>
-                  <li class="p-news-nav__item p-news-nav__item--magazine">
+                  <li
+                    class="p-news-nav__item p-news-nav__item--magazine js-news-category"
+                  >
                     広報さがみはら
                   </li>
                 </ul>
-                <ul class="p-news-list">
-                  <li class="p-news-list__item">
+                <ul class="p-news-list" data-show-category="all">
+                  <li class="p-news-list__item" data-news-category="magazine">
                     <a href="" class="p-news-list__item__link">
                       <p class="p-news-list__item-date">2019.06.30</p>
                       <p
@@ -100,7 +117,7 @@
                       <p class="p-news-list__item-title">ニュースタイトル</p>
                     </a>
                   </li>
-                  <li class="p-news-list__item">
+                  <li class="p-news-list__item" data-news-category="news">
                     <a href="" class="p-news-list__item__link">
                       <p class="p-news-list__item-date">2019.06.30</p>
                       <p
@@ -113,7 +130,7 @@
                       </p>
                     </a>
                   </li>
-                  <li class="p-news-list__item">
+                  <li class="p-news-list__item" data-news-category="event">
                     <a href="" class="p-news-list__item__link">
                       <p class="p-news-list__item-date">2019.06.30</p>
                       <p
@@ -126,7 +143,7 @@
                       </p>
                     </a>
                   </li>
-                  <li class="p-news-list__item">
+                  <li class="p-news-list__item" data-news-category="news">
                     <a href="" class="p-news-list__item__link">
                       <p class="p-news-list__item-date">2019.06.30</p>
                       <p
@@ -139,11 +156,72 @@
                       </p>
                     </a>
                   </li>
-                  <li class="p-news-list__item">
+                  <li class="p-news-list__item" data-news-category="junior">
                     <a href="" class="p-news-list__item__link">
                       <p class="p-news-list__item-date">2019.06.30</p>
                       <p
-                        class="p-news-list__item-tag p-news-list__item-tag--boys"
+                        class="p-news-list__item-tag p-news-list__item-tag--junior"
+                      >
+                        少年団
+                      </p>
+                      <p class="p-news-list__item-title">ニュースタイトル</p>
+                    </a>
+                  </li>
+                  <li class="p-news-list__item" data-news-category="magazine">
+                    <a href="" class="p-news-list__item__link">
+                      <p class="p-news-list__item-date">2019.06.30</p>
+                      <p
+                        class="p-news-list__item-tag p-news-list__item-tag--magazine"
+                      >
+                        広報さがみはら
+                      </p>
+                      <p class="p-news-list__item-title">ニュースタイトル</p>
+                    </a>
+                  </li>
+                  <li class="p-news-list__item" data-news-category="news">
+                    <a href="" class="p-news-list__item__link">
+                      <p class="p-news-list__item-date">2019.06.30</p>
+                      <p
+                        class="p-news-list__item-tag p-news-list__item-tag--news"
+                      >
+                        お知らせ
+                      </p>
+                      <p class="p-news-list__item-title">
+                        ニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトル
+                      </p>
+                    </a>
+                  </li>
+                  <li class="p-news-list__item" data-news-category="event">
+                    <a href="" class="p-news-list__item__link">
+                      <p class="p-news-list__item-date">2019.06.30</p>
+                      <p
+                        class="p-news-list__item-tag p-news-list__item-tag--event"
+                      >
+                        イベント情報
+                      </p>
+                      <p class="p-news-list__item-title">
+                        ニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトル
+                      </p>
+                    </a>
+                  </li>
+                  <li class="p-news-list__item" data-news-category="news">
+                    <a href="" class="p-news-list__item__link">
+                      <p class="p-news-list__item-date">2019.06.30</p>
+                      <p
+                        class="p-news-list__item-tag p-news-list__item-tag--news"
+                      >
+                        お知らせ
+                      </p>
+                      <p class="p-news-list__item-title">
+                        ニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトルニュースタイトル
+                      </p>
+                    </a>
+                  </li>
+                  <li class="p-news-list__item" data-news-category="junior">
+                    <a href="" class="p-news-list__item__link">
+                      <p class="p-news-list__item-date">2019.06.30</p>
+                      <p
+                        class="p-news-list__item-tag p-news-list__item-tag--junior"
                       >
                         少年団
                       </p>
@@ -163,17 +241,16 @@
               </div>
               <div class="l-content u-shadow">
                 <div class="p-top-sns__facebook">
-                  <iframe
-                    name="f92103b4eafa8"
-                    title="fb:page Facebook Social Plugin"
-                    frameborder="0"
-                    allowtransparency="true"
-                    allowfullscreen="true"
-                    scrolling="no"
-                    allow="encrypted-media"
-                    src="https://www.facebook.com/v2.5/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D45%23cb%3Df265630a96056ac%26domain%3Dwww.jade.dti.ne.jp%26origin%3Dhttp%253A%252F%252Fwww.jade.dti.ne.jp%252Ff1c8f16b86e1df4%26relation%3Dparent.parent&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsagamihara.sports.association%2F&amp;locale=ja_JP&amp;sdk=joey&amp;show_facepile=false&amp;tabs=timeline&amp;"
-                    class=""
-                  ></iframe>
+                  <div
+                    class="fb-page"
+                    data-href="https://www.facebook.com/sagamihara.sports.association/"
+                    data-width="700"
+                    data-tabs="timeline,events"
+                    data-hide-cover="false"
+                    data-show-facepile="true"
+                    data-small-header="false"
+                    data-adapt-container-width="true"
+                  ></div>
                 </div>
               </div>
             </div>
@@ -215,56 +292,56 @@
                 </a>
               </div>
               <div class="p-top-activity__sub">
-                <a href="" class="c-btn--gray">
+                <a href="" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--support"></span>
                     賛助会員募
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--award"></span>
                     表彰
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--character"></span>
                     マスコットキャラクター
                   </p>
                   <span class="u-icon-link--blue"></span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--facility"></span>
                     指定管理施設
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--volunteer"></span>
                     スポーツボランティア
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--badge"></span>
                     オリジナル缶バッチ
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--cooperation"></span>
                     震災支援活動への協力
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--magazine"></span>
                     広報

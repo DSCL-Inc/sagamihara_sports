@@ -1,36 +1,60 @@
 .c-page-mv {
-  height: 300px;
+  height: 100px;
   width: 100%;
-  @include background-cover("c-page-mv--news.jpg");
   position: relative;
+  background-color: $color-theme;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100px;
+    @include background-cover("c-page-mv__left.png");
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 520px;
+    height: 100px;
+    @include background-cover("c-page-mv__right.png");
+  }
 }
 .c-page-mv__title {
-  font-size: 40px;
+  font-size: 24px;
   font-weight: bold;
-  @include absolute-center-xy;
+  @include absolute-center-y;
   color: #ffffff;
   letter-spacing: 2px;
 }
-.c-page-nav {
+
+.c-page-mv__nav__list {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-}
-.c-page-nav__item {
-  font-size: 13px;
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: underline;
-  display: flex;
-  align-items: center;
-  span {
-    width: 12px;
-    height: 12px;
-    display: block;
-    margin-left: 8px;
+  bottom: 70px;
+  border-radius: 10px;
+  right: 50%;
+  transform: translateX(50%);
+  li {
+    color: #fff;
+    display: inline-flex;
   }
-  + .c-page-nav__item {
-    margin-left: 20px;
+  a {
+    font-size: 15px;
+    font-weight: bold;
+    @include transition($property: opacity);
+    padding: 12px;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      opacity: 0.7;
+    }
+    &.is-current {
+      background: #fff;
+      color: $color-theme;
+      font-weight: bold;
+    }
   }
 }

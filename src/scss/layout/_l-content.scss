@@ -1,0 +1,20 @@
+.l-content {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 48px;
+  width: 100%;
+  overflow: hidden;
+  + .l-content {
+    margin-top: 60px;
+  }
+}
+@include mq(xl) {
+  .l-content {
+    padding: 32px;
+  }
+}
+@include mq(lg) {
+  .l-content {
+    padding: 20px;
+  }
+}

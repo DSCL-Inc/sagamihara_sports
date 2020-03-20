@@ -1,0 +1,7 @@
+AuthUserFile /home/s-sports/www/s-sport/junior-stakeholder/.htpasswd
+AuthGroupFile /dev/null
+AuthName MembersOnly
+AuthType Basic
+
+Options +Includes
+AddHandler server-parsed html

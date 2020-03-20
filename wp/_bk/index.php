@@ -4,11 +4,17 @@ get_header();
 
       <main class="l-main">
         <section class="p-top-mv">
-          <img
-            src="<?php echo get_template_directory_uri(); ?>/assets/image/p-top_mv.jpg"
-            alt="公益社団法人 相模原市体育協会"
-          />
-          <div class="p-top-mv-slide__cover"></div>
+			<picture>
+            <source
+              media="(min-width: 768px)"
+              srcset="<?php echo get_template_directory_uri(); ?>/assets/image/p-top_mv.jpg"
+              alt="公益社団法人 相模原市体育協会"
+            />
+            <img
+              src="<?php echo get_template_directory_uri(); ?>/assets/image/p-top_mv_sp.jpg"
+              alt="公益社団法人 相模原市体育協会"
+            />
+          </picture>
         </section>
         <section class="p-top-banner">
         <?php if(have_rows('top_mv_under_banner')): ?>
@@ -32,7 +38,7 @@ get_header();
         </section>
         <div class="l-wrap">
           <section class="p-top-info p-top__section u-flex">
-            <div class="p-news">
+            <div class="p-top-news">
               <div class="p-top-section__head">
                 <h2 class="p-top-section__head__title">
                   <span
@@ -44,46 +50,44 @@ get_header();
                   >一覧を見る<span class="u-icon-right-angle"></span
                 ></a>
               </div>
-              <div class="l-content u-flex u-shadow">
+              <div class="l-content  u-shadow">
                 <ul class="p-news-nav">
-                  <li class="p-news-nav__item p-news-nav__item--all">全て</li>
-                  <li class="p-news-nav__item p-news-nav__item--news is-active">
+                  <li class="p-news-nav__item p-news-nav__item--all js-news-category is-active" data-news-category="all">全て</li>
+                  <li class="p-news-nav__item p-news-nav__item--news  js-news-category" data-news-category="news">
                     お知らせ
                   </li>
-                  <li class="p-news-nav__item p-news-nav__item--event">
+                  <li class="p-news-nav__item p-news-nav__item--event  js-news-category" data-news-category="event">
                     イベント情報
                   </li>
-                  <li class="p-news-nav__item p-news-nav__item--boys">
+                  <li class="p-news-nav__item p-news-nav__item--junior  js-news-category" data-news-category="junior">
                     スポーツ少年団
                   </li>
-                  <li class="p-news-nav__item p-news-nav__item--magazine">
+                  <li class="p-news-nav__item p-news-nav__item--magazine  js-news-category" data-news-category="magazine">
                     広報さがみはら
                   </li>
                 </ul>
-                <ul class="p-news-list">
-                <?php $args = array(
-    'numberposts' => 5, 
-    'post_type' => 'news' 
-  );
+				  <ul class="p-news-list">
+					<?php $args = array(
+				  'posts_per_page' => '5',
+					'post_type' => 'news' 
+				  );
   $customPosts = get_posts($args);
 ?>
 <?php
   if($customPosts) : foreach($customPosts as $post) : setup_postdata( $post );
   ?>
-   <li class="p-news-list__item">
-                    <a href="<?php the_field("news_url"); ?>" class="p-news-list__item__link">
-                      <p class="p-news-list__item-date"><?php the_date(); ?></p>
-                      <?php 
+					  <?php 
                           if ($terms = get_the_terms($post->ID, 'news_category')) {
                             foreach ( $terms as $term ) {
                               $term_name = $term -> name;
                               $term_slug = $term -> slug;
                             }
+							    }
                             ?>
-                            <?php
-                        }
-                      
-                      ?>
+   <li class="p-news-list__item" data-news-category="<?php echo $term_slug ;?>">
+                    <a href="<?php (get_field("news_url")) ? the_field("news_url")  : the_permalink(); ?>" class="p-news-list__item__link">
+                      <p class="p-news-list__item-date"><?php the_time('Y年m月d日'); ?></p>
+                    
                            
                       <p
                         class="p-news-list__item-tag p-news-list__item-tag--<?php echo esc_html($term_slug);?>"
@@ -95,13 +99,9 @@ get_header();
                     </a>
                   </li>
   <?php endforeach; ?>
-  <?php else : //記事が無い場合 ?>
-  <p>ただいま新着情報はございません</p>
   <?php endif;
-  wp_reset_postdata(); //クエリのリセット ?>
-
-                  
-                 
+  wp_reset_postdata(); ?>
+         
                 </ul>
               </div>
             </div>
@@ -115,17 +115,16 @@ get_header();
               </div>
               <div class="l-content u-shadow">
                 <div class="p-top-sns__facebook">
-                  <iframe
-                    name="f92103b4eafa8"
-                    title="fb:page Facebook Social Plugin"
-                    frameborder="0"
-                    allowtransparency="true"
-                    allowfullscreen="true"
-                    scrolling="no"
-                    allow="encrypted-media"
-                    src="https://www.facebook.com/v2.5/plugins/page.php?adapt_container_width=true&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D45%23cb%3Df265630a96056ac%26domain%3Dwww.jade.dti.ne.jp%26origin%3Dhttp%253A%252F%252Fwww.jade.dti.ne.jp%252Ff1c8f16b86e1df4%26relation%3Dparent.parent&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsagamihara.sports.association%2F&amp;locale=ja_JP&amp;sdk=joey&amp;show_facepile=false&amp;tabs=timeline&amp;"
-                    class=""
-                  ></iframe>
+                  <div
+                    class="fb-page"
+                    data-href="https://www.facebook.com/sagamihara.sports.association/"
+                    data-width="700"
+                    data-tabs="timeline,events"
+                    data-hide-cover="false"
+                    data-show-facepile="true"
+                    data-small-header="false"
+                    data-adapt-container-width="true"
+                  ></div>
                 </div>
               </div>
             </div>
@@ -141,7 +140,7 @@ get_header();
             </div>
             <div class="l-content u-shadow">
               <div class="p-top-activity__main">
-                <a class="p-top-activity__main__item" src="">
+                <a class="p-top-activity__main__item" href="<?php echo esc_url( home_url( '/' ) ); ?>project">
                   <div
                     class="p-top-activity__main__item__img p-top-activity__main__item__img--event"
                   ></div>
@@ -149,7 +148,7 @@ get_header();
                     イベント情報<span class="u-icon-link--white"> </span>
                   </p>
                 </a>
-                <a class="p-top-activity__main__item" src="">
+                <a class="p-top-activity__main__item" href="<?php echo esc_url( home_url( '/' ) ); ?>junior">
                   <div
                     class="p-top-activity__main__item__img p-top-activity__main__item__img--junior"
                   ></div>
@@ -157,7 +156,7 @@ get_header();
                     スポーツ少年団<span class="u-icon-link--white"> </span>
                   </p>
                 </a>
-                <a class="p-top-activity__main__item" src="">
+                <a class="p-top-activity__main__item" href="<?php echo esc_url( home_url( '/' ) ); ?>member">
                   <div
                     class="p-top-activity__main__item__img p-top-activity__main__item__img--member"
                   ></div>
@@ -167,60 +166,59 @@ get_header();
                 </a>
               </div>
               <div class="p-top-activity__sub">
-                <a href="" class="c-btn--gray">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>supportingmember" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--support"></span>
-                    賛助会員募
+                    賛助会員
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>award" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--award"></span>
                     表彰
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>character" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--character"></span>
                     マスコットキャラクター
                   </p>
                   <span class="u-icon-link--blue"></span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>facility" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--facility"></span>
-                    指定管理施設
+                   指定管理者施設
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>volunteer" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--volunteer"></span>
                     スポーツボランティア
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>kanbajji" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--badge"></span>
                     オリジナル缶バッチ
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>support-activities" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--cooperation"></span>
                     震災支援活動への協力
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
-                <a href="" class="c-btn--gray">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>magazine" class="c-btn">
                   <p class="c-btn__title">
                     <span class="u-icon-activity--magazine"></span>
-                    広報
-                  </p>
+					  スポーツさがみはら</p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
               </div>
@@ -234,8 +232,8 @@ get_header();
                 ></span
                 >広告バナー
               </h4>
-              <a class="p-top-head__btn u-shadow" href=""
-                >一覧を見る<span class="u-icon-right-angle"></span
+              <a class="p-top-head__btn u-shadow" href="<?php echo esc_url( home_url( '/' ) ); ?>banner-guide"
+                >詳しく見る<span class="u-icon-right-angle"></span
               ></a>
             </div>
             <div class="l-content u-shadow">

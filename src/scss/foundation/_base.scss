@@ -11,14 +11,15 @@ body {
   width: 100%;
   margin: 0;
   color: #0e1642;
-  font-size: 10px;
+  font-size: 15px;
   font-feature-settings: "palt";
-  font-weight: 200;
+  font-weight: 500;
 }
 .l-container {
   width: 100%;
   overflow: hidden;
   margin-top: 70px;
+  line-height: 1.6;
 }
 .l-main {
   background-image: url(../image/bg.png);
@@ -26,14 +27,7 @@ body {
   background-repeat: repeat;
   padding-bottom: 120px;
 }
-.l-content {
-  border-radius: 10px;
-  background-color: #fff;
-  padding: 60px;
-  + .l-content {
-    margin-top: 60px;
-  }
-}
+
 .c-page-container {
   padding-top: 60px;
 }
@@ -48,4 +42,10 @@ img {
 }
 * {
   box-sizing: border-box;
+}
+
+@include mq(md) {
+  .l-container {
+    margin-top: 100px;
+  }
 }

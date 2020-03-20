@@ -2,14 +2,23 @@
   & + .c-page-section {
     margin-top: 80px;
   }
+  p {
+    font-size: 15px;
+    line-height: 2;
+  }
+}
+.c-page-section__head {
+  display: flex;
+  justify-content: space-between;
 }
 .c-page-section__body {
   & + .c-page-section__body {
     margin-top: 40px;
   }
 }
+
 .c-page-section__title {
-  font-size: 24px;
+  font-size: 20px;
   border-left: 10px solid $color_theme;
   padding-left: 12px;
   padding: 0 8px;
@@ -22,12 +31,12 @@
 }
 
 .c-page-section__title--md {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 12px;
   font-weight: bold;
 }
 .c-page-section__title--sm {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 8px;
 }
@@ -41,6 +50,15 @@
   margin-top: 24px;
 }
 .c-desc {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 2;
+  a {
+    color: $color-link;
+    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }

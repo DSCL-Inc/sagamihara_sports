@@ -7,9 +7,7 @@
 get_header();
 ?>
       <main class="l-main">
-      <div class="c-page-mv c-page-mv--news">
-          <h2 class="c-page-mv__title"><?php the_title(); ?></h2>
-        </div>
+<?php get_template_part('template-parts/page-mv'); ?>
         <div class="c-page-container l-wrap">
           <div class="l-content u-shadow">
           <div class="c-page-section__body">
@@ -27,8 +25,7 @@ get_header();
                 );
     $posts = get_posts( $args );
     if( $posts ) : foreach( $posts as $post ) : setup_postdata( $post ); ?>
-   
-   <a class="c-card__item js-modal-show" data-modal="<?php echo $post->post_name";?>>
+   <a class="c-card__item js-modal-show" data-modal="<?php the_ID(); ?>">
                   <div class="c-card__item__img">
                     <img src="<?php the_field("member_thumbnail"); ?>" alt="<?php the_title(); ?>" />
                   </div>
@@ -44,83 +41,16 @@ get_header();
     </div>
             </div>
         </div>
-
-
       </main>
-      <div class="c-junior__type__mordal js-modal-content">
-                <div class="c-junior__type__mordal__bg"></div>
-                <div class="c-junior__type__mordal__container">
-                  <button class="c-junior__type__mordal__close-btn js-modal-close">
-                    <span class="u-icon-close"></span>
+      <div class="p-member__modal p-member__modal--member js-modal-content">
+                <div class="p-member__modal__bg"></div>
+                <div class="p-member__modal__container">
+                
+                 
+                </div>
+                <button class="p-member__modal__close-btn js-modal-close">
+                  閉じる
                   </button>
-                  <div class="c-junior__type__mordal__inner">
-                  <div class="c-junior__type__mordal__top">
-                    <div class="u-col-wrap">
-                      <div class="u-col u-col-6">
-                        <div class="c-junior__type__img">
-                          <img src="http://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/p-spotch_shorinji-kempo.png" alt="" />
-                        </div>
-                      </div>
-                      <div class="u-col u-col-6">
-                        <h4 class="c-page-section__title">
-                          カヌー協会
-                        </h4>
-                        <table class="c-table--event u-m-top40">
-                          <tr>
-                            <td>設立</td>
-                            <td>昭和２９年設立</td>
-                          </tr>
-                          <tr>
-                            <td>代表</td>
-                            <td><a href="">中田　修（なかた　おさむ）</a></td>
-                          </tr>
-                          <tr>
-                            <td>加盟団体数</td>
-                            <td>
-                              10団体
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>web</td>
-                            <td>https//:XXXXXXXX</td>
-                          </tr>
-                          <tr>
-                            <td>電話番号</td>
-                            <td>042-756-0369（自宅）</td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="c-junior__type__event-table">
-                    <h4 class="c-junior__type__event-table__head">
-                      カヌー協会が主催している大会・行事
-                    </h4>
-                    <div class="c-junior__type__event-table__body">
-                      <table class="c-table--equal">
-                        <thead>
-                          <tr>
-                            <th>大会・行事名</th>
-                            <th>連絡担当者</th>
-                            <th>連絡先</th>
-                            <th>開催日</th>
-                            <th>会場</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>初心者講座</td>
-                            <td>担当者名</td>
-                            <td>080-xxxx-xxxx</td>
-                            <td>６月１６日</td>
-                            <td>市体育館弓道場</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    </div>
-                  </div>
-                  </div>
                 </div>
 
 <?php

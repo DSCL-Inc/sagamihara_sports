@@ -1,5 +1,5 @@
 .c-table {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: normal;
   text-align: left;
   line-height: 1.6;
@@ -16,48 +16,47 @@
   }
   th {
     padding: 16px 0;
-    font-size: 14px;
+    font-size: 15px;
   }
-
   td {
     padding: 16px 0;
     padding-right: 20px;
     line-height: 1.6;
-    vertical-align: middle;
+    vertical-align: baseline;
+    tr {
+      border: none;
+      &:last-child {
+        border-bottom: none;
+      }
+      td:first-child {
+        width: auto;
+        font-weight: normal;
+      }
+    }
   }
   .u-col .u-text-link {
     line-height: 2.2;
     display: block;
   }
-}
-.c-table--tournament {
-  @extend .c-table;
-  table-layout: fixed;
-  tr {
-    display: table-row;
-  }
-
-  .c-table__th__10w {
-    width: 80px;
-  }
-  .c-table--tournament__icon-btn {
-    text-indent: -9999px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    @include justify-center;
-    @include transition($property: background-color);
+  a {
+    color: $color-link;
+    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
     &:hover {
-      background-color: #f4f4f4;
-    }
-    span {
-      width: 32px;
-      height: 32px;
+      text-decoration: none;
     }
   }
 }
+
 .c-table--event {
   @extend .c-table;
+  .c-table--event__past {
+    display: flex;
+    a + a {
+      margin-left: 16px;
+    }
+  }
 }
 
 .c-table--equal {

@@ -1,15 +1,13 @@
 <?php
 /**
- * Template Name: アーカイブページ - スポーツ少年団/登録団体
+ * Template Name: スポーツ少年団/会員専用ページ TOP
  * Template Post Type: post, page
 
  */
 get_header();
 ?>
       <main class="l-main">
-      <div class="c-page-mv c-page-mv--news">
-          <h2 class="c-page-mv__title"><?php the_title(); ?></h2>
-        </div>
+      <?php get_template_part('template-parts/page-mv'); ?>
         <div class="c-page-container l-wrap">
           <div class="l-content u-shadow">
           <div class="c-page-section__body">
@@ -19,7 +17,7 @@ get_header();
               </div>
               <?php endwhile;?>
 <?php endif; ?>
-<div class="c-card c-card--5">
+<div class="c-card c-card--5 u-m-top40">
 <?php 
                 $args = array(
                   'post_type' => 'junior_member',    //投稿タイプの指定
@@ -30,7 +28,7 @@ get_header();
    
    <a class="c-card__item js-modal-show" data-modal="<?php the_ID(); ?>">
                   <div class="c-card__item__img">
-                    <img src="<?php the_field("member_thumbnail"); ?>" alt="<?php the_title(); ?>" />
+                    <img src="<?php the_field("junior_member_thumbnail"); ?>" alt="<?php the_title(); ?>" />
                   </div>
                   <p class="c-card__item__name">
                   <?php the_title(); ?><span class="u-icon-link--blue"></span>
@@ -44,19 +42,13 @@ get_header();
     </div>
             </div>
         </div>
-
-
-      </main>
-      <div class="c-junior__type__mordal js-modal-content">
-                <div class="c-junior__type__mordal__bg"></div>
-                <div class="c-junior__type__mordal__container">
-                  <button class="c-junior__type__mordal__close-btn js-modal-close">
-                    <span class="u-icon-close"></span>
+</main>
+      <div class="p-member__modal p-member__modal--junior js-modal-content">
+                <div class="p-member__modal__bg"></div>
+                <div class="p-member__modal__container"> </div>
+                <button class="p-member__modal__close-btn js-modal-close">
+                  閉じる
                   </button>
-                  <div class="c-junior__type__mordal__inner">
-                  
-                  </div>
-                </div>
                 </div>
 
 <?php

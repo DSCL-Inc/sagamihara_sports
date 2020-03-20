@@ -1,0 +1,26 @@
+.c-page-nav {
+  border-radius: 10px;
+  display: inline-flex;
+  float: right;
+  margin: 0 auto 20px;
+  .c-page-nav__item.is-current .c-page-nav__item__link {
+    color: #fff;
+    background-color: $color-theme;
+  }
+}
+.c-page-nav__item:first-child {
+  border-radius: 10px 0 0 10px;
+  overflow: hidden;
+}
+.c-page-nav__item:last-child {
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
+}
+.c-page-nav__item__link {
+  padding: 16px 32px;
+  color: #888;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  background-color: #fff;
+}

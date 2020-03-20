@@ -6,47 +6,65 @@
  */
 get_header();
 ?>
+ <?php if($_GET['y']):?>
+				  		<?php $y=$_GET["y"];?>  
+				  <?php elseif(!$_GET['y']):?>
+				  <?php $y=get_field("y_0_y_num");?>
+				  <?php endif;?>
       <main class="l-main">
-      <div class="c-page-mv c-page-mv--news">
-          <h2 class="c-page-mv__title"><?php the_title(); ?></h2>
-        </div>
+   <?php get_template_part('template-parts/page-mv'); ?>
         <div class="c-page-container l-wrap">
+			   <ul class="c-page-nav">
+		   <?php if(have_rows("y")):while(have_rows('y')): the_row();?>
+		   <li class="c-page-nav__item <?php ($y==get_sub_field("y_num")) ? print " is-current" : 0;?>"><a href="?y=<?php the_sub_field("y_num");?>" class="c-page-nav__item__link"><?php the_sub_field("y_wareki");?></a></li>
+		   <?php endwhile;endif;?>
+            </ul>
           <div class="l-content u-shadow">
             <div class="c-page-section">
               <div class="c-page-section__body">
               <div class="p-calender-list">
-				  <?php $month_reset=0; ?>
-				  <?php $project_year = get_field('project_year');?>
+				  <?php $month_reset=null; ?> 
 				  <?php for($j =1;$j<=12;$j++):?>
 				  <?php  if($j<=9):?>
-				  		<?php  $month=$j+3;?>  
+				  		<?php
+				  $year=$y;
+				  $month=$j+3;
+				  ?>  
 				  <?php  else:?> 
-				  <?php
-				  if($month_reset):
-				  $month++;
-				  else:
-				   $month=1;
-				  $project_year+=1;
-				   $month_reset=1;
-				  endif;
-				  ?>
+					 <?php
+				  		$year=$y+1;
+					  if(isset($month_reset)):
+					  		$month++;
+					  else:
+						   $month=1;
+						   $month_reset=1;
+					  endif;
+					  ?>
 				  <?php  endif;?>
 				   <?php 
 							$args[$j] = array(
 								'wildcard_meta_key' => true,
 								'post_type' => 'project', 
 								'posts_per_page' => -1,
-							//	'orderby' => 'meta_value',
-							//	'meta_key' => 'project_date_%_project_date_item',
+								'orderby' => 'meta_value',
+								'order' => 'ASC',
+								'orderby'=>'meta_value_num',
 								'meta_query'=>array(
-									'relation'=>'AND',
-									'key'=>get_field("project_year"),
+									'relation'=>"AND",
+									array(
 										array(
-										   //'key'=>'project_date_%_project_date_item',
-											'value'=>array(date( $project_year.'/'.$month.'/01'),date( $project_year.'/'.$month.'/30')),
-											'compare'=>'BETWEEN',
-											'type' => 'DATE',
+											'key'=>"project_date_0_project_date_item",
+												'value'=>array(date($year."/".$month."/01"),date($year."/".$month."/31")),
+												'compare'=>"BETWEEN",
+												'type' => 'DATE',
+											),
+										array(
+											'key'=>"project_year",
+											"value"=>$y,
+											'compare'=>'=',
 										)
+									)
+									
 								)							
 );								
     $posts[$j] = get_posts( $args[$j] );
@@ -54,31 +72,32 @@ get_header();
               <div class="p-calender-list__row">
                 <div class="p-calender-list__row__head"><?php echo $month;?>月</div>
                 <div class="p-calender-list__row__body">
-                <?php 
-               
-                ?>
                <?php foreach( $posts[$j] as $post ) : setup_postdata( $post ); ?>		
-					<?php
-					
-    				$date_from_get = get_sub_field( 'project_date_item');
-					$date_to_get = get_sub_field( 'project_date_item_to');
-						?>
-					
+						
                   <a href="<?php the_permalink();?>" class="p-calender-list__item">
                     <div class="p-calender-list__item__date">
-                    <?php if(have_rows('project_date')): ?>
+						<?php if(have_rows('project_date')): ?>
 						<?php $i=0;?>
-                    		<?php while(have_rows('project_date')): the_row(); ?>								
-										<?php if($i>0): echo "・";endif;?>
-										 <?php if(get_sub_field("project_date_item_to")):?>
-												<?php the_sub_field( 'project_date_item');?>
-												<?php echo "〜";?>
-										  		<?php the_sub_field( 'project_date_item_to');?>日
-										<?php else:?>
-												<?php the_sub_field( 'project_date_item');?>日
-										<?php endif;?>
-										<?php $i++;?>
-								<?php endwhile; ?>
+                    <?php while(have_rows('project_date')): the_row(); ?>	
+								<?php
+								$date_from_get = get_sub_field( 'project_date_item', false, false);
+								$date_to_get = get_sub_field( 'project_date_item_to', false, false);
+								$date_from_data = new DateTime($date_from_get); 
+								$date_to_data = new DateTime($date_to_get); 
+								?>
+								<?php if($i>0): echo "・";endif;?>
+								<?php echo $date_from_data->format("j");?>
+								<?php if($date_to_get):?>
+								<?php echo " - ";?>
+									<?php if($date_to_data->format("m")!=$date_from_data->format("m")):?>
+											<?php echo $date_to_data->format("m月j"); ?>日
+													<?php else:?>
+															<?php echo $date_to_data->format("j"); ?>日
+												<?php endif;?>
+											<?php else:?>日
+											<?php endif;?>
+											<?php $i++;?>
+							<?php endwhile; ?>
                     <?php endif;?>
                     </div>
                     <div class="p-calender-list__item__title">
@@ -88,7 +107,8 @@ get_header();
                     <div class="p-calender-list__item__img">
                       <img src="<?php the_field("project_thumbnail")?>" alt="<?php the_title(); ?>" />
                     </div>
-                    <?php endif;?>
+					  <?php endif;?>
+
                   </a>
                   <?php endforeach; ?>
     <?php wp_reset_postdata(); //クエリのリセット ?>
@@ -96,12 +116,6 @@ get_header();
               </div>
 				      <?php endif; ?>
    <?php endfor;?>
-              <p class="c-caption">
-                お申し込み方法等の詳細は、広報さがみはら「市体育協会からのお知らせ」に掲載されます。<br />相模原市民選手権大会については、<a
-                  href=""
-                  >こちら</a
-                >をご覧ください。
-              </p>
             </div>
         </div>
           </div>

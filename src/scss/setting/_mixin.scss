@@ -3,14 +3,14 @@
   font-weight: 400;
   line-height: 1.8;
   @media screen and (max-width: 480px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 @mixin desc {
   font-size: 15px;
   line-height: 1.8;
   @media screen and (max-width: 480px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 @mixin justify-center {

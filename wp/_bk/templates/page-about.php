@@ -7,22 +7,7 @@
 get_header();
 ?>
       <main class="l-main">
-      <div class="c-page-mv">
-          <h2 class="c-page-mv__title"><?php the_title(); ?></h2>
-          <nav class="c-page-nav">
-            <a class="c-page-nav__item"
-              >スポーツ協会概要<span class="u-icon-under-angle"></span
-            ></a>
-            <a class="c-page-nav__item"
-              >組織図<span class="u-icon-under-angle"></span
-            ></a>
-            <a class="c-page-nav__item"
-              >情報公開<span class="u-icon-under-angle"></span
-            ></a>
-          </nav>
-        </div>
-    
-        
+   <?php get_template_part('template-parts/page-mv'); ?>
         <div class="c-page-container l-wrap">
           <div class="l-content">
           <?php if ( have_posts() ) : ?>

@@ -4,8 +4,24 @@ $(function() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000
+    autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 768, //ブレイクポイントを指定
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480, //ブレイクポイントを指定
+        settings: {
+          slidesToShow: 1,
+          arrows: false
+        }
+      }
+    ]
   });
+
   //sp-menu
   $(".sp-menu").click(function() {
     if ($(this).hasClass("open")) {

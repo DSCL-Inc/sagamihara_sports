@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
+  font-size: 15px;
   border-radius: 10px;
   padding: 0 16px;
   margin: 6px;
@@ -27,6 +27,18 @@
     width: 16px;
     height: 16px;
   }
+  .c-btn__title {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    [class^="u-icon-activity"] {
+      position: relative;
+      margin-right: 4px;
+      top: 0;
+      transform: translateY(0);
+      left: 0;
+    }
+  }
 }
 .c-btn-wrap {
   margin: 0 -6px;
@@ -46,7 +58,9 @@
 
 .c-text-btn {
   display: flex;
+  align-items: center;
   @include transition($property: opacity);
+  font-weight: bold;
   &:hover {
     opacity: 0.7;
     .u-icon-back-link--blue {

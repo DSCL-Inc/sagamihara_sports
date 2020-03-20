@@ -5,36 +5,53 @@
 
  */
 get_header();
+$project_year=$_GET["project_year"];
 ?>
       <main class="l-main">
+		   <ul class="c-page-mv__nav__list">
+		   <?php if(have_rows("y")):while(have_rows('y')): the_row();?>
+              <li><a href="?y=<?php the_sub_field("y_num");?>"><?php the_sub_field("y_wareki");?></a></li>
+		   <?php endwhile;endif;?>
+            </ul>
+       <?php get_template_part('template-parts/page-mv'); ?>
         <div class="c-page-container l-wrap">
           <div class="l-content u-shadow">
-          <?php while ( have_posts() ) : the_post(); ?>
+			   <?php 
+			  $project_year=$_GET["y"];
+							$args= array(
+								'post_type' => 'project', 
+								'posts_per_page' => -1,
+								'meta_query'=>array(
+									'relation'=>"AND",
+									array(
+											'key'=>"project_report",
+										'value'=>"",
+										"compare"=>"!="
+										),
+									array(
+										'key'=>"project_year",
+										'value'=>$project_year,
+										'compare'=>'=',
+									)
+								)
+									
+);								
+    $posts = get_posts( $args);?>
+               <?php if( $posts):foreach( $posts as $post ) : setup_postdata( $post ); ?>
           <div class="c-page-section" id="<?php the_title();?>">
               <h3 class="c-page-section__title"><?php the_title();?></h3>
               <div class="c-page-section__body">
                 <div class="u-flex">
                   <div class="u-overflow-hidden">
-                    <div class="u-col-wrap">
-                      <div class="u-col u-col-4 p-event-report-img">
-                        <img src='<?php the_field("project_past_thumbnail");?>' lt="<?php the_title(); ?>">
-                      </div>
-                      <table class="u-col u-col-8 c-table">
-                      <?php if(have_rows('project_past_detail')): ?>
-                <?php while(have_rows('project_past_detail')): the_row(); ?>
-                <tr>
-                <td><?php the_sub_field("project_past_detail_head")?></td>
-                <td><?php the_sub_field("project_past_detail_body")?></td>
-              </tr>
-            <?php endwhile; ?>
-            <?php endif; ?>
-                      </table>
+                    <div>
+                        <?php if( get_field('project_detail') ):?>
+	<?php the_field('project_detail'); ?>
+<?php endif;?>
                     </div>
-                    <p class="c-desc u-m-top20">
-                    <?php the_field("project_past_comment")?>                    </p>
+                    <?php the_field("project_report")?>
                   </div>
                   <?php
-$images = get_field('project_past_gallery'); 
+$images = get_field('project_gallery'); 
 if( $images ): 
 ?>
                   <div class="p-event-report__gallery">
@@ -49,10 +66,11 @@ if( $images ):
                 </div>
               </div>
             </div>
-          <?php endwhile; ?>
+          <?php endforeach; ?>
+			      <?php wp_reset_postdata(); //クエリのリセット ?>
+			  <?php endif; ?>
               </div>  
             </div>
-          </div>
 
       </main>
    
