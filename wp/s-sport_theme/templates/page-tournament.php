@@ -44,13 +44,13 @@ endif;
                <?php foreach( $posts as $post ) : setup_postdata( $post ); ?>		
           <div class="l-content u-shadow">
             <div class="c-page-section">
-              <h3 class="c-page-section__title">競技科目一覧</h3>
+              <h3 class="c-page-section__title">種目一覧</h3>
               <div class="c-page-section__body">
        
   <div class="p-tournament__table">
        <div class="p-tournament__table__head">
-      <div>競技名</div>
-		   <div>種別</div>
+      <div>種目</div>
+		  <div>種別</div>
       <div>開催日</div>
       <div>会 場</div>
       <div class="p-tournament__table__doc">
