@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: 固定ページ - 加盟団体/会員専用ページ TOP
+ * Template Name: 固定ページ - 加盟団体/関係者専用ページ TOP
  * Template Post Type: post, page
 
  */
