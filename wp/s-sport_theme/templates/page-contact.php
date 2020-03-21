@@ -13,7 +13,7 @@ get_header();
         <div class="c-page-container l-wrap-md">
           <div class="l-content u-shadow">
 			  <div class="p-contact">
-          <?php echo do_shortcode('[mwform_formkey key="1036"]'); ?>
+         <?php the_content();?>
 				  </div>
             </div>
           </div>

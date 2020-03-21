@@ -6,12 +6,12 @@
  */
 get_header();
 ?>
- <?php if($_GET['y']):?>
-				  		<?php $y=$_GET["y"];?>  
-				  <?php elseif(!$_GET['y']):?>
-				  <?php $y=get_field("y_0_y_num");?>
-				  <?php endif;?>
-      <main class="l-main">
+<?php if($_GET['y']):?>
+<?php $y=$_GET["y"];?>
+<?php elseif(!$_GET['y']):?>
+<?php $y=get_field("y_0_y_num");?>
+<?php endif;?>
+<main class="l-main">
    <?php get_template_part('template-parts/page-mv'); ?>
         <div class="c-page-container l-wrap">
 			   <ul class="c-page-nav">
@@ -21,6 +21,10 @@ get_header();
             </ul>
           <div class="l-content u-shadow">
             <div class="c-page-section">
+				<h3 class="c-page-section__title">
+				<?php if(have_rows("y")):while(have_rows('y')): the_row();?>
+					<?php ($y==get_sub_field("y_num"))?the_sub_field("y_wareki"): 0;?><?php endwhile;?><?php endif;?>協会事業
+				</h3>
               <div class="c-page-section__body">
               <div class="p-calender-list">
 				  <?php $month_reset=null; ?> 
@@ -111,15 +115,73 @@ get_header();
 
                   </a>
                   <?php endforeach; ?>
-    <?php wp_reset_postdata(); //クエリのリセット ?>
                 </div>
               </div>
 				      <?php endif; ?>
    <?php endfor;?>
+				     <?php wp_reset_postdata(); //クエリのリセット ?>
+				  <?php 
+							$undecided_args = array(
+								'wildcard_meta_key' => true,
+								'post_type' => 'project', 
+								'posts_per_page' => -1,
+								'orderby' => 'meta_value',
+								'order' => 'ASC',
+								'orderby'=>'meta_value_num',
+								'meta_query'=>array(
+									'relation'=>"AND",
+									array(
+										array(
+											'key'=>"project_date_undecided",
+												'value'=>"1",
+												'compare'=>"="
+											),
+										array(
+											'key'=>"project_year",
+											"value"=>$y,
+											'compare'=>'=',
+										)
+									)
+									
+								)							
+);								
+	$undecided_posts = get_posts( $undecided_args);
+    if( $undecided_posts ) : ?>
+				  		<?php
+				  $year=$y;
+				  ?>
+				  <div class="p-calender-list__row">
+					  <div class="p-calender-list__row__head">未定</div>
+                <div class="p-calender-list__row__body">
+               <?php foreach( $undecided_posts as $post ) : setup_postdata( $post ); ?>						
+                  <a href="<?php the_permalink();?>" class="p-calender-list__item">
+                    <div class="p-calender-list__item__date">
+						<?php if(get_field('project_date_undecided_comment')): ?>
+						<?php the_field('project_date_undecided_comment'); ?>
+						<?php endif;?>
+                    </div>
+                    <div class="p-calender-list__item__title">
+						<?php if(get_the_title()):?>
+                    <?php the_title(); ?>
+						<?php endif;?>
+                    </div>
+                    <?php if(get_field("project_thumbnail")):?>
+                    <div class="p-calender-list__item__img">
+                      <img src="<?php the_field("project_thumbnail")?>" alt="<?php the_title(); ?>" />
+                    </div>
+					  <?php endif;?>
+
+                  </a>
+                  <?php endforeach; ?>
+    <?php wp_reset_postdata(); //クエリのリセット ?>
+                </div>
+              </div>
+				      
+<?php endif; ?>
             </div>
         </div>
           </div>
-
+			   
           </div>
 		  </div>
 		  <?php get_template_part('advertise_banner'); ?>

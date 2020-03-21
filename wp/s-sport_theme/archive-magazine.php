@@ -6,12 +6,24 @@
  */
 get_header();
 ?>
+<?php
+$page_data = get_page_by_path('magazine'); $page = get_post($page_data);
+$title = $page -> post_title;
+$content = $page -> post_content;
+			  ?>
       <main class="l-main">
       <div class="c-page-mv c-page">
-          <h2 class="c-page-mv__title">スポーツさがみはら</h2>
+		  <div class="l-wrap">
+          <h2 class="c-page-mv__title"><?php echo $title;?></h2>
+			  </div>
         </div>
         <div class="c-page-container l-wrap">
           <div class="l-content u-shadow">
+			  <div>
+				  <?php
+echo $content;
+			  ?>
+			  </div>
 <div class="c-card c-card--5">
 <?php 
                 $args = array(

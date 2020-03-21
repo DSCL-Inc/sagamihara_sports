@@ -45,7 +45,7 @@ add_filter( 'posts_where', 'my_posts_where_wildcard', 10, 2 );
 function remove_menus () {
     global $menu;
 	unset($menu[5]); 
-    //unset($menu[25]); 
+    unset($menu[25]); 
 	$menuReserve_media = $menu[10];
 unset($menu[10]);
 $menu[5] = $menuReserve_media;
@@ -68,4 +68,32 @@ function add_posttype_revisions() {
     add_post_type_support( 'news', 'revisions' );
 }
 add_action('init', 'add_posttype_revisions');
+
+
+//MWWP Formの保存先パスを修正
+/**
+ * @param empty $path
+ * @param MW_WP_Form_Data $Data
+ * @param string name 属性値
+ * @return string 空値以外を返したときだけそのパスが使用される
+ */
+
+// MW-WP-FormのID一覧を取得して、add filterする。
+
+function my_mwform_upload_dir( $path, $Data, $key ) {
+	return '/form_upload_data';// ディレクトリ名を指定
+}
+$args= array(
+  'posts_per_page'  => -1,
+  'post_type' => 'mw-wp-form'
+);
+$the_query = new WP_Query($args);
+if ( $the_query->have_posts() ) {
+	while( $the_query->have_posts() ) {
+		$the_query->the_post();
+		add_filter( 'mwform_upload_dir_mw-wp-form-' . $post->ID, 'my_mwform_upload_dir', 10, 3 );
+	}
+}
+wp_reset_query();
+
 ?>

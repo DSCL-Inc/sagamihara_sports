@@ -15,7 +15,7 @@ $ajax_query = new WP_Query(
     <?php $ajax_query->the_post(); ?>
     <div
                     class="p-member__modal__head"
-                    style="background-image:url(../assets/image/p-spotch_canoe.png)"
+                    style="background-image:url(<?php the_field("junior_member_thumbnail"); ?>)"
                   >
                     <h4 class="p-member__modal__title"><?php the_title();?></h4>
                   </div>

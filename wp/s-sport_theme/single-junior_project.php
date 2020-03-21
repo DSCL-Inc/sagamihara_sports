@@ -26,17 +26,21 @@ get_header();
             <?php endif;?>
               </div>
             </div>
-				  <?php if( get_field('junior_project_detail') ):?>
-	<?php the_field('junior_project_detail'); ?>
-<?php endif;?>
-				  
-			  
-            <?php
-            $project_form_check = get_field('junior_project_form');
-            if ( $project_form_check == 1 ):?>
-            <a class="c-btn--primary u-center u-m-top40" href="<?php echo esc_url( home_url( '/' ) ); ?>junior/schejule/form?id=<?php the_field("junior_project_form_id");?>">申し込む<span class="u-icon-link--white"></span></a>
-				  
-            <?php endif; ?>
+        <?php
+				  $project_form=get_field("junior_project_form");
+            $project_form_radio = $project_form['junior_project_form_radio'];  
+				  $project_form_comment = $project_form['junior_project_form_comment'];  
+				  $project_form_id = $project_form['junior_project_form_id'];  
+			  					 if ($project_form_radio== 'フォームあり'):
+                        ?>
+			   <a class="c-btn--primary u-center u-m-top40" href="<?php echo esc_url( home_url( '/' ) ); ?>project/form?id=<?php echo $project_form_id;?>">申し込む<span class="u-icon-link--white"></span></a>
+			  <?php elseif($project_form_radio == 'フォームなし'):?>
+				  <?php if($project_form_comment):?>
+				   <div class="u-m-top40">
+					   <?php echo $project_form_comment?>
+				  </div>
+				    <?php endif;?>
+                        <?php endif;?>
 				</div>
 				</div>
 			   <?php
@@ -89,13 +93,24 @@ if( $images ):
 								)
 );								
     $posts= get_posts( $args );
+	$post_year = get_field("junior_project_year");
+			  $now_year =get_the_time("Y");
     if( $posts>1) : ?>
 				<div class="c-page-section p-project-detail__report">
 					<h4 class="c-page-section__title--md">他年度の結果</h4>
-			
 					<div class="c-btn-wrap">	
-               <?php foreach( $posts as $post ) : setup_postdata( $post ); ?>	
-			  <a href="<?php the_permalink(); ?>" class="c-btn"><?php the_field("junior_project_year");?>年度<span class="u-icon-link--blue"></span></a>
+               <?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
+						<?php
+						$past_project_year=get_field("junior_project_year");
+						 if($past_project_year>=2019):
+			  		($past_project_year==2019)?$wraki ="令和元年度":$wraki ="令和".($now_year - 2018)."年度";
+			  elseif($past_project_year>=1889&&$past_project_year<2019):
+			  ($now_year==1889)?$wraki ="平成元年度":$wraki ="平成".($now_year - 1989)."年度";
+			  endif;
+						?>
+						<?php if($post_year!=get_field("junior_project_year")):?>
+			  <a href="<?php the_permalink(); ?>" class="c-btn"><?php echo $wraki?><span class="u-icon-link--blue"></span></a>
+						<?php endif;?>
 					  <?php endforeach;?>
 					</div>
 					</div>

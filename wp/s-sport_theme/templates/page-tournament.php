@@ -85,7 +85,15 @@ endif;
                           $tcp_comment=$tcp['tournament_point_comment'];
                           if ($tcp_radio == 'ファイルあり'):
                           ?>
-                          <a class="p-tournament__table__icon-btn" href="<?php echo $tcp_file; ?>" target="_blank"><span class="u-icon-word"></span></a>
+                          <a class="p-tournament__table__icon-btn" href="<?php echo $tcp_file; ?>" target="_blank"><span class='u-icon-<?php 
+							  if(strrchr($tcp_file, '.') == '.word'):
+							  echo "word";
+							  elseif(strrchr($tcp_file, '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($tcp_file, '.') == '.excel'):
+							  echo "excel";
+							  endif;
+							  ?>'></span></a>
                           <?php elseif($tcp_radio == 'ファイルなし'):?>
                           <?php if($tcp_comment):?>
                           <?php echo $tcp_comment;?>
@@ -102,7 +110,15 @@ endif;
                         $tca_comment=$tca['tournament_application_comment'];
                         if ($tca_radio == 'ファイルあり'):
                         ?>
-                        <a class="p-tournament__table__icon-btn" href="<?php echo $tca_file; ?>" target="_blank"><span class="u-icon-excel"></span></a>
+                        <a class="p-tournament__table__icon-btn" href="<?php echo $tca_file; ?>" target="_blank"><span class='u-icon-<?php 
+							  if(strrchr($tcp_file, '.') == '.word'):
+							  echo "word";
+							  elseif(strrchr($tcp_file, '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($tcp_file, '.') == '.excel'):
+							  echo "excel";
+							  endif;
+							  ?>'></span></a>
 							<?php elseif($tca_radio == 'フォーム'):?>
 							<a class="u-text-link" href="" target="_blank">フォーム</a>
                         <?php elseif($tca_radio == 'ファイルなし'):?>
@@ -121,7 +137,15 @@ endif;
                         $tcr_comment=$tcr['tournament_result_comment'];
                         if ($tcr_radio == 'ファイルあり'):
                         ?>
-                        <a class="p-tournament__table__icon-btn" href="<?php echo $tce_file; ?>" target="_blank"><span class="u-icon-pdf"></span></a>
+                        <a class="p-tournament__table__icon-btn" href="<?php echo $tce_file; ?>" target="_blank"><span class="u-icon-<?php 
+							  if(strrchr($tcp_file, '.') == '.word'):
+							  echo "word";
+							  elseif(strrchr($tcp_file, '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($tcp_file, '.') == '.excel'):
+							  echo "excel";
+							  endif;
+							  ?>"></span></a>
                         <?php elseif($tcr_radio == 'ファイルなし'):?>
                         <?php if($tcr_comment):?>
                         <?php echo $tcr_comment;?>
