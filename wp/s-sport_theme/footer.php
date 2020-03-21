@@ -3,7 +3,7 @@
     <div class="l-footer-top__column l-wrap">
       <div class="l-footer-top__column__item">
         <ul class="l-footer-top__list">
-          <li class="l-footer-top__list__item"><span class="u-icon-header-menu--about"></span>スポーツ協会</li>
+          <li class="l-footer-top__list__item u-bold"><span class="u-icon-header-menu--about"></span>スポーツ協会</li>
           <li class="l-footer-top__list__item">
             <a href="<?php echo esc_url(home_url('/')); ?>about" class="l-footer-top__list__link">スポーツ協会について</a></li>
           <li class="l-footer-top__list__item"> <a href="<?php echo esc_url(home_url('/')); ?>facility" class="l-footer-top__list__link">
@@ -14,7 +14,7 @@
       </div>
       <div class="l-footer-top__column__item">
         <ul class="l-footer-top__list">
-          <li class="l-footer-top__list__item">
+          <li class="l-footer-top__list__item u-bold">
             <span class="u-icon-header-menu--event"></span>イベント情報</li>
           <li class="l-footer-top__list__item">
             <a href="" class="l-footer-top__list__link">協会事業</a></li>
@@ -25,7 +25,7 @@
       </div>
       <div class="l-footer-top__column__item">
         <ul class="l-footer-top__list">
-          <li class="l-footer-top__list__item">
+          <li class="l-footer-top__list__item u-bold">
             <span class="u-icon-header-menu--junior"></span>スポーツ少年団</li>
           <li class="l-footer-top__list__item">
             <a href="<?php echo esc_url(home_url('/')); ?>junior" class="l-footer-top__list__link">
@@ -48,7 +48,7 @@
       </div>
       <div class="l-footer-top__column__item">
         <ul class="l-footer-top__list">
-          <li class="l-footer-top__list__item">
+          <li class="l-footer-top__list__item u-bold">
             <a href="<?php echo esc_url(home_url('/')); ?>member" class="l-footer-top__list__link">
               <span class="u-icon-header-menu--member"></span>加盟団体
             </a>
