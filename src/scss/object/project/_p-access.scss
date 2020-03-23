@@ -37,3 +37,8 @@
     margin-top: 4px;
   }
 }
+@include mq(sm) {
+  .p-access__list__item + .p-access__list__item {
+    margin-top: 4px;
+  }
+}

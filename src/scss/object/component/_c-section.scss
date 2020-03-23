@@ -62,3 +62,8 @@
     }
   }
 }
+@include mq(sm) {
+  .c-page-section + .c-page-section {
+    margin-top: 48px;
+  }
+}

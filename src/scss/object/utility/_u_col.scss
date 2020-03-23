@@ -17,3 +17,14 @@
 .u-col-3 {
   width: calc(100% / 12 * 3);
 }
+@include mq(sm) {
+  .u-col-wrap {
+    flex-direction: column;
+  }
+  .u-col {
+    width: 100%;
+  }
+  .c-page-section__img {
+    margin-top: 20px;
+  }
+}

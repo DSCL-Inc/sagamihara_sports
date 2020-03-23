@@ -24,3 +24,23 @@
   display: block;
   background-color: #fff;
 }
+@include mq(md) {
+  .c-page-nav__item__link {
+    padding: 12px 16px;
+  }
+}
+@include mq(sm) {
+  .c-page-nav {
+    display: flex;
+    width: 100%;
+  }
+  .c-page-nav__item {
+    width: calc(100% / 4);
+  }
+  .c-page-nav__item__link {
+    width: 100%;
+    padding: 12px 8px;
+    font-size: 12px;
+    text-align: center;
+  }
+}

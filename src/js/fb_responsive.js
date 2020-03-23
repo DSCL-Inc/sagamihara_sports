@@ -10,7 +10,6 @@
 
 $(document).ready(function($) {
   if ($(".fb-page").length) {
-    // iframeリロードの[ON/OFF]を切り替えるウィンドウサイズ。
     var reloadWidth = 768;
 
     $(function() {

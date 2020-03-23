@@ -25,7 +25,7 @@ $(function() {
           member: member_data
         },
         success: function(response) {
-          $(".p-member__modal__container").append(response);
+          $(".p-member__modal__container__inner").append(response);
           flag = false;
         }
       });
@@ -33,6 +33,6 @@ $(function() {
   });
   $(".js-modal-close").click(function() {
     $(".js-modal-content").removeClass("is-show");
-    $(".p-member__modal__container").empty();
+    $(".p-member__modal__container__inner").empty();
   });
 });

@@ -4,8 +4,8 @@ html {
 }
 
 body {
-  font-family: "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
-    sans-serif;
+  font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic ProN", "游ゴシック",
+    "Yu Gothic", "ＭＳ Ｐゴシック", sans-serif;
   -webkit-text-size-adjust: 100%;
   height: 100%;
   width: 100%;
@@ -28,16 +28,13 @@ body {
   padding-bottom: 120px;
 }
 
-.c-page-container {
-  padding-top: 60px;
-}
-
 a {
   text-decoration: none;
   color: inherit;
 }
 img {
   width: 100%;
+  height: auto;
   display: block;
 }
 * {
@@ -47,5 +44,8 @@ img {
 @include mq(md) {
   .l-container {
     margin-top: 100px;
+  }
+  .l-main {
+    padding-bottom: 80px;
   }
 }

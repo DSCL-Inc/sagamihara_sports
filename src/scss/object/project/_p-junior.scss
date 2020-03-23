@@ -29,13 +29,14 @@
   border-radius: 0 0 20px 20px;
   position: absolute;
   left: 50%;
-  top: 0;
+  top: -2px;
   margin: auto;
   padding: 12px 16px;
   font-size: 16px;
   display: inline-block;
   transform: translateX(-50%);
   font-weight: bold;
+  white-space: nowrap;
 }
 .p-junior__register__title--orange {
   @extend .p-junior__register__title;
@@ -46,8 +47,6 @@
   @extend .p-junior__register__title;
   color: $color-junior;
   border: 2px solid $color-junior;
-}
-.p-junior__register__procedure {
 }
 .p-junior__register__procedure__item__head {
   font-size: 16px;
@@ -71,7 +70,6 @@
   }
 }
 .p-junior__register__procedure__item__body {
-  margin-top: 16px;
   display: block;
   li {
     line-height: 1.6;
@@ -90,6 +88,21 @@
   }
 }
 
-/*
- 	2. junior__type
+@include mq(md) {
+  /*
+ 	1. junior__register
 ====================================*/
+  .p-junior__register__col {
+    padding: 52px 16px 40px;
+  }
+}
+
+@include mq(sm) {
+  .p-junior__register__col {
+    border-top: 2px solid $color-junior;
+  }
+  .p-junior__register__procedure__item.p-junior__register__procedure__item {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+}

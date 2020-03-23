@@ -57,10 +57,38 @@
 }
 
 .c-text-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   @include transition($property: opacity);
   font-weight: bold;
+  &[href$=".xls"]:after {
+    content: "";
+    display: block;
+    @include background-cover("u-icon-excel.svg");
+    width: 16px;
+    height: 16px;
+  }
+  &[href$=".pdf"]:after {
+    content: "";
+    display: block;
+    @include background-cover("u-icon-pdf.svg");
+    width: 16px;
+    height: 16px;
+  }
+  &[href$=".docx"]:after {
+    content: "";
+    display: block;
+    @include background-cover("u-icon-word.svg");
+    width: 16px;
+    height: 16px;
+  }
+  &[target="_blank"]:after {
+    content: "";
+    display: block;
+    @include background-cover("u-icon-external--blue.svg");
+    width: 16px;
+    height: 16px;
+  }
   &:hover {
     opacity: 0.7;
     .u-icon-back-link--blue {
@@ -73,5 +101,28 @@
     height: 16px;
     margin-right: 8px;
     @include transition($property: transform);
+  }
+}
+
+@include mq(md) {
+  .c-btn-wrap {
+    .c-btn {
+      width: calc(100% / 2 - 12px);
+    }
+  }
+}
+@include mq(sm) {
+  .c-btn-wrap {
+    .c-btn {
+      height: 60px;
+      max-width: 240px;
+      font-size: 13px;
+      padding: 0 8px;
+      padding-right: 24px;
+      span {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }

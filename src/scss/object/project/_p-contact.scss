@@ -63,3 +63,17 @@
   margin-top: 20px;
   font-size: 14px;
 }
+
+@include mq(sm) {
+  .p-contact {
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+    }
+    tr {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+}

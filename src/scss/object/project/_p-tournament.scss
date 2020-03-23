@@ -6,6 +6,7 @@
   width: 100%;
   display: table;
   position: relative;
+
   .u-col .u-text-link {
     line-height: 2.2;
     display: block;
@@ -25,18 +26,27 @@
     );
   }
 }
+.p-tournament__table__head > div:not(.p-tournament__table__doc),
+.p-tournament__table__row__item > div:not(.p-tournament__table__doc) {
+  padding-right: 20px;
+}
 
 .p-tournament__table__head {
   padding: 16px 0;
-  font-size: 15px;
+  font-size: 14px;
   display: flex;
-
+  color: #777777;
   & > div:not(.p-tournament__table__doc) {
-    width: calc((100% - 600px) / 2);
+    width: calc((100% - 580px) / 2);
   }
   & > div:first-child {
     width: 200px;
     flex-shrink: 0;
+  }
+  .p-tournament__table__doc {
+    div:first-child {
+      text-align: left;
+    }
   }
 }
 .p-tournament__table__doc {
@@ -44,6 +54,7 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  text-align: center;
   & > div {
     width: calc((100% - 100px) / 3);
   }
@@ -51,12 +62,13 @@
     width: 100px;
   }
 }
+
 .p-tournament__table__body {
   display: block;
   max-height: 500px;
   height: 100%;
   overflow: scroll;
-
+  padding-bottom: 50px;
   div.p-tournament__table__row {
     border-top: 1px solid #ddd;
     display: flex;
@@ -64,19 +76,19 @@
       border-bottom: 1px solid #ddd;
     }
   }
-  .p-tournament__table__row__item {
-    display: flex;
-    align-items: center;
-    padding: 16px 0;
-    &:first-child {
-      padding-top: 0;
-    }
-    & > div:not(.p-tournament__table__doc) {
-      width: calc((100% - 300px) / 2);
-    }
-    & + .p-tournament__table__row__item {
-      border-top: 1px solid #ddd;
-    }
+}
+.p-tournament__table__row__item {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  &:first-child {
+    padding-top: 0;
+  }
+  & > div:not(.p-tournament__table__doc) {
+    width: calc((100% - 300px) / 2);
+  }
+  & + .p-tournament__table__row__item {
+    border-top: 1px solid #ddd;
   }
 }
 .p-tournament__table__row__item-wrap {
@@ -87,6 +99,7 @@
   width: 200px;
   font-weight: bold;
   flex-shrink: 0;
+  padding-right: 20px;
 }
 
 .p-tournament__table__row {
@@ -95,18 +108,20 @@
   vertical-align: middle;
 }
 .p-tournament__table__icon-btn {
-  text-indent: -9999px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  @include justify-center;
-  @include transition($property: background-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 13px;
+  margin: auto;
+  font-weight: bold;
+  @include transition($property: color);
   &:hover {
-    background-color: #f4f4f4;
+    color: $color-theme;
   }
   span {
-    width: 32px;
-    height: 32px;
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -126,5 +141,102 @@
   &:hover {
     background-color: $color-theme;
     color: #fff;
+  }
+}
+
+@include mq(md) {
+  .p-tournament__table {
+    font-size: 14px;
+  }
+  .p-tournament__table__head {
+    font-size: 12px;
+  }
+  .p-tournament__table__head > div:not(.p-tournament__table__doc) {
+    width: calc((100% - 418px) / 2);
+  }
+  .p-tournament__table__head > div:first-child,
+  .p-tournament__table__row__title {
+    width: 100px;
+  }
+  .p-tournament__table__doc {
+    width: 320px;
+  }
+
+  .p-tournament__table__head > div:not(.p-tournament__table__doc),
+  .p-tournament__table__row__item > div:not(.p-tournament__table__doc) {
+    padding-right: 12px;
+  }
+  .p-tournament__table__icon-btn {
+    font-size: 10px;
+  }
+  .p-tournament__table__form {
+    font-size: 12px;
+  }
+  .p-tournament__table__doc > div:last-child {
+    width: 80px;
+  }
+}
+@include mq(sm) {
+  .p-tournament__table__head {
+    display: none;
+  }
+  .p-tournament__table__row {
+    flex-direction: column;
+  }
+  .p-tournament__table__row__title {
+    font-size: 16px;
+    width: auto;
+  }
+  .p-tournament__table__row__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .p-tournament__table__row__item-wrap {
+    margin-top: 8px;
+  }
+  .p-tournament__table__body
+    .p-tournament__table__row__item
+    > div:not(.p-tournament__table__doc) {
+    width: 100%;
+  }
+  .p-tournament__table__head > div:not(.p-tournament__table__doc) {
+    width: 100%;
+  }
+  .p-tournament__table__icon-btn {
+    font-weight: normal;
+  }
+  .p-tournament__table__head > div:not(.p-tournament__table__doc),
+  .p-tournament__table__row__item > div:not(.p-tournament__table__doc) {
+    padding-right: 0;
+  }
+
+  .p-tournament__table__doc {
+    margin-top: 12px;
+    width: 100%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    div {
+      text-align: left;
+      display: inline-flex;
+      width: auto;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    div + div {
+      margin-left: 16px;
+    }
+  }
+  .p-tournament__table__doc > div:last-child {
+    width: auto;
+    margin-top: 12px;
+    width: 100%;
+  }
+  .p-tournament__table__icon-btn {
+    font-size: 15px;
+  }
+  .p-tournament__table__form {
+    font-size: 14px;
+    padding: 16px 8px;
   }
 }

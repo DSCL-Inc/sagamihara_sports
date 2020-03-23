@@ -63,3 +63,40 @@
   @extend .c-table;
   table-layout: fixed;
 }
+
+@include mq(sm) {
+  .c-table {
+    font-size: 15px;
+    font-weight: normal;
+    text-align: left;
+    line-height: 1.6;
+    width: 100%;
+    td:first-child {
+      width: 100%;
+      display: block;
+      padding: 0 0 4px;
+    }
+    tr {
+      display: block;
+      &:first-child {
+        padding-top: 8px;
+      }
+      + tr {
+        padding-top: 8px;
+      }
+    }
+    th {
+      padding: 16px 0;
+      font-size: 15px;
+    }
+    td {
+      padding: 0 0 8px;
+    }
+    table {
+      tr,
+      td {
+        display: block;
+      }
+    }
+  }
+}

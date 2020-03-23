@@ -1,0 +1,5 @@
+@include mq(sm) {
+  .wp-block-column + .wp-block-column {
+    margin-top: 32px;
+  }
+}

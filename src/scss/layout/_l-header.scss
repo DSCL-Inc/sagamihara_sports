@@ -1,17 +1,14 @@
 .l-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   background-color: #fff;
+  transition: 0.3s top ease;
+  border-bottom: 1px solid #dddddd;
   &.is-show {
-    .c-fixed-logo {
-      left: 20px;
-    }
-    .c-navigation {
-      top: 20px;
-    }
+    position: fixed;
   }
   [class^="u-icon-"],
   [class*="u-icon-"] {
@@ -75,7 +72,7 @@
         background-color: #cb2a2a;
       }
     }
-    &:hover > .l-header__dropdown-menu {
+    > .l-header__dropdown-menu {
       height: auto;
       display: block;
       color: #fff;
@@ -105,17 +102,18 @@
 }
 .l-header__submenu {
   display: flex;
-  width: 250px;
+  width: 160px;
   height: 70px;
   flex-shrink: 0;
+  border-left: 1px solid #dddddd;
 }
 .l-header__submenu__item {
-  width: calc(100% / 3);
+  width: calc(100% / 2);
   height: 100%;
   &:hover > .l-header__dropdown-menu {
     height: auto;
     display: block;
-    width: 160px;
+    width: 180px;
     background: #fff;
     font-size: 13px;
   }
@@ -125,10 +123,40 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 11px;
+  font-size: 10px;
   color: $font-black;
   height: 100%;
   letter-spacing: 0;
+}
+.l-header__font-size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 180px;
+  border-left: 1px solid #dddddd;
+  span {
+    font-size: 13px;
+  }
+}
+.l-header__font-size__btn {
+  display: flex;
+  margin-top: 4px;
+  button {
+    border: 1px solid #888;
+    color: #888;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    & + button {
+      margin-left: 6px;
+    }
+    &.is-active {
+      background-color: $color-theme;
+      color: #fff;
+    }
+  }
 }
 @include mq(xl) {
   .l-header__menu__item__link {
@@ -157,7 +185,8 @@
   .l-header__dropdown-menu__item__link {
     font-size: 12px;
   }
-  .l-header__submenu__item__link {
+
+  .l-header__menu__item-name {
     transform: scale(0.9);
     letter-spacing: -1px;
   }
@@ -206,7 +235,12 @@
     border-left: 1px solid #ddd;
   }
   .l-header__dropdown-menu__item__link {
-    padding: 12px;
+    padding: 20px 12px;
+  }
+  .l-header__dropdown-menu {
+    position: absolute;
+    left: 0;
+    width: 100%;
   }
 }
 
@@ -226,9 +260,6 @@
   }
   .l-header__dropdown-menu__item__link {
     font-size: 11px;
-  }
-  .l-header__submenu__item__link {
-    transform: scale(0.8);
   }
   .l-header__logo {
     width: 180px;

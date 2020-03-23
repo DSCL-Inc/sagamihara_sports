@@ -45,6 +45,7 @@
 }
 .p-calender-list__item__title {
   padding-left: 60px;
+  padding-right: 20px;
   line-height: 1.6;
   width: 100%;
 }
@@ -93,4 +94,39 @@
 .p-project-detail__report {
   padding-top: 40px;
   border-top: 2px solid #dddddd;
+}
+@include mq(md) {
+  .p-calender-list__row__head {
+    width: 80px;
+  }
+  .p-calender-list__item__title {
+    padding-left: 20px;
+  }
+}
+@include mq(sm) {
+  .p-calender-list__row__head {
+    font-size: 16px;
+  }
+
+  .p-calender-list__item {
+    flex-direction: column;
+    padding: 12px 0;
+  }
+  .p-calender-list__row__head {
+    width: 56px;
+    padding-top: 12px;
+  }
+  .p-calender-list__item__date {
+    width: auto;
+    font-size: 12px;
+  }
+  .p-calender-list__item__title {
+    font-size: 14px;
+    padding: 0;
+    margin-top: 4px;
+  }
+  .p-calender-list__item__img {
+    margin-top: 8px;
+    width: 80px;
+  }
 }

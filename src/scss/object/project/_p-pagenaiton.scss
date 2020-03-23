@@ -43,3 +43,9 @@
     background-repeat: no-repeat;
   }
 }
+
+@include mq(md) {
+  .p-pagenation {
+    margin-top: 20px;
+  }
+}

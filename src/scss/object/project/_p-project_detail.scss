@@ -1,0 +1,52 @@
+.p-project__lead a {
+  display: inline-flex;
+  align-items: center;
+  @include transition($property: opacity);
+  font-weight: bold;
+  padding: 4px 8px;
+  background-color: #efefef;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-size: 14px;
+  &[href$=".xls"]:after {
+    @include background-cover("u-icon-excel.svg");
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+  &[href$=".pdf"]:after {
+    @include background-cover("u-icon-pdf.svg");
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+  &[href$=".docx"]:after {
+    @include background-cover("u-icon-word.svg");
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+  &[target="_blank"]:not([href$=".pdf"]):not([href$=".docx"]):not([href$=".xls"]):after {
+    @include background-cover("u-icon-external--blue.svg");
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+  &:hover {
+    opacity: 0.7;
+    .u-icon-back-link--blue {
+      transform: translateX(-4px);
+    }
+  }
+  .u-icon-back-link--blue {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    @include transition($property: transform);
+  }
+}
