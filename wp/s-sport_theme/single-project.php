@@ -16,10 +16,9 @@ get_header();
               <h4 class="c-page-section__title">
               <?php the_title(); ?>
               </h4>
-              <p class="c-desc">
-              <?php the_field("project_lead");?>
-              </p>
-				  
+              <div class="p-project__lead">
+                <?php the_field("project_lead");?>
+              </div>
             </div>
             <div class="u-col u-col-4">
             <?php if(get_field("project_thumbnail")):?>
@@ -27,16 +26,22 @@ get_header();
             <?php endif;?>
               </div>
             </div>
+				   <?php if(get_field("project_detail")):?>
+				  <div class="u-m-top40">
+					  <?php the_field("project_detail");?>
+				  </div>
+				  <?php endif;?>
 				  <?php
 				  $project_form=get_field("project_form");
             $project_form_radio = $project_form['project_form_radio'];  
-				  $project_form_comment = $project_form['project_form_comment'];  
-				  $project_form_id = $project_form['project_form_id'];  
-			    //  $tcf_comment=$tcf['tournament_competition_form_comment'];
 			  					 if ($project_form_radio== 'フォームあり'):
+				    $project_form_id = $project_form['project_form_id'];  
                         ?>
 			   <a class="c-btn--primary u-center u-m-top40" href="<?php echo esc_url( home_url( '/' ) ); ?>project/form?id=<?php echo $project_form_id;?>">申し込む<span class="u-icon-link--white"></span></a>
-			  <?php elseif($project_form_radio == 'フォームなし'):?>
+			  <?php elseif($project_form_radio == 'フォームなし'):
+				  $project_form_comment = $project_form['project_form_comment'];  
+				  ?>
+				  
 				  <?php if($project_form_comment):?>
 				   <div class="u-m-top40">
 					   <?php echo $project_form_comment?>
@@ -49,21 +54,24 @@ get_header();
 			  $project_report=get_field('project_report');
 			  if($project_report["project_report_check"] ):
 			  ?>
+<?php
+$images = $project_report["project_report_gallery"]; 
+?>
 <div class="c-page-section">
 	<h4 class="c-page-section__title">開催後のレポート</h4>
               <div class="c-page-section__body">
 				  <div class="u-col-wrap">
 					  
-				  <div class="u-col u-col-8">
+				  <div class='u-col <?php if($images) : echo "u-col-8"; endif; ?>'>
 				  <div class="c-desc">
 						<?php  echo $project_report["project_report_text"]?>
 				   </div>
 					  </div>
-					  <div class="u-col u-col-4">
-				                    <?php
-$images = $project_report["project_report_gallery"]; 
+					  <?php
 if( $images ): 
 ?>
+					  <div class="u-col u-col-4">
+ 
                   <div class="p-event-report__gallery">
                   <?php foreach( $images as $image ): ?>
                     <a href="<?php echo $image; ?>"  class="p-event-report__gallery__item fancybox">
@@ -72,8 +80,9 @@ if( $images ):
                     </a>
                     <?php endforeach; ?>
                   </div>
-                  <?php endif; ?>
+                  
 	</div>
+					  <?php endif; ?>
 					  </div>
 </div>
 	</div>

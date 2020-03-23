@@ -54,9 +54,9 @@ endif;
       <div>開催日</div>
       <div>会 場</div>
       <div class="p-tournament__table__doc">
-      <div>開催要項</div>
-      <div>申請方法</div>
-      <div>結果</div>
+		  <div>大会情報</div>
+      <div></div>
+      <div></div>
       <div>申込フォーム</div>
     </div>
     </div>
@@ -85,7 +85,7 @@ endif;
                           $tcp_comment=$tcp['tournament_point_comment'];
                           if ($tcp_radio == 'ファイルあり'):
                           ?>
-                          <a class="p-tournament__table__icon-btn" href="<?php echo $tcp_file; ?>" target="_blank"><span class='u-icon-<?php 
+			  <a class="p-tournament__table__icon-btn" href="<?php echo $tcp_file; ?>" target="_blank">開催要項<span class='u-icon-<?php 
 							  if(strrchr($tcp_file, '.') == '.word'):
 							  echo "word";
 							  elseif(strrchr($tcp_file, '.') == '.pdf'):
@@ -110,7 +110,7 @@ endif;
                         $tca_comment=$tca['tournament_application_comment'];
                         if ($tca_radio == 'ファイルあり'):
                         ?>
-                        <a class="p-tournament__table__icon-btn" href="<?php echo $tca_file; ?>" target="_blank"><span class='u-icon-<?php 
+			  <a class="p-tournament__table__icon-btn" href="<?php echo $tca_file; ?>" target="_blank">申込方法<span class='u-icon-<?php 
 							  if(strrchr($tcp_file, '.') == '.word'):
 							  echo "word";
 							  elseif(strrchr($tcp_file, '.') == '.pdf'):
@@ -137,7 +137,7 @@ endif;
                         $tcr_comment=$tcr['tournament_result_comment'];
                         if ($tcr_radio == 'ファイルあり'):
                         ?>
-                        <a class="p-tournament__table__icon-btn" href="<?php echo $tce_file; ?>" target="_blank"><span class="u-icon-<?php 
+                        <a class="p-tournament__table__icon-btn" href="<?php echo $tce_file; ?>" target="_blank">結果<span class="u-icon-<?php 
 							  if(strrchr($tcp_file, '.') == '.word'):
 							  echo "word";
 							  elseif(strrchr($tcp_file, '.') == '.pdf'):

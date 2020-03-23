@@ -1,33 +1,12 @@
-<?php
-/*
-	if(is_page() == 'junior-stakeholder'): 
-		$userArray = array("admin" => "password");
-		basic_auth($userArray); 
-elseif(is_page() == 'member-stakeholder'):
-	   $userArray = array("admin" => "password");
-		basic_auth($userArray); 
-	endif;
-*/
-?>
 <!DOCTYPE html>
-
 <html>
 	<head> 
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="Googleで検索した時に見えるキャプション" />
-<meta property="og:url" content="http://xxxxxx.com" />
-<meta property="og:title" content="SNSで共有した時に見えるページ名" />
-<meta property="og:type" content="website" />
-<meta property="og:description" content="SNSで共有した時に見えるキャプション" />
-<meta property="og:image" content="http://xxxx.png" />
-<meta property="og:site_name" content="SNSで共有した時に見えるサイト名" />
-<meta property="og:locale" content="ja_JP" />
-<meta property="fb:app_id" content="App-ID（15文字の半角数字）" />
 <meta name="twitter:card" content="summary_large_image" />
-<link href="" rel="apple-touch-icon" />
-<link rel="shortcut icon" href="../../../favicon.ico" />
+<link href="<?php echo get_template_directory_uri(); ?>/assets/image/apple-touch-icon.png" rel="apple-touch-icon" />
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/image/favicon.ico" />
 <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" rel="stylesheet" type="text/css" />
 		<script
   src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
@@ -40,7 +19,6 @@ elseif(is_page() == 'member-stakeholder'):
   defer
 ></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/app.js" type="text/javascript" defer></script>
-
 		<?php wp_head(); ?>
 	</head>
 <div class="l-container">
@@ -58,7 +36,7 @@ elseif(is_page() == 'member-stakeholder'):
     </a>
     <ul class="l-header__menu">
       <li class="l-header__menu__item l-header__menu__item--about">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>about" class="l-header__menu__item__link">
+        <a class="l-header__menu__item__link">
           <span class="u-icon-header-menu--about"></span>
           <p class="l-header__menu__item-name">スポーツ協会</p>
           <ul class="l-header__dropdown-menu">
@@ -81,7 +59,7 @@ elseif(is_page() == 'member-stakeholder'):
         </a>
       </li>
       <li class="l-header__menu__item l-header__menu__item--event">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>project" class="l-header__menu__item__link">
+        <a class="l-header__menu__item__link">
           <span class="u-icon-header-menu--event"></span>
           <p class="l-header__menu__item-name">イベント情報</p>
           <ul class="l-header__dropdown-menu">
@@ -99,7 +77,7 @@ elseif(is_page() == 'member-stakeholder'):
         </a>
       </li>
       <li class="l-header__menu__item l-header__menu__item--junior">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>junior" class="l-header__menu__item__link">
+        <a class="l-header__menu__item__link">
           <span class="u-icon-header-menu--junior"></span>
           <p class="l-header__menu__item-name">スポーツ少年団</p>
           <ul class="l-header__dropdown-menu">

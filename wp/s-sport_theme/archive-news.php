@@ -8,8 +8,10 @@ get_header();
 $term=$_GET["news-category"];
 ?>
 <main class="l-main">
- <div class="c-page-mv c-page-mv--news">
+ <div class="c-page-mv c-page-mv">
+	 <div class="l-wrap">
           <h2 class="c-page-mv__title">新着情報</h2>
+		 </div>
         </div>
         <div class="c-page-container l-wrap">
 			<ul class="p-news-nav--page  ">

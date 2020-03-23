@@ -45,14 +45,17 @@ get_header();
       </main>
       <div class="p-member__modal p-member__modal--member js-modal-content">
                 <div class="p-member__modal__bg"></div>
+		  
                 <div class="p-member__modal__container">
-                
+                <div class="p-member__modal__container__inner">
                  
                 </div>
                 <button class="p-member__modal__close-btn js-modal-close">
                   閉じる
                   </button>
+					</div>
                 </div>
+		  
 
 <?php
 get_footer();
