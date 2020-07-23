@@ -1,10 +1,8 @@
 .p-tournament__table {
-  font-size: 15px;
   font-weight: normal;
   text-align: left;
   line-height: 1.6;
   width: 100%;
-  display: table;
   position: relative;
 
   .u-col .u-text-link {
@@ -15,7 +13,7 @@
     display: block;
     content: "";
     position: absolute;
-    height: 50px;
+    height: 150px;
     width: 100%;
     left: 0;
     bottom: 0;
@@ -25,9 +23,25 @@
       rgba(255, 255, 255, 1)
     );
   }
+  &:after {
+    display: block;
+    content: "下へスクロール▼";
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    color: #777777;
+  }
+  &.is-scroll-hide:after {
+    display: none;
+  }
 }
 .p-tournament__table__head > div:not(.p-tournament__table__doc),
-.p-tournament__table__row__item > div:not(.p-tournament__table__doc) {
+.p-tournament__table__row__item > dl:not(.p-tournament__table__doc) {
   padding-right: 20px;
 }
 
@@ -43,20 +57,27 @@
     width: 200px;
     flex-shrink: 0;
   }
-  .p-tournament__table__doc {
-    div:first-child {
-      text-align: left;
-    }
-  }
+}
+dt {
+  display: none;
 }
 .p-tournament__table__doc {
   width: 380px;
   flex-shrink: 0;
   display: flex;
-  align-items: center;
   text-align: center;
-  & > div {
+  & > dl {
     width: calc((100% - 100px) / 3);
+    text-align: center;
+    span {
+      display: block;
+      font-size: 12px;
+    }
+  }
+  & > div {
+    width: calc(380px / 4);
+    display: flex;
+    flex-direction: column;
   }
   & > div:last-child {
     width: 100px;
@@ -69,12 +90,17 @@
   height: 100%;
   overflow: scroll;
   padding-bottom: 50px;
-  div.p-tournament__table__row {
-    border-top: 1px solid #ddd;
-    display: flex;
-    &:last-child {
-      border-bottom: 1px solid #ddd;
-    }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.p-tournament__table__row {
+  border-top: 1px solid #ddd;
+  display: flex;
+  &:last-child {
+    border-bottom: 1px solid #ddd;
   }
 }
 .p-tournament__table__row__item {
@@ -97,7 +123,6 @@
 
 .p-tournament__table__row__title {
   width: 200px;
-  font-weight: bold;
   flex-shrink: 0;
   padding-right: 20px;
 }
@@ -138,6 +163,7 @@
   display: block;
   text-align: center;
   flex-shrink: 0;
+  text-decoration: none;
   &:hover {
     background-color: $color-theme;
     color: #fff;
@@ -182,17 +208,34 @@
   }
   .p-tournament__table__row {
     flex-direction: column;
+    // border-top: 0;
   }
   .p-tournament__table__row__title {
     font-size: 16px;
     width: auto;
+    font-weight: 700;
+    // border-bottom: 1px solid #ddd;
+    // padding-bottom: 6px;
+    // margin-bottom: 6px;
   }
   .p-tournament__table__row__item {
     flex-direction: column;
     align-items: flex-start;
+    // padding-top: 0;
+    // padding-bottom: 0;
+    dl {
+      display: flex;
+      padding: 6px 0;
+    }
+    dt {
+      width: 90px;
+      display: block;
+      text-align: left;
+    }
   }
+
   .p-tournament__table__row__item-wrap {
-    margin-top: 8px;
+    margin-top: 16px;
   }
   .p-tournament__table__body
     .p-tournament__table__row__item
@@ -204,39 +247,30 @@
   }
   .p-tournament__table__icon-btn {
     font-weight: normal;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    border-radius: 5px;
+    text-decoration: none;
   }
   .p-tournament__table__head > div:not(.p-tournament__table__doc),
   .p-tournament__table__row__item > div:not(.p-tournament__table__doc) {
     padding-right: 0;
   }
-
   .p-tournament__table__doc {
-    margin-top: 12px;
     width: 100%;
     align-items: flex-start;
     flex-wrap: wrap;
-    div {
-      text-align: left;
-      display: inline-flex;
-      width: auto;
-      &:last-child {
-        margin: 0;
-      }
-    }
-    div + div {
-      margin-left: 16px;
-    }
-  }
-  .p-tournament__table__doc > div:last-child {
-    width: auto;
-    margin-top: 12px;
-    width: 100%;
+    flex-direction: column;
   }
   .p-tournament__table__icon-btn {
-    font-size: 15px;
   }
   .p-tournament__table__form {
     font-size: 14px;
     padding: 16px 8px;
+  }
+  .p-tournament__table__doc > div:last-child {
+    width: 100%;
+    text-align: left;
   }
 }

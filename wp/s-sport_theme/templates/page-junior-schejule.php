@@ -23,164 +23,10 @@ endif;
 		   <?php endwhile;endif;?>
             </ul>
           <div class="l-content u-shadow">
-            
-           
 <!--c-page-section-->
 <div class="c-page-section">
   <div class="c-page-section__body">
-  <div class="p-calender-list">
-				 <?php $month_reset=null; ?> 
-				  <?php for($j =1;$j<=12;$j++):?>
-				  <?php  if($j<=9):?>
-				  		<?php
-				  $year=$y;
-				  $month=$j+3;
-				  ?>  
-				  <?php  else:?> 
-					 <?php
-				  		$year=$y+1;
-					  if(isset($month_reset)):
-					  		$month++;
-					  else:
-						   $month=1;
-						   $month_reset=1;
-					  endif;
-					  ?>
-				  <?php  endif;?>
-				   <?php 
-							$args[$j] = array(
-								'wildcard_meta_key' => true,
-								'post_type' => 'junior_project', 
-								'posts_per_page' => -1,
-								'orderby' => 'meta_value',
-								'order' => 'ASC',
-								'orderby'=>'meta_value_num',
-								'meta_query'=>array(
-									'relation'=>"AND",
-									array(
-											'value'=>array(date($year."/".$month."/01"),date($year."/".$month."/31")),
-											'compare'=>"BETWEEN",
-											'type' => 'DATE',
-										),
-									array(
-										'key'=>"junior_project_year",
-										"value"=>$y,
-										'compare'=>'=',
-									)
-								)							
-);								
-    $posts[$j] = get_posts( $args[$j] );
-    if( $posts[$j] ) : ?>
-              <div class="p-calender-list__row">
-                <div class="p-calender-list__row__head"><?php echo $month;?>月</div>
-                <div class="p-calender-list__row__body">
-               <?php foreach( $posts[$j] as $post ) : setup_postdata( $post ); ?>		
-					<?php
-    				$date_from_get = get_sub_field( 'junior_project_date_item');
-					$date_to_get = get_sub_field( 'junior_project_date_item_to');
-						?>
-                  <a href="<?php the_permalink();?>" class="p-calender-list__item">
-                    <div class="p-calender-list__item__date">
-                    <?php if(have_rows('junior_project_date')): ?>
-						<?php $i=0;?>
-                <?php while(have_rows('junior_project_date')): the_row(); ?>								
-										<?php
-						$date_from_get = get_sub_field( 'junior_project_date_item', false, false);
-						$date_to_get = get_sub_field( 'junior_project_date_item_to', false, false);
-							$date_from_data = new DateTime($date_from_get); 
-							$date_to_data = new DateTime($date_to_get); 
-							?>
-										<?php if($i>0): echo "・";endif;?>
-						<?php echo $date_from_data->format("j");?>
-						<?php if($date_to_get):?>
-							<?php echo " - ";?>
-								<?php if($date_to_data->format("m")!=$date_from_data->format("m")):?>
-										<?php echo $date_to_data->format("m/j"); ?>日
-												<?php else:?>
-														<?php echo $date_to_data->format("j"); ?>日
-											<?php endif;?>
-										<?php else:?>日
-										<?php endif;?>
-										<?php $i++;?>
-								<?php endwhile; ?>
-                    <?php endif;?>
-                    </div>
-                    <div class="p-calender-list__item__title">
-                    <?php the_title(); ?>
-                    </div>
-                    <?php if(get_field("junior_project_thumbnail")):?>
-                    <div class="p-calender-list__item__img">
-                      <img src="<?php the_field("junior_project_thumbnail")?>" alt="<?php the_title(); ?>" />
-                    </div>
-                    <?php endif;?>
-                  </a>
-                  <?php endforeach; ?>
-    <?php wp_reset_postdata(); //クエリのリセット ?>
-                </div>
-              </div>
-	    <?php endif; ?>
-   <?php endfor;?>
-	  <?php 
-							$undecided_args = array(
-								'wildcard_meta_key' => true,
-								'post_type' => 'junior_project', 
-								'posts_per_page' => -1,
-								'orderby' => 'meta_value',
-								'order' => 'ASC',
-								'orderby'=>'meta_value_num',
-								'meta_query'=>array(
-									'relation'=>"AND",
-									array(
-										array(
-											'key'=>"junior_project_date_undecided",
-												'value'=>"1",
-												'compare'=>"="
-											),
-										array(
-											'key'=>"junior_project_year",
-											"value"=>$y,
-											'compare'=>'=',
-										)
-									)
-									
-								)							
-);								
-	$undecided_posts = get_posts( $undecided_args);
-    if( $undecided_posts ) : ?>
-				  		<?php
-				  $year=$y;
-				  ?>
-				  <div class="p-calender-list__row">
-					  <div class="p-calender-list__row__head">未定</div>
-                <div class="p-calender-list__row__body">
-               <?php foreach( $undecided_posts as $post ) : setup_postdata( $post ); ?>						
-                  <a href="<?php the_permalink();?>" class="p-calender-list__item">
-                    <div class="p-calender-list__item__date">
-						<?php if(get_field('project_date_undecided_comment')): ?>
-						<?php the_field('project_date_undecided_comment'); ?>
-						<?php endif;?>
-                    </div>
-                    <div class="p-calender-list__item__title">
-						<?php if(get_the_title()):?>
-                    <?php the_title(); ?>
-						<?php endif;?>
-                    </div>
-                    <?php if(get_field("project_thumbnail")):?>
-                    <div class="p-calender-list__item__img">
-                      <img src="<?php the_field("project_thumbnail")?>" alt="<?php the_title(); ?>" />
-                    </div>
-					  <?php endif;?>
-
-                  </a>
-                  <?php endforeach; ?>
-    <?php wp_reset_postdata(); //クエリのリセット ?>
-                </div>
-              </div>
-				      
-<?php endif; ?>
-				    
-            </div>
-
+  <?php get_template_part('templates/project/project_list'); ?>
 </div>
 </div>
 			  <!--./c-page-section-->
@@ -189,15 +35,15 @@ endif;
               <div class="c-page-section__body">
                 <div class="p-tournament__table">
        <div class="p-tournament__table__head">
-      <div>競技名</div>
+      <div>種目</div>
 		   <div>種別</div>
       <div>開催日</div>
       <div>会 場</div>
       <div class="p-tournament__table__doc">
-      <div>大会情報</div>
-      <div></div>
-      <div></div>
-      <div>申込フォーム</div>
+		  <div>開催要項</div>
+		  <div>申込用紙</div>
+		  <div>結果</div>
+		  <div>申込フォーム</div>
     </div>
     </div>
     <div class="p-tournament__table__body">
@@ -218,6 +64,7 @@ endif;
 						);
 						?>
 <?php if ( $the_query->have_posts() ) : ?>
+		<div>
   <?php while ( $the_query->have_posts() ) : ?>
     <?php $the_query->the_post(); ?>
       <div class="p-tournament__table__row">
@@ -229,9 +76,7 @@ endif;
 		  <div><?php  the_sub_field('junior_tournament_type');?></div>
       <div><?php  the_sub_field('junior_tournament_date');?></div>
         <div>
-			<a>
 			<?php the_sub_field('junior_tournament_place'); ?><span class="u-icon--external"></span>
-			</a>
 		  </div>
         <div  class="p-tournament__table__doc">
           <div>
@@ -242,49 +87,46 @@ endif;
                           $tcp_comment=$tcp['junior_tournament_point_comment'];
                           if ($tcp_radio == 'ファイルあり'):
                           ?>
-			  <a class="p-tournament__table__icon-btn" href="<?php echo $tcp_file; ?>" target="_blank">開催要項<span class="u-icon-<?php 
-							  if(strrchr($tcp_file, '.') == '.word'):
+			  <a class="p-tournament__table__icon-btn" href="<?php echo $tcp_file; ?>" target="_blank">開催要項<span class='u-icon-<?php 
+							  if(strrchr($tcp_file, '.') == '.docs'||strrchr($tcp_file, '.') == '.doc'):
 							  echo "word";
 							  elseif(strrchr($tcp_file, '.') == '.pdf'):
 							  echo "pdf";
-							  elseif(strrchr($tcp_file, '.') == '.excel'):
+							  elseif(strrchr($tcp_file, '.') == '.xls'||strrchr($tcp_file, '.') == '.xlsx'):
 							  echo "excel";
 							  endif;
-							  ?>"></span></a>
-                          <?php elseif($tcp_radio == 'ファイルなし'):?>
-                          <?php if($tcp_comment):?>
-                          <?php echo $tcp_comment;?>
-                          <?php else:?>
-                          -
-                          <?php endif;?>
+							  ?>'></span></a>
+                          
                         <?php endif;?>
+			  <?php if($tcp_comment):?>
+			  <span>
+                          <?php echo $tcp_comment;?>
+				  </span>
+                          <?php endif;?>
 			</div>
           <div>
 			  <?php
                         $tca = get_sub_field('junior_tournament_application');
                         $tca_radio=$tca['junior_tournament_application_radio'];
                         $tca_file=$tca['junior_tournament_application_file'];
-                        $tca_comment=$tca['junior_tournament_application_comment'];
+                        $tca_comment=$tca['tournament_application_comment'];
                         if ($tca_radio == 'ファイルあり'):
                         ?>
-			  <a class="p-tournament__table__icon-btn" href="<?php echo $tca_file; ?>" target="_blank">申込方法<span class="u-icon-<?php 
-							  if(strrchr($tcp_file, '.') == '.word'):
+			  <a class="p-tournament__table__icon-btn" href="<?php echo $tca_file; ?>" target="_blank">申込用紙<span class='u-icon-<?php 
+							  if(strrchr($tca_file, '.') == '.docs'||strrchr($tca_file, '.') == '.doc'):
 							  echo "word";
-							  elseif(strrchr($tcp_file, '.') == '.pdf'):
+							  elseif(strrchr($tca_file, '.') == '.pdf'):
 							  echo "pdf";
-							  elseif(strrchr($tcp_file, '.') == '.excel'):
+							  elseif(strrchr($tca_file, '.') == '.xls'||strrchr($tca_file, '.') == '.xlsx'):
 							  echo "excel";
 							  endif;
-							  ?>"></span></a>
-							<?php elseif($tca_radio == 'フォーム'):?>
-							<a class="u-text-link" href="" target="_blank">フォーム</a>
-                        <?php elseif($tca_radio == 'ファイルなし'):?>
-                        <?php if($tca_comment):?>
-                        <?php echo $tca_comment;?>
-                        <?php else:?>
-                        -
+				  ?>'></span></a>
                         <?php endif;?>
-                        <?php endif;?>
+			  <?php if($tcp_comment):?>
+			  <span>
+                          <?php echo $tcp_comment;?>
+				  </span>
+                          <?php endif;?>
 			</div>
           <div>
 			<?php
@@ -293,39 +135,38 @@ endif;
                         $tcr_file=$tcr['junior_tournament_result_file'];
                         $tcr_comment=$tcr['junior_tournament_result_comment'];
                         if ($tcr_radio == 'ファイルあり'):
-                        ?>
-                        <a class="p-tournament__table__icon-btn" href="<?php echo $tce_file; ?>" target="_blank">結果<span class="u-icon-<?php 
-							  if(strrchr($tcp_file, '.') == '.word'):
+                        ?><a class="p-tournament__table__icon-btn" href="<?php echo $tcr_file; ?>" target="_blank">結果<span class="u-icon-<?php 
+							  if(strrchr($tcr_file, '.') == '.docs'||strrchr($tcr_file, '.') == '.doc'):
 							  echo "word";
-							  elseif(strrchr($tcp_file, '.') == '.pdf'):
+							  elseif(strrchr($tcr_file, '.') == '.pdf'):
 							  echo "pdf";
-							  elseif(strrchr($tcp_file, '.') == '.excel'):
+							  elseif(strrchr($tcr_file, '.') == '.xls'||strrchr($tcr_file, '.') == '.xlsx'):
 							  echo "excel";
 							  endif;
 							  ?>"></span></a>
-                        <?php elseif($tcr_radio == 'ファイルなし'):?>
-                        <?php if($tcr_comment):?>
-                        <?php echo $tcr_comment;?>
-                        <?php else:?>
-                        -
+                      
                         <?php endif;?>
+			    <?php if($tcr_comment):?>
+			  <span>
+                        <?php echo $tcr_comment;?>
+			  </span>
                         <?php endif;?>
 			</div>
           <div>
 			  <?php
                         $tcf = get_sub_field('junior_tournament_form');
                         $tcf_radio=$tcf['junior_tournament_form_radio'];
-                        $tcf_id=$tcf['junior_tournament_form_id'];		  
-			    //  $tcf_comment=$tcf['tournament_competition_form_comment'];
+                        $tcf_id=$tcf['junior_tournament_form_id'];		 
+			  $tcf_comment=$tcf['tournament_form_comment'];
 			  					 if ($tcf_radio== 'フォームあり'):
                         ?>
-			  <a class="p-tournament__table__form" href="<?php echo esc_url( home_url( '/' ) ); ?>tournament/form?id=<?php echo $tcf_id ?>" >申込フォーム</a>
-			  <?php elseif($tcf_radio == 'フォームなし'):?>
-                        <?php if($tcf_comment):?>
-                        <?php echo $tcf_comment;?>
-                        <?php else:?>
-                        -
+			  <a class="p-tournament__table__form" href="<?php echo esc_url( home_url( '/' ) ); ?>junior/form?id=<?php echo $tcf_id ?>" >申込フォーム</a>
+                        
                         <?php endif;?>
+			  <?php if($tcf_comment):?>
+			  <span>
+                        <?php echo $tcf_comment;?>
+			  </span>
                         <?php endif;?>
 			</div>
       </div>
@@ -335,6 +176,7 @@ endif;
     </div>
     </div>
 		<?php endwhile; ?>
+		</div>
 		<?php endif; ?>
  
    </div>

@@ -1,0 +1,8 @@
+.p-page-bottom {
+  margin-top: 80px;
+}
+@include mq(sm) {
+  .p-page-bottom {
+    margin-top: 32px;
+  }
+}

@@ -9,7 +9,7 @@ get_header();
       <main class="l-main">
    <?php get_template_part('template-parts/page-mv'); ?>
         <div class="c-page-container l-wrap">
-          <div class="l-content">
+          <div class="l-content u-shadow">
           <?php if ( have_posts() ) : ?>
   <?php while( have_posts() ) : the_post(); ?>
           <?php the_content(); ?>
@@ -26,7 +26,15 @@ get_header();
           <?php $group_name=get_sub_field('スポーツ協会について_基本情報_グループ'); ?>
           <?php if( $group_name ): ?>
             <a href="<?php echo $group_name['スポーツ協会について_基本情報_pdf'];?>" class="c-btn" target="_blank">
-            <?php echo $group_name['スポーツ協会について_基本情報_ボタン名']; ?><span class="u-icon-pdf"></span        >
+            <?php echo $group_name['スポーツ協会について_基本情報_ボタン名']; ?><span class='u-icon-<?php 
+							  if(strrchr($group_name['スポーツ協会について_基本情報_pdf'], '.') == '.docx'||strrchr($group_name['スポーツ協会について_基本情報_pdf'], '.') == '.doc'):
+							  echo "word";
+							  elseif(strrchr($group_name['スポーツ協会について_基本情報_pdf'], '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($group_name['スポーツ協会について_基本情報_pdf'], '.') == '.xls'||strrchr($group_name['スポーツ協会について_基本情報_pdf'], '.') == '.xlsx'):
+							  echo "excel";
+							  endif;
+							  ?>'></span>
             </a>
           <?php endif; ?>
           <?php endwhile; ?>
@@ -48,7 +56,15 @@ get_header();
                     <?php $group_name2=get_sub_field('about_disclosure_report_group'); ?> 
                     <?php if( $group_name2 ): ?>
             <a href="<?php echo $group_name2['about_disclosure_report_pdf'];?>" class="c-btn" target="_blank">
-            <?php echo $group_name2['about_disclosure_report_name']; ?><span class="u-icon-pdf"></span>
+            <?php echo $group_name2['about_disclosure_report_name']; ?><span class='u-icon-<?php 
+							  if(strrchr($group_name2['about_disclosure_report_pdf'], '.') == '.docx'||strrchr($group_name2['about_disclosure_report_pdf'], '.') == '.doc'):
+							  echo "word";
+							  elseif(strrchr($group_name2['about_disclosure_report_pdf'], '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($group_name2['about_disclosure_report_pdf'], '.') == '.xls'||strrchr($group_name2['about_disclosure_report_pdf'], '.') == '.xlsx'):
+							  echo "excel";
+							  endif;
+							  ?>'></span>
             </a>
             <?php endif; ?>
             <?php endwhile; ?>
@@ -66,7 +82,15 @@ get_header();
           <?php $group_name=get_sub_field('スポーツ協会について_共済・後援について_グループ'); ?>
           <?php if( $group_name ): ?>
             <a href="<?php echo $group_name['スポーツ協会について_共済・後援について_pdf'];?>" class="c-btn" target="_blank">
-            <?php echo $group_name['スポーツ協会について_共済・後援について_ボタン名']; ?><span class="u-icon-pdf"></span        >
+            <?php echo $group_name['スポーツ協会について_共済・後援について_ボタン名']; ?><span class='u-icon-<?php 
+							  if(strrchr($group_name['スポーツ協会について_共済・後援について_pdf'], '.') == '.docx'||strrchr($group_name['スポーツ協会について_共済・後援について_pdf'], '.') == '.doc'):
+							  echo "word";
+							  elseif(strrchr($group_name['スポーツ協会について_共済・後援について_pdf'], '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($group_name['スポーツ協会について_共済・後援について_pdf'], '.') == '.xls'||strrchr($group_name['スポーツ協会について_共済・後援について_pdf'], '.') == '.xlsx'):
+							  echo "excel";
+							  endif;
+							  ?>'></span>
             </a>
           <?php endif; ?>
           <?php endwhile; ?>
@@ -80,8 +104,6 @@ get_header();
         </div>
         <?php get_template_part('advertise_banner'); ?>
       </main>
-   
-    </div>
 
 
 <?php

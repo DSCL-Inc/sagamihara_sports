@@ -30,8 +30,7 @@ get_header();
                   <div class="c-card__item__img">
                     <img src="<?php the_field("junior_member_thumbnail"); ?>" alt="<?php the_title(); ?>" />
                   </div>
-                  <p class="c-card__item__name">
-                  <?php the_title(); ?><span class="u-icon-link--blue"></span>
+                  <p class="c-card__item__name"><?php the_title(); ?><span class="u-icon-link--blue"></span>
                   </p>
                 </a>
                   <?php endforeach; ?>

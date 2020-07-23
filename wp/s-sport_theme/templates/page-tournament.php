@@ -50,18 +50,19 @@ endif;
   <div class="p-tournament__table">
        <div class="p-tournament__table__head">
       <div>種目</div>
-		  <div>種別</div>
+		   <div>種別</div>
       <div>開催日</div>
       <div>会 場</div>
       <div class="p-tournament__table__doc">
-		  <div>大会情報</div>
-      <div></div>
-      <div></div>
-      <div>申込フォーム</div>
+		  <div>開催要項</div>
+		  <div>申込用紙<span>(申込期間)</span></div>
+		  <div>結果</div>
+		  <div>申込フォーム</div>
     </div>
     </div>
     <div class="p-tournament__table__body">
 		   <?php if(have_rows('tournament')): ?>
+		<div>
         <?php while(have_rows('tournament')): the_row(); ?>
       <div class="p-tournament__table__row">
       <div  class="p-tournament__table__row__title"><?php the_sub_field('tournament_name'); ?></div>
@@ -72,9 +73,7 @@ endif;
 		  <div><?php  the_sub_field('tournament_type');?></div>
       <div><?php  the_sub_field('tournament_date');?></div>
         <div>
-			<a>
 			<?php the_sub_field('tournament_place'); ?><span class="u-icon--external"></span>
-			</a>
 		  </div>
         <div  class="p-tournament__table__doc">
           <div>
@@ -86,21 +85,19 @@ endif;
                           if ($tcp_radio == 'ファイルあり'):
                           ?>
 			  <a class="p-tournament__table__icon-btn" href="<?php echo $tcp_file; ?>" target="_blank">開催要項<span class='u-icon-<?php 
-							  if(strrchr($tcp_file, '.') == '.word'):
+							  if(strrchr($tcp_file, '.') == '.docs'||strrchr($tcp_file, '.') == '.doc'):
 							  echo "word";
 							  elseif(strrchr($tcp_file, '.') == '.pdf'):
 							  echo "pdf";
-							  elseif(strrchr($tcp_file, '.') == '.excel'):
+							  elseif(strrchr($tcp_file, '.') == '.xls'||strrchr($tcp_file, '.') == '.xlsx'):
 							  echo "excel";
 							  endif;
 							  ?>'></span></a>
-                          <?php elseif($tcp_radio == 'ファイルなし'):?>
-                          <?php if($tcp_comment):?>
-                          <?php echo $tcp_comment;?>
-                          <?php else:?>
-                          -
-                          <?php endif;?>
+                          
                         <?php endif;?>
+			  <?php if($tcp_comment):?>
+                          <?php echo $tcp_comment;?>
+                          <?php endif;?>
 			</div>
           <div>
 			  <?php
@@ -110,23 +107,23 @@ endif;
                         $tca_comment=$tca['tournament_application_comment'];
                         if ($tca_radio == 'ファイルあり'):
                         ?>
-			  <a class="p-tournament__table__icon-btn" href="<?php echo $tca_file; ?>" target="_blank">申込方法<span class='u-icon-<?php 
-							  if(strrchr($tcp_file, '.') == '.word'):
+			  <a class="p-tournament__table__icon-btn" href="<?php echo $tca_file; ?>" target="_blank">申込用紙<span class='u-icon-<?php 
+							  if(strrchr($tca_file, '.') == '.docs'||strrchr($tca_file, '.') == '.doc'):
 							  echo "word";
-							  elseif(strrchr($tcp_file, '.') == '.pdf'):
+							  elseif(strrchr($tca_file, '.') == '.pdf'):
 							  echo "pdf";
-							  elseif(strrchr($tcp_file, '.') == '.excel'):
+							  elseif(strrchr($tca_file, '.') == '.xls'||strrchr($tca_file, '.') == '.xlsx'):
 							  echo "excel";
 							  endif;
 							  ?>'></span></a>
 							<?php elseif($tca_radio == 'フォーム'):?>
 							<a class="u-text-link" href="" target="_blank">フォーム</a>
-                        <?php elseif($tca_radio == 'ファイルなし'):?>
-                        <?php if($tca_comment):?>
-                        <?php echo $tca_comment;?>
-                        <?php else:?>
-                        -
+                        
                         <?php endif;?>
+			  <?php if($tca_comment):?>
+			  <span>
+                        <?php echo $tca_comment;?>
+			  </span>
                         <?php endif;?>
 			</div>
           <div>
@@ -136,39 +133,38 @@ endif;
                         $tcr_file=$tcr['tournament_result_file'];
                         $tcr_comment=$tcr['tournament_result_comment'];
                         if ($tcr_radio == 'ファイルあり'):
-                        ?>
-                        <a class="p-tournament__table__icon-btn" href="<?php echo $tce_file; ?>" target="_blank">結果<span class="u-icon-<?php 
-							  if(strrchr($tcp_file, '.') == '.word'):
+                        ?><a class="p-tournament__table__icon-btn" href="<?php echo $tcr_file; ?>" target="_blank">結果<span class="u-icon-<?php 
+							  if(strrchr($tcr_file, '.') == '.docs'||strrchr($tcr_file, '.') == '.doc'):
 							  echo "word";
-							  elseif(strrchr($tcp_file, '.') == '.pdf'):
+							  elseif(strrchr($tcr_file, '.') == '.pdf'):
 							  echo "pdf";
-							  elseif(strrchr($tcp_file, '.') == '.excel'):
+							  elseif(strrchr($tcr_file, '.') == '.xls'||strrchr($tcr_file, '.') == '.xlsx'):
 							  echo "excel";
 							  endif;
 							  ?>"></span></a>
-                        <?php elseif($tcr_radio == 'ファイルなし'):?>
-                        <?php if($tcr_comment):?>
-                        <?php echo $tcr_comment;?>
-                        <?php else:?>
-                        -
+                        
                         <?php endif;?>
+			  <?php if($tcr_comment):?>
+			   <span>
+                        <?php echo $tcr_comment;?>
+				   </span>
                         <?php endif;?>
 			</div>
           <div>
 			  <?php
                         $tcf = get_sub_field('tournament_form');
                         $tcf_radio=$tcf['tournament_form_radio'];
-                        $tcf_id=$tcf['tournament_form_id'];		  
-			    //  $tcf_comment=$tcf['tournament_competition_form_comment'];
+                        $tcf_id=$tcf['tournament_form_id'];	
+			  					$tcf_comment=$tcf['tournament_form_comment'];
 			  					 if ($tcf_radio== 'フォームあり'):
                         ?>
 			  <a class="p-tournament__table__form" href="<?php echo esc_url( home_url( '/' ) ); ?>tournament/form?id=<?php echo $tcf_id ?>" >申込フォーム</a>
-			  <?php elseif($tcf_radio == 'フォームなし'):?>
-                        <?php if($tcf_comment):?>
-                        <?php echo $tcf_comment;?>
-                        <?php else:?>
-                        -
+                        
                         <?php endif;?>
+			  <?php if($tcf_comment):?>
+			  <span>
+                        <?php echo $tcf_comment;?>
+				  </span>
                         <?php endif;?>
 			</div>
       </div>
@@ -178,6 +174,7 @@ endif;
     </div>
     </div>
 		<?php endwhile; ?>
+		</div>
 		<?php endif; ?>
  
    </div>
@@ -191,8 +188,7 @@ endif;
   <?php the_field("tournament_about")?>
 </div>
 <!--./c-page-section-->
-	  
-
+	 
 </div>
 
           </div>

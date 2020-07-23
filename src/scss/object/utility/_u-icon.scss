@@ -108,8 +108,12 @@
 .u-icon-facility {
   @include background-cover("u-icon-facility.svg");
 }
+
 .u-icon-external {
   @include background-cover("u-icon-external.svg");
+}
+.u-icon-external--white {
+  @include background-cover("u-icon-external--white.svg");
 }
 
 .u-icon-top-angle {

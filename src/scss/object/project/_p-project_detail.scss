@@ -2,39 +2,46 @@
   display: inline-flex;
   align-items: center;
   @include transition($property: opacity);
-  font-weight: bold;
-  padding: 4px 8px;
-  background-color: #efefef;
-  border-radius: 6px;
-  margin-top: 8px;
+  height: 60px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #f5f5f5;
+  justify-content: space-between;
+  align-items: center;
   font-size: 14px;
+  border-radius: 10px;
+  padding: 0 16px;
+  margin: 4px;
+  position: relative;
+  text-decoration: none;
+  color: $font-black;
   &[href$=".xls"]:after {
     @include background-cover("u-icon-excel.svg");
     content: "";
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
   &[href$=".pdf"]:after {
     @include background-cover("u-icon-pdf.svg");
     content: "";
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
   &[href$=".docx"]:after {
     @include background-cover("u-icon-word.svg");
     content: "";
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
   &[target="_blank"]:not([href$=".pdf"]):not([href$=".docx"]):not([href$=".xls"]):after {
     @include background-cover("u-icon-external--blue.svg");
     content: "";
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
   &:hover {
     opacity: 0.7;
@@ -44,9 +51,34 @@
   }
   .u-icon-back-link--blue {
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     margin-right: 8px;
     @include transition($property: transform);
+  }
+}
+.p-project-back {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+@include mq(sm) {
+  .p-project__lead a {
+    max-width: calc(50% - 8px);
+    margin: 0 auto 8px;
+  }
+  .p-project-detail__img {
+    margin-top: 20px;
+  }
+  iframe[src*="youtube"] {
+    width: 100%;
+  }
+  .p-project-detail__report {
+    padding-top: 32px;
+  }
+  .p-project-detail__report__back {
+    margin-top: 12px;
+  }
+  .p-project-back {
+    margin-top: 24px;
   }
 }

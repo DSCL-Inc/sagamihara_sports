@@ -1,13 +1,13 @@
-<div class="l-wrap">
-        <section class="p-top-advertisement p-top__section">
+<div class="l-wrap page">
+        <section class="p-top-advertisement p-page-bottom-advertisement">
             <div class="p-top-section__head">
               <h4 class="p-top-section__head__title">
                 <span
                   class="p-top-section__head__character p-top-section__head__character--ad">
-                  </span>広告バナー
-              </h4>
+                  </span>バナー広告
+              </h4>
               <a class="p-top-head__btn u-shadow" href="<?php echo esc_url( home_url( '/' ) ); ?>banner-guide"
-                >詳しく見る<span class="u-icon-right-angle"></span
+                >バナー広告について<span class="u-icon-right-angle"></span
               ></a>
             </div>
             <div class="l-content u-shadow">
@@ -21,7 +21,7 @@
                       if($top_advertisement):
 //ヒアドキュメント開始
 echo <<<EOT
-<a href="{$top_advertisement['top_advertisement_url']}" target="_blank" rel="noopener" class="p-top-advertisement__list__item">
+<a href="{$top_advertisement['top_advertisement_url']}" target="_blank" rel="noopener" class="p-top-advertisement__list__item" onClick=”ga(‘send’, ‘event’, ‘link’, ‘click’, ‘バナー広告_{$top_advertisement['top_advertisement_name']}’, ‘1’);”>
 <img src="{$top_advertisement['top_advertisement_img']}" alt="{$top_advertisement['top_advertisement_name']} ?>"/>
 </a>
 EOT;

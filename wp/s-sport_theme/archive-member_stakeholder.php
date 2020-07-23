@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Template Name: アーカイブページ - 加盟団体/会員専用ページ TOP
@@ -6,6 +7,7 @@
  */
 get_header();
 ?>
+
 <main class="l-main">
         <div class="c-page-mv">>
 			<div class="l-wrap">

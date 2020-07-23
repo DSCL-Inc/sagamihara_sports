@@ -20,7 +20,7 @@
             <span class="u-icon-header-menu--event"></span>イベント情報</li>
 			<ul class="l-footer-top__sub-list">
           <li class="l-footer-top__list__item">
-            <a href="" class="l-footer-top__list__link">協会事業</a></li>
+            <a href="<?php echo esc_url(home_url('/')); ?>project" class="l-footer-top__list__link">協会事業</a></li>
           <li class="l-footer-top__list__item">
             <a href="<?php echo esc_url(home_url('/')); ?>tournament" class="l-footer-top__list__link">
               市民選手権大会</a></li>
@@ -36,18 +36,12 @@
             <a href="<?php echo esc_url(home_url('/')); ?>junior" class="l-footer-top__list__link">
               スポーツ少年団とは</a></li>
           <li class="l-footer-top__list__item">
-            <a href="<?php echo esc_url(home_url('/')); ?>junior/register" class="l-footer-top__list__link">
-              登録・更新方法
-            </a></li>
+            <a href="<?php echo esc_url(home_url('/')); ?>junior/register" class="l-footer-top__list__link">登録・更新方法</a></li>
           <li class="l-footer-top__list__item">
-            <a href="<?php echo esc_url(home_url('/')); ?>junior/member" class="l-footer-top__list__link">
-              登録団
-            </a>
+            <a href="<?php echo esc_url(home_url('/')); ?>junior/member" class="l-footer-top__list__link">登録団体</a>
           </li>
           <li class="l-footer-top__list__item">
-            <a href="<?php echo esc_url(home_url('/')); ?>junior/schejule" class="l-footer-top__list__link">
-              年間行事予定
-            </a>
+            <a href="<?php echo esc_url(home_url('/')); ?>junior/schejule" class="l-footer-top__list__link">年間行事予定</a>
           </li>
 				</ul>
         </ul>
@@ -63,18 +57,23 @@
         <ul class="l-footer-top__list">
           <li class="l-footer-top__list__item">
             <a href="http://www.city.sagamihara.kanagawa.jp/hometown/" class="l-footer-top__list__link" target="_blank">
-              ホームタウンチーム
-            </a>
+				ホームタウンチーム<span class="u-icon-external--white"></span>
+			  </a>
           </li>
           <li class="l-footer-top__list__item">
             <a href="http://www.city.sagamihara.kanagawa.jp/kurashi/kyouiku/sports/1010089.html" class="l-footer-top__list__link" target="_blank">
-              総合型地域スポーツクラブ
-            </a>
+				総合型地域スポーツクラブ<span class="u-icon-external--white"></span>
+			  </a>
           </li>
+			<li class="l-footer-top__list__item">
+            <a href="https://www.city.sagamihara.kanagawa.jp/kurashi/kyouiku/sports/1010087.html" class="l-footer-top__list__link" target="_blank">スポーツ大会出場奨励事業<span class="u-icon-external--white"></span>
+				</a>
+          </li>
+			
         </ul>
       </div>
       <div class="l-footer-top__column__item">
-        <a href="https://www.facebook.com/sagamihara.sports.association/" class="l-footer-top__btn" target="_blank">
+        <a href="https://www.facebook.com/sagamihara.sport.association/" class="l-footer-top__btn" target="_blank">
           <p class="l-footer-top__btn__title">
             <span class="u-icon-facebook"></span>
             公式Facebookアカウント
@@ -101,7 +100,7 @@
         </a>
         <p class="l-footer-bottom__address">
           〒252-0236　相模原市中央区富士見6-6-23　けやき会館4階
-          <br />TEL:042-751-5552 FAX:042-751-5545
+          <br />TEL:042-751-5552  FAX:042-751-5545
         </p>
       </div>
       <div class="l-footer-bottom__right">
@@ -110,7 +109,7 @@
             <a href="<?php echo esc_url(home_url('/')); ?>/link" class="l-footer-bottom__nav__item__link">リンク</a>
           </li>
           <li class="l-footer-bottom__nav__item">
-            <a href="<?php echo esc_url(home_url('/')); ?>policy" class="l-footer-bottom__nav__item__link">個人情報保護方針</a>
+			  <a href="<?php echo esc_url(home_url('/')); ?>policy" class="l-footer-bottom__nav__item__link">個人情報保護方針等</a>
           </li>
           <li class="l-footer-bottom__nav__item">
             <a href="<?php echo esc_url(home_url('/')); ?>/access" class="l-footer-bottom__nav__item__link">営業・アクセス</a>

@@ -21,7 +21,7 @@
 }
 .l-footer-top__column__item {
   width: 25%;
-  padding: 0px 32px 12px;
+  padding: 0px 28px 12px;
   &:first-child {
     padding-left: 0;
   }
@@ -45,7 +45,6 @@
   margin-top: 8px;
 }
 .l-footer-top__list + .l-footer-top__list {
-  margin-top: 20px;
   background-image: linear-gradient(
     to right,
     #fff,
@@ -57,11 +56,11 @@
   background-repeat: repeat-x;
   background-position: top;
   background-repeat: repeat-x;
-  padding-top: 20px;
 }
 .l-footer-top__list__item {
   position: relative;
   color: #fff;
+  padding: 16px 0;
   &.u-bold {
     font-size: 16px;
     display: flex;
@@ -81,23 +80,33 @@
   font-size: 14px;
   opacity: 0.9;
   display: flex;
-  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  align-items: inherit;
+  .u-icon-external--white {
+    width: 16px;
+    height: 16px;
+    margin-left: 2px;
+  }
 }
 .l-footer-top__btn {
   border-radius: 10px;
   height: 56px;
   width: 100%;
-  padding: 0 16px;
+  padding: 0 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #f5f5f5;
+  text-decoration: none;
+  color: $font-black;
   & + .l-footer-top__btn {
     margin-top: 12px;
   }
   .u-icon-external {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
   }
 }
 .l-footer-top__btn__title {
@@ -140,6 +149,11 @@
   color: #fff;
   line-height: 1.6;
   opacity: 0.9;
+  a {
+    color: #fff;
+    pointer-events: none;
+    text-decoration: none;
+  }
 }
 .c-backtotop {
   background-color: $color-theme;
@@ -168,7 +182,7 @@
   font-weight: bold;
   color: #fff;
   text-decoration: underline;
-
+  text-decoration: none;
   &:hover {
     text-decoration: none;
   }
@@ -178,6 +192,9 @@
   margin-top: 20px;
   color: #fff;
   opacity: 0.7;
+}
+.js-sp-accordion {
+  pointer-events: none;
 }
 
 @include mq(xl) {
@@ -191,6 +208,9 @@
 @include mq(lg) {
   .l-footer-top__list__item:first-child {
     font-size: 14px;
+  }
+  .l-footer-top__list__item {
+    padding: 0;
   }
   .l-footer-bottom__left {
     flex-direction: column;
@@ -266,7 +286,7 @@
     left: 50%;
     top: -80px;
     border-radius: 0;
-    width: 108%;
+    width: 108.5%;
     margin: auto;
     transform: translateX(-50%);
   }
@@ -278,5 +298,8 @@
 
   .l-footer-bottom__right {
     margin-top: 20px;
+  }
+  .js-sp-accordion {
+    pointer-events: auto;
   }
 }

@@ -2,7 +2,8 @@
   font-family: "icomoon";
   src: url("../fonts/icomoon.eot?lv4mq8");
   src: url("../fonts/icomoon.eot?lv4mq8#iefix") format("embedded-opentype"),
-    url("../fonts/icomoon.ttf?lv4mq8") format("truetype"), url("fonts/icomoon.woff?lv4mq8") format("woff"),
+    url("../fonts/icomoon.ttf?lv4mq8") format("truetype"),
+    url("fonts/icomoon.woff?lv4mq8") format("woff"),
     url("../fonts/icomoon.svg?lv4mq8#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
@@ -64,7 +65,6 @@
 }
 .icon-scroll:before {
   content: "\e905";
-  font-size: 15px;
 }
 
 $icon-fixed-logo--sp: "\e900";

@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head> 
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140389676-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140389676-2');
+</script>
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="twitter:card" content="summary_large_image" />
+<title>公益財団法人相模原市スポーツ協会</title>
 <link href="<?php echo get_template_directory_uri(); ?>/assets/image/apple-touch-icon.png" rel="apple-touch-icon" />
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/image/favicon.ico" />
 <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" rel="stylesheet" type="text/css" />
+
 		<script
   src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
   type="text/javascript"
@@ -35,7 +45,7 @@
       />
     </a>
     <ul class="l-header__menu">
-      <li class="l-header__menu__item l-header__menu__item--about">
+      <li class="l-header__menu__item l-header__menu__item--about" ontouchstart="">
         <a class="l-header__menu__item__link">
           <span class="u-icon-header-menu--about"></span>
           <p class="l-header__menu__item-name">スポーツ協会</p>
@@ -58,7 +68,7 @@
           </ul>
         </a>
       </li>
-      <li class="l-header__menu__item l-header__menu__item--event">
+      <li class="l-header__menu__item l-header__menu__item--event" ontouchstart="">
         <a class="l-header__menu__item__link">
           <span class="u-icon-header-menu--event"></span>
           <p class="l-header__menu__item-name">イベント情報</p>
@@ -76,7 +86,7 @@
           </ul>
         </a>
       </li>
-      <li class="l-header__menu__item l-header__menu__item--junior">
+      <li class="l-header__menu__item l-header__menu__item--junior" ontouchstart="">
         <a class="l-header__menu__item__link">
           <span class="u-icon-header-menu--junior"></span>
           <p class="l-header__menu__item-name">スポーツ少年団</p>
@@ -100,7 +110,7 @@
           </ul>
         </a>
       </li>
-      <li class="l-header__menu__item l-header__menu__item--member">
+		<li class="l-header__menu__item l-header__menu__item--member">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>member" class="l-header__menu__item__link">
           <span class="u-icon-header-menu--member"></span>
           <p class="l-header__menu__item-name">加盟団体</p>
@@ -111,11 +121,11 @@
     <li class="l-header__submenu__item">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>access" class="l-header__submenu__item__link">
         <span class="u-icon-header-submenu--access"></span>
-        <p class="l-header__menu__item-name">営業・アクセス</p>
+		  <p class="l-header__menu__item-name">営業・アクセス</p>
       </a>
       </li>
-      <li class="l-header__submenu__item">
-      <a href="" class="l-header__submenu__item__link">
+      <li class="l-header__submenu__item" ontouchstart="">
+      <a class="l-header__submenu__item__link">
         <span class="u-icon-header-submenu--login"></span>
         <p class="l-header__menu__item-name">関係者専用</p>
         
@@ -132,13 +142,16 @@
               >
             </li>
           </ul>
-      <li class="l-header__submenu__item">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" class="l-header__submenu__item__link">
-        <span class="u-icon-header-submenu--contact"></span>
-        <p class="l-header__menu__item-name">お問い合わせ</p>
-      </a>
-      </li>
     </ul>
+	  <div class="l-header__font-size">
+      <span>文字サイズ</span>
+      <div class="l-header__font-size__btn">
+        <button class="js-font-size js-font-size--normal">
+          標準
+        </button>
+        <button class="js-font-size js-font-size--large">大</button>
+      </div>
+    </div>
   </div>
 </header>
 

@@ -4,7 +4,7 @@ var startPos = 0,
 $(window).on("scroll", function() {
   winScrollTop = $(this).scrollTop();
   if (winScrollTop >= headerHeight) {
-    if (winScrollTop < startPos) {
+    if (winScrollTop <= startPos) {
       $(".l-header.is-hide").addClass("is-show");
       $(".l-header.is-hide").css("top", -headerHeight);
       setTimeout(function() {

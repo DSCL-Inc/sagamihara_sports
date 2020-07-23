@@ -21,7 +21,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-decoration: none;
   cursor: pointer;
+  color: $font-black;
   &:nth-child(n + 6) {
     margin-top: 20px;
   }
@@ -40,12 +42,12 @@
   }
 }
 .c-card__item__name {
-  font-size: 14px;
-  font-weight: bold;
   margin-top: 12px;
   display: flex;
   align-items: center;
   text-overflow: ellipsis;
+  width: 100%;
+  justify-content: center;
   .u-icon-link--blue {
     margin-left: 4px;
   }

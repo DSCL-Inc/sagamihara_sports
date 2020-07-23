@@ -15,19 +15,19 @@ $term=$_GET["news-category"];
         </div>
         <div class="c-page-container l-wrap">
 			<ul class="p-news-nav--page  ">
-              <li class="p-news-nav__item p-news-nav__item--all  <?php if(!$term):echo "is-active";endif;?>"><a href="/news/">全て</a></li>
+              <li class="p-news-nav__item p-news-nav__item--all  <?php if(!$term):echo "is-active";endif;?>"><a href="/news/"  class="p-news-nav__item__link">全て</a></li>
               <li class="p-news-nav__item p-news-nav__item--news <?php if($term=="news"):echo "is-active";endif;?>">
-               <a href="/news?news-category=news">お知らせ</a>
+               <a href="/news?news-category=news"  class="p-news-nav__item__link">お知らせ</a>
               </li>
               <li class="p-news-nav__item p-news-nav__item--event <?php if($term=="event"):echo "is-active";endif;?>">
-				  <a href="/news?news-category=event">イベント情報</a>
+				  <a href="/news?news-category=event"  class="p-news-nav__item__link">イベント情報</a>
               </li>
               <li class="p-news-nav__item p-news-nav__item--junior <?php if($term=="junior"):echo "is-active";endif;?>">
-				  <a href="/news?news-category=junior">スポーツ少年団</a>
+				  <a href="/news?news-category=junior"  class="p-news-nav__item__link">スポーツ少年団</a>
               </li>
               <li class="p-news-nav__item p-news-nav__item--magazine <?php if($term=="magazine"):echo "is-active";endif;?>">
                 
-				  <a href="/news?news-category=magazine">広報さがみはら</a>
+				  <a href="/news?news-category=magazine"  class="p-news-nav__item__link">広報さがみはら</a>
               </li>
             </ul>
           <div class="l-content  u-shadow">            
@@ -67,24 +67,27 @@ $the_query = new WP_Query( array(
 				?>
 				
             <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-   <li class="p-news-list__item">
-                    <a href="<?php (get_field("news_url")) ? the_field("news_url")  : the_permalink(); ?>" class="p-news-list__item__link">
-                      <p class="p-news-list__item-date"><?php the_time('Y年m月d日'); ?></p>
-                     <?php 
+   <li class="p-news-list__item" data-news-category="<?php echo $term_slug ;?>">
+                    <a href="<?php (get_field("news_url")) ? the_field("news_url")  : the_permalink(); ?>" class="p-news-list__item__link" <?php if(get_field("news_blank")):echo 'target="_blank"'; endif;?>>
+                      <p class="p-news-list__item-date"><?php the_time('Y年m月d日'); ?></p> 
+						 <?php 
                           if ($terms = get_the_terms($post->ID, 'news_category')) {
                             foreach ( $terms as $term ) {
-                              $term_name = $term -> name;
-                              $term_slug = $term -> slug;
-                            }
-                        }
-                      
-                      ?>
-                           
+								 $term_name = $term -> name;
+								 $term_slug = $term -> slug;
+						?>
                       <p
                         class="p-news-list__item-tag p-news-list__item-tag--<?php echo esc_html($term_slug);?>"
                       >
-                      <?php echo esc_html($term_name);?>
+						   <?php 
+                             
+								 echo esc_html($term_name);
+                            ?>
                       </p>
+						 <?php 
+                            }
+							    }
+                            ?>
                       <p class="p-news-list__item-title"><?php the_title(); ?></p>
                     </a>
                   </li>

@@ -55,6 +55,8 @@ $the_query = new WP_Query( array(
 				<?php wp_reset_query(); ?>
             </div>
           </div>
+			<?php $url = htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES, 'UTF-8');?>
+			 <?php if (strpos($url, 'member-stakeholder') !== false) :?>
 				 <?php if(have_rows('stakeholder-subsidy')): ?>
 				 <div class="c-page-section">
 					 <div class="c-page-section__head">
@@ -68,7 +70,16 @@ $the_query = new WP_Query( array(
                     
                     <?php while(have_rows('stakeholder-subsidy')): the_row(); ?>
             <a href="<?php the_sub_field("stakeholder-subsidy_file")?>" class="c-btn" target="_blank">
-            <?php the_sub_field("stakeholder-subsidy_name")?><span class="u-icon-pdf"></span>
+				<?php $stakeholder_subsidy_file=get_sub_field("stakeholder-subsidy_file");?>
+            <?php the_sub_field("stakeholder-subsidy_name")?><span class="u-icon-<?php 
+							  if(strrchr($stakeholder_subsidy_file, '.') == '.docx'||strrchr($stakeholder_subsidy_file, '.') == '.doc'):
+							  echo "word";
+							  elseif(strrchr($stakeholder_subsidy_file, '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($stakeholder_subsidy_file, '.') == '.xls'||strrchr(get_sub_field("stakeholder-support_file"), '.') == '.xlsx'):
+							  echo "excel";
+							  endif;
+							  ?>"></span>
             </a>
             <?php endwhile; ?>
                 </div>
@@ -87,18 +98,87 @@ $the_query = new WP_Query( array(
                 <div class="c-page-section">
                   <div class="c-btn-wrap">
                     <?php while(have_rows('stakeholder-support')): the_row(); ?>
-            <a href="<?php the_sub_field("stakeholder-support_file")?>" class="c-btn" target="_blank">
-            <?php the_sub_field("stakeholder-support_name")?><span class="u-icon-pdf"></span>
+					  <?php $stakeholder_support_file=get_sub_field("stakeholder-support_file");?>
+            <a href="<?php echo $stakeholder_support_file;?>" class="c-btn" target="_blank">
+            <?php the_sub_field("stakeholder-support_name")?><span class="u-icon-<?php 
+							  if(strrchr($stakeholder_support_file, '.') == '.docx'||strrchr($stakeholder_support_file, '.') == '.doc'):
+							  echo "word";
+							  elseif(strrchr($stakeholder_support_file, '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($stakeholder_support_file, '.') == '.xls'||strrchr(get_sub_field("stakeholder-support_file"), '.') == '.xlsx'):
+							  echo "excel";
+							  endif;
+							  ?>"></span>
             </a>
             <?php endwhile; ?>
                 </div>
                 </div>
               </div>
             </div>
-				 <?php endif; ?>
+				  <?php endif; ?>
+				  <?php if(have_rows('stakeholder-others')): ?>
+				 <div class="c-page-section">
+					 <div class="c-page-section__head">
+						 <h4 class="c-page-section__title--md">
+							  その他資料
+						 </h4>
+					 </div>
+              <div class="c-page-section__body">
+                <div class="c-page-section">
+                  <div class="c-btn-wrap">
+                    <?php while(have_rows('stakeholder-others')): the_row(); ?>
+            <a href="<?php the_sub_field("stakeholder_others_file")?>" class="c-btn" target="_blank">
+				<?php $stakeholder_others_file=get_sub_field("stakeholder_others_file");?>
+            <?php the_sub_field("stakeholder_others_name");?><span class="u-icon-<?php 
+							  if(strrchr($stakeholder_others_file, '.') == '.docx'||strrchr($stakeholder_others_file, '.') == '.doc'):
+							  echo "word";
+							  elseif(strrchr($stakeholder_others_file, '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($stakeholder_others_file, '.') == '.xls'||strrchr($stakeholder_others_file, '.') == '.xlsx'):
+							  echo "excel";
+							  endif;
+							  ?>"></span>
+            </a>
+            <?php endwhile; ?>
+                </div>
+                </div>
+              </div>
+            </div>
+				<?php endif; ?>
+			<?php  elseif (strpos($url, 'junior-stakeholder') !== false): ?>
+			<div class="c-page-section">
+					 <div class="c-page-section__head">
+						 <h4 class="c-page-section__title--md">
+							  ダウンロード
+						 </h4>
+					 </div>
+              <div class="c-page-section__body">
+                <div class="c-page-section">
+                  <div class="c-btn-wrap">
+                    <?php while(have_rows('stakeholder-dl')): the_row(); ?>
+            <a href="<?php the_sub_field("stakeholder-dl_file")?>" class="c-btn" target="_blank">
+				<?php $stakeholder_dl_file=get_sub_field("stakeholder-dl_file");?>
+            <?php the_sub_field("stakeholder-dl_name");?><span class="u-icon-<?php 
+							  if(strrchr($stakeholder_dl_file, '.') == '.docx'||strrchr($stakeholder_dl_file, '.') == '.doc'):
+							  echo "word";
+							  elseif(strrchr($stakeholder_dl_file, '.') == '.pdf'):
+							  echo "pdf";
+							  elseif(strrchr($stakeholder_dl_file, '.') == '.xls'||strrchr($stakeholder_dl_file, '.') == '.xlsx'):
+							  echo "excel";
+							  endif;
+							  ?>"></span>
+            </a>
+            <?php endwhile; ?>
+                </div>
+                </div>
+              </div>
+            </div>
+				 
+				
+				<?php endif; ?>
 				 
 			</div>
-        </div>
+	</div>
         <?php get_template_part('advertise_banner'); ?>
       </main>
 

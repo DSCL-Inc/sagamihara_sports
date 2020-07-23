@@ -1,5 +1,4 @@
-.c-table {
-  font-size: 15px;
+table {
   font-weight: normal;
   text-align: left;
   line-height: 1.6;
@@ -10,19 +9,15 @@
   }
   tr {
     border-top: 1px solid #ddd;
-    &:last-child {
-      border-bottom: 1px solid #ddd;
-    }
   }
   th {
     padding: 16px 0;
-    font-size: 15px;
   }
   td {
     padding: 16px 0;
     padding-right: 20px;
-    line-height: 1.6;
     vertical-align: baseline;
+    line-height: 1.8;
     tr {
       border: none;
       &:last-child {
@@ -49,8 +44,14 @@
   }
 }
 
+.c-table--year {
+  @extend table;
+  td:first-child {
+    width: 300px;
+  }
+}
 .c-table--event {
-  @extend .c-table;
+  @extend table;
   .c-table--event__past {
     display: flex;
     a + a {
@@ -59,38 +60,27 @@
   }
 }
 
-.c-table--equal {
-  @extend .c-table;
-  table-layout: fixed;
-}
-
 @include mq(sm) {
-  .c-table {
-    font-size: 15px;
+  table {
     font-weight: normal;
     text-align: left;
     line-height: 1.6;
     width: 100%;
     td:first-child {
-      width: 100%;
+      width: 100% !important;
       display: block;
-      padding: 0 0 4px;
+      font-size: 14px;
     }
     tr {
       display: block;
-      &:first-child {
-        padding-top: 8px;
-      }
-      + tr {
-        padding-top: 8px;
-      }
+      padding-top: 16px;
+      padding-bottom: 16px;
     }
     th {
       padding: 16px 0;
-      font-size: 15px;
     }
     td {
-      padding: 0 0 8px;
+      padding: 0 0 12px;
     }
     table {
       tr,

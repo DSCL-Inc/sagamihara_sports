@@ -30,6 +30,8 @@
   display: flex;
   padding: 24px 0;
   @include transition($property: color);
+  text-decoration: none;
+  color: $font-black;
   & + .p-calender-list__item {
     border-top: 1px solid #ddd;
   }
@@ -40,7 +42,7 @@
 .p-calender-list__item__date {
   width: 120px;
   flex-shrink: 0;
-  font-size: 15px;
+
   line-height: 1.6;
 }
 .p-calender-list__item__title {

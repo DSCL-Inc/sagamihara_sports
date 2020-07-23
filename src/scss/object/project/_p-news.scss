@@ -4,7 +4,7 @@
   width: auto;
   display: flex;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
   border: 2px solid #ddd;
   background-color: #fff;
 }
@@ -16,46 +16,56 @@
 }
 .p-news-nav__item {
   position: relative;
-  font-size: 16px;
   padding: 12px 0;
   box-sizing: border-box;
   width: 20%;
   text-align: center;
   cursor: pointer;
+  text-decoration: none;
+  color: $font-black;
+  font-size: 75%;
   &.is-active {
     font-weight: bold;
+    color: #fff;
+    a {
+      color: #fff;
+    }
   }
-
   &.p-news-nav__item--all.is-active {
     background-color: $color-theme;
-    color: #fff;
   }
   &.p-news-nav__item--news.is-active {
     background-color: $color-news;
-    color: #fff;
   }
   &.p-news-nav__item--event.is-active {
     background-color: $color-event;
-    color: #fff;
   }
   &.p-news-nav__item--junior.is-active {
     background-color: $color-junior;
-    color: #fff;
   }
   &.p-news-nav__item--member.is-active {
     background-color: $color-member;
-    color: #fff;
   }
   &.p-news-nav__item--magazine.is-active {
     background-color: $color-magazine;
-    color: #fff;
   }
 }
-
+.p-news-nav__item__link {
+  text-decoration: none;
+  color: $font-black;
+  @include transition($property: color);
+  &:hover {
+    color: $color-theme;
+  }
+}
+.p-news-list__item__link {
+  text-decoration: none;
+  color: $font-black;
+}
 .p-news-list__item {
   background-color: #fff;
   box-sizing: border-box;
-  padding: 16px 0;
+  padding: 12px 0;
   @include transition;
   border-bottom: 1px dotted #dddddd;
 }
@@ -66,7 +76,7 @@
 }
 .p-news-list__item-tag {
   font-size: 10px;
-  padding: 6px 8px;
+  padding: 1px 7px;
   border-radius: 20px;
   border: 1px solid;
   font-weight: bold;
@@ -96,8 +106,7 @@
   }
 }
 .p-news-list__item-title {
-  font-size: 15px;
-  margin-top: 12px;
+  margin-top: 4px;
 }
 
 .p-news-detail {
@@ -155,7 +164,7 @@
   line-height: 1.4;
 }
 .p-news-detail__body {
-  margin-top: 20px;
+  margin-top: 32px;
 }
 
 @include mq(md) {
@@ -166,6 +175,9 @@
 @include mq(sm) {
   .p-news-list__item-title {
     margin-top: 8px;
+  }
+  .p-news-detail__body {
+    margin-top: 28px;
   }
   .p-news-list__item-tag {
     padding: 2px 8px;

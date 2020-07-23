@@ -19,10 +19,10 @@
 .c-page-nav__item__link {
   padding: 16px 32px;
   color: #888;
-  font-size: 16px;
   font-weight: bold;
   display: block;
   background-color: #fff;
+  text-decoration: none;
 }
 @include mq(md) {
   .c-page-nav__item__link {
