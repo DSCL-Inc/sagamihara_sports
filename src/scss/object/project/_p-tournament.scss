@@ -13,15 +13,11 @@
     display: block;
     content: "";
     position: absolute;
-    height: 150px;
+    height: 100px;
     width: 100%;
     left: 0;
     bottom: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1)
-    );
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
   }
   &:after {
     display: block;
@@ -78,6 +74,10 @@ dt {
     width: calc(380px / 4);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    span {
+      font-size: 12px;
+    }
   }
   & > div:last-child {
     width: 100px;
@@ -237,9 +237,7 @@ dt {
   .p-tournament__table__row__item-wrap {
     margin-top: 16px;
   }
-  .p-tournament__table__body
-    .p-tournament__table__row__item
-    > div:not(.p-tournament__table__doc) {
+  .p-tournament__table__body .p-tournament__table__row__item > div:not(.p-tournament__table__doc) {
     width: 100%;
   }
   .p-tournament__table__head > div:not(.p-tournament__table__doc) {

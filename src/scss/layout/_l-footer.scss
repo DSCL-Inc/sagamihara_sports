@@ -56,11 +56,13 @@
   background-repeat: repeat-x;
   background-position: top;
   background-repeat: repeat-x;
+  padding-top: 16px;
+  margin-top: 16px;
 }
+
 .l-footer-top__list__item {
   position: relative;
   color: #fff;
-  padding: 16px 0;
   &.u-bold {
     font-size: 16px;
     display: flex;
@@ -212,6 +214,7 @@
   .l-footer-top__list__item {
     padding: 0;
   }
+
   .l-footer-bottom__left {
     flex-direction: column;
     align-items: flex-start;
