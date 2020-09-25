@@ -2,6 +2,7 @@
 /**
  * Template Name: アーカイブページ - 協会事業
  * Template Post Type: post, page
+
  */
 get_header();
 ?>

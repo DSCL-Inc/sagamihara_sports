@@ -75,8 +75,7 @@ endif;
         <div>
 			<?php the_sub_field('tournament_place'); ?><span class="u-icon--external"></span>
 		  </div>
-        <div  class="p-tournament__table__doc">
-          <div>
+        <div  class="p-tournament__table__doc"><div>
 			 <?php
                           $tcp = get_sub_field('tournament_point');
                           $tcp_radio=$tcp['tournament_point_radio'];
@@ -98,9 +97,7 @@ endif;
 			  <?php if($tcp_comment):?>
                           <?php echo $tcp_comment;?>
                           <?php endif;?>
-			</div>
-          <div>
-			  <?php
+			</div><div><?php
                         $tca = get_sub_field('tournament_application');
                         $tca_radio=$tca['tournament_application_radio'];
                         $tca_file=$tca['tournament_application_file'];

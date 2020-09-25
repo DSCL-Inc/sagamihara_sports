@@ -1,5 +1,5 @@
 <div class="l-wrap page">
-        <section class="p-top-advertisement p-page-bottom-advertisement">
+        <section class="p-top-advertisement p-page-bottom">
             <div class="p-top-section__head">
               <h4 class="p-top-section__head__title">
                 <span
