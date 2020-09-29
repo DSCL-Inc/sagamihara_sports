@@ -1,4 +1,56 @@
-@import "setting/**";
-@import "foundation/**/**";
-@import "layout/**";
-@import "object/**";
+@import "setting/animation";
+@import "setting/breakpoints";
+@import "setting/color";
+@import "setting/fadein";
+@import "setting/font";
+@import "setting/mixin";
+@import "setting/svg";
+@import "setting/transition";
+
+@import "foundation/base";
+@import "foundation/print";
+@import "foundation/reset";
+
+@import "layout/l-content";
+@import "layout/l-flex";
+@import "layout/l-footer";
+@import "layout/l-header";
+@import "layout/l-row";
+@import "layout/l-wrap";
+
+@import "object/component/c-btn";
+@import "object/component/c-caption";
+@import "object/component/c-card";
+@import "object/component/c-loader";
+@import "object/component/c-page-mv";
+@import "object/component/c-page-nav";
+@import "object/component/c-section";
+@import "object/component/c-tab";
+@import "object/component/c-table";
+@import "object/component/c-text-box";
+
+@import "object/js/js_table_header_fixed";
+
+@import "object/project/p-access";
+@import "object/project/p-advertisement";
+@import "object/project/p-contact";
+@import "object/project/p-junior";
+@import "object/project/p-member-modal";
+@import "object/project/p-news";
+@import "object/project/p-pagenaiton";
+@import "object/project/p-project";
+@import "object/project/p-project_detail";
+@import "object/project/p-top";
+@import "object/project/p-tournament";
+
+@import "object/utility/responsive";
+@import "object/utility/u_col";
+@import "object/utility/u-icon";
+@import "object/utility/u-shadow";
+@import "object/utility/u-utility";
+@import "object/utility/wp";
+
+//@import "setting/**";
+//@import "foundation/**/**";
+//@import "layout/**";
+//@import "object/**";
