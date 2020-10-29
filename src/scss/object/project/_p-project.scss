@@ -1,14 +1,3 @@
-.p-project-detail__img {
-  width: 100%;
-  height: 0;
-  padding-top: 60%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  img {
-    @include absolute-center-xy;
-  }
-}
 .p-calender-list__row {
   border-bottom: 1px solid #ddd;
   display: flex;
@@ -59,20 +48,10 @@
      and image tag is modified by transform and absolute axis.
   */
 
-  width: 165px;
-  height:0;
-  position:relative;
-  padding:6.5% 0 0 0;
-  overflow:hidden;
-  border-radius:5px;
-  img{
-     position:absolute;
-     left:50%;
-     top:50%;
-     transform:translate(-50%, -50%);
-  }
+  width: 120px;
+  overflow: hidden;
+  border-radius: 5px;
 
-  
   /* New Style Candidate 1 :
      The image will be scaled 100% for both width and height.
      Note that this feature ignores the original aspect ratio.
