@@ -136,6 +136,7 @@
 }
 .p-top-info {
   justify-content: space-between;
+  align-content:stretch;
 }
 .p-top-news {
   width: calc(100% - 420px);
@@ -149,7 +150,7 @@
 .p-top-sns {
   margin-left: 40px;
   width: 380px;
-  height: 544px;
+
   flex-shrink: 0;
   .p-top-section__head__title {
     height: 80px;
@@ -157,7 +158,8 @@
     width: 100%;
   }
   .l-content {
-    height: 464px;
+    height : calc(100% - 120px);
+    /* height: 464px; */
   }
 }
 .u-icon-facebook {
@@ -315,6 +317,9 @@
 @include mq(md) {
   .p-top__section:first-child {
     margin-top: 32px;
+  }
+  .p-top-sns{
+    height: 544px; 
   }
   .p-top-sns__facebook {
     width: 100%;

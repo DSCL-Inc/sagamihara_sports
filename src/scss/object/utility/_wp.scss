@@ -11,12 +11,12 @@
     position: relative;
     padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
 
-    height: 202px !important;
+    height:202px !important;
     overflow: hidden;
-    .wp-block-embed__wrapper {
-      height: 202px !important;
+    .wp-block-embed__wrapper{
+      height:202px !important;
       iframe {
-        //position: absolute;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;

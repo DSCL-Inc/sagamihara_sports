@@ -52,7 +52,39 @@
   width: 100%;
 }
 .p-calender-list__item__img {
-  width: 120px;
+  /* Modified on 29 Oct, 2020 */
+  /* New Style Candidate 2 :
+     Style is imitating the picture on detail pages ... 
+     such as frame's corners are softened by border-radius,
+     and image tag is modified by transform and absolute axis.
+  */
+
+  width: 165px;
+  height:0;
+  position:relative;
+  padding:6.5% 0 0 0;
+  overflow:hidden;
+  border-radius:5px;
+  img{
+     position:absolute;
+     left:50%;
+     top:50%;
+     transform:translate(-50%, -50%);
+  }
+
+  
+  /* New Style Candidate 1 :
+     The image will be scaled 100% for both width and height.
+     Note that this feature ignores the original aspect ratio.
+
+  width: 165px;
+  height:68px;
+  overflow:hidden;
+  img{
+     width:100% !important;
+     height:100% !important;
+  }
+  */
 }
 
 .p-event-report__gallery {
