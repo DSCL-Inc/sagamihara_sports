@@ -2795,6 +2795,70 @@ dt {
     width: 100%;
     text-align: left; } }
 
+.p-password__wrap {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../image/bg.png);
+  background-size: 200px;
+  background-repeat: repeat;
+  padding-bottom: 120px; }
+
+.p-password__body {
+  border: 1px solid #ddd;
+  max-width: 600px;
+  width: 88%;
+  margin: 0 auto;
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff; }
+  .p-password__body p {
+    font-size: 16px;
+    line-height: 1.6; }
+  .p-password__body h2 {
+    font-size: 24px;
+    margin-bottom: 32px;
+    line-height: 1.4; }
+
+.p-password__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+  .p-password__form label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; }
+  .p-password__form input[type="password"] {
+    border: 1px solid #ddd;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 12px;
+    max-width: 200px;
+    width: 100%;
+    font-size: 20px;
+    padding: 8px; }
+  .p-password__form input[type="Submit"] {
+    border: 1px solid #ddd;
+    display: block;
+    background-color: #434acc;
+    width: 180px;
+    height: 60px;
+    padding: 20px;
+    font-size: 20px;
+    margin: 40px auto 0;
+    color: #fff;
+    border-radius: 10px;
+    border-radius: 10px;
+    line-height: 1; }
+
 .sp-only {
   display: none; }
 
