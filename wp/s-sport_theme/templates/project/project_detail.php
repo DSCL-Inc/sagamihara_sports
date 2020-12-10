@@ -27,7 +27,13 @@
 			  					 if ($project_form_radio== 'フォームあり'):
 				    $project_form_id = $project_form[$post_type.'_form_id'];  
                         ?>
-			   <a class="c-btn--primary u-center u-m-top40" href="<?php echo esc_url( home_url( '/$post_type' ) ); ?>/form?id=<?php echo $project_form_id;?>">申し込む<span class="u-icon-link--white"></span></a>
+            <?php
+                  $ivan2 = get_post_type(); 
+                  $ivan = esc_url( home_url( '/' )) . $ivan2 . '/form?id=' . $project_form_id;
+            ?>
+			   <a class="c-btn--primary u-center u-m-top40" href="<?php echo $ivan;?>">
+               申し込む<span class="u-icon-link--white"></span>
+               </a>
 			  <?php elseif($project_form_radio == 'フォームなし'):
 				  $project_form_comment = $project_form[$post_type.'_form_comment'];  
 				  ?>
