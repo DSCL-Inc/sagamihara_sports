@@ -5,13 +5,12 @@
 
  */
 get_header();
-if($_GET["y"]):
-$y=$_GET["y"];
-else:
-$y=get_the_time("Y");
-endif;
-
 ?>
+<?php if($_GET['y']):?>
+<?php $y=$_GET["y"];?>
+<?php elseif(!$_GET['y']):?>
+<?php $y=get_field("y_0_y_num");?>
+<?php endif;?>
    <?php get_template_part('template-parts/page-mv'); ?>
          <?php 
 							$args = array(
