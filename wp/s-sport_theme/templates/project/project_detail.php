@@ -80,9 +80,11 @@ if( $images ):
 			  <?php 
 							$args= array(
 								'post_type' => $post_type, 
-								'posts_per_page' => 4,
+								'posts_per_page' => 5,
+                    //          リンクが4つ表示されるよう修正
 					//			'meta_key'=>$post_type."_date_0_".$post_type."_date_item",
 								'orderby'=>"date",
+
 								'meta_query'=>array(
 								'relation'=>"AND",
 									array(
@@ -111,7 +113,8 @@ $query = new WP_Query($args);
 			  			endif;
 						?>
 						<?php if($post_year!=get_field($post_type."_year")):?>
-							<a href="<?php the_permalink(); ?>" class="c-btn"><?php echo $wraki?><span class="u-icon-link--blue"></span></a>
+							<a href="<?php the_permalink(); ?>" class="c-btn is--order<?php echo ($now_year - $past_project_year); ?>" style="order:<?php echo ($now_year - $past_project_year); ?> !important;"><?php echo $wraki ?><span class="u-icon-link--blue"></span></a>
+                        <?php /* flexレイアウトを使用し、project_yearの数値をもとに並べ替え */ ?>
 						<?php endif;?>
 					  <?php endforeach;?>
 					</div>
