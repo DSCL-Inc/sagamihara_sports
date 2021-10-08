@@ -70,7 +70,6 @@ if( $images ):
                     </a>
                     <?php endforeach; ?>
                   </div>
-                  
 	</div>
 					  <?php endif; ?>
 					  </div>
@@ -92,7 +91,6 @@ if( $images ):
 											'value'=>post_custom( $post_type."_category" ),
 											'compare'=>'=',
 										)
-									
 								)
 );
 $query = new WP_Query($args);

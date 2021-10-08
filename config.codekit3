@@ -2060,6 +2060,12 @@
 		"oAP": "/build/all-in-one-seo-pack/wpml-config.xml",
 		"oF": 0
 		},
+	"/build": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/build",
+		"oF": 0
+		},
 	"/redume.txt": {
 		"cB": 0,
 		"ft": 8192,
@@ -4843,6 +4849,17 @@
 		"iS": 12171,
 		"oA": 0,
 		"oAP": "/build/wp/s-sport_theme/assets/image/p-top_hedding-img_news.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"/wp/s-sport_theme/assets/image/p-top_hedding-img_related-links.png": {
+		"ft": 32768,
+		"iS": 22372,
+		"oA": 0,
+		"oAP": "/build/wp/s-sport_theme/assets/image/p-top_hedding-img_related-links.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 1,

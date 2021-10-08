@@ -26,7 +26,6 @@ echo <<<EOT
 </a>
 EOT;
 //ヒアドキュメント終了
-
                       endif;
                       $i++;
                     endwhile;

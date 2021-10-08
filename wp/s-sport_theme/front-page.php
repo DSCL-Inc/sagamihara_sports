@@ -89,7 +89,6 @@ get_header();
                         class="p-news-list__item-tag p-news-list__item-tag--<?php echo esc_html($term_slug);?>"
                       >
 						   <?php 
-                             
 								 echo esc_html($term_name);
                             ?>
                       </p>
@@ -225,8 +224,28 @@ get_header();
               </div>
             </div>
           </section>
+          <section class="p-top-activity p-top__section">
+            <div class="p-top-section__head">
+              <h3 class="p-top-section__head__title">
+                <span
+                  class="p-top-section__head__character p-top-section__head__character--related-links"
+                ></span
+                >関連リンク
+              </h3>
+            </div>
+            <div class="l-content u-shadow">
+              <div class="p-top-relatted-links">
+                <?php if(have_rows('top_related-banner')): ?>
+<?php while(have_rows('top_related-banner')): the_row(); ?>
+<a class="p-top-relatted-links__item" href="<?php the_sub_field('top_related-banner_url'); ?>" target="_blank">
+<img src="<?php the_sub_field('top_related-banner_image'); ?>" >
+                </a>
+<?php endwhile; ?>
+<?php endif; ?>
+              </div>
+            </div>
+          </section>
         </div>
-        
         <?php get_template_part('advertise_banner'); ?>
 
       </main>
