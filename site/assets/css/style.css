@@ -2513,8 +2513,10 @@ table,
 @media screen and (max-width: 768px) {
   .p-top-relatted-links__item {
     width: 30%; }
-  :not(:nth-child(3n + 1)) {
-    margin-left: 3%; } }
+    .p-top-relatted-links__item:not(:nth-child(5n + 1)) {
+      margin-left: 0; }
+    .p-top-relatted-links__item:not(:nth-child(3n + 1)) {
+      margin-left: 3%; } }
 
 /*
  	4. top-advertisement

@@ -275,8 +275,7 @@ display: flex; /* flexbox */
   width: 18%;
   display: inline-block;
 
-  &:not(:nth-child(5n + 1)){
-
+  &:not(:nth-child(5n + 1)) {
     margin-left: 2.5%;
   }
 
@@ -288,12 +287,16 @@ display: flex; /* flexbox */
 @include mq(md) {
   .p-top-relatted-links__item {
   width: 30%;
-  }
-  
-  &:not(:nth-child(3n + 1)){
 
+  &:not(:nth-child(5n + 1)) {
+    margin-left:0;
+  }
+
+  &:not(:nth-child(3n + 1)) {
     margin-left: 3%;
   }
+  }
+
 
 }
 
