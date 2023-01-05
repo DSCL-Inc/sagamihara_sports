@@ -7,7 +7,11 @@
               <?php the_title(); ?>
               </h4>
               <div class="p-project__lead">
-                <?php the_field("project_lead");?>
+			  	<?php if($post_type!="junior_project"): ?>
+                	<?php the_field("project_lead");;?>
+				<?php else:?>
+					<?php the_field("junior_project_lead");?>
+				<?php endif; ?>
               </div>
             </div>
 					<?php if(get_field($post_type."_thumbnail")):?>
@@ -31,7 +35,6 @@
 			  <?php elseif($project_form_radio == 'フォームなし'):
 				  $project_form_comment = $project_form[$post_type.'_form_comment'];  
 				  ?>
-				  
 				  <?php if($project_form_comment):?>
 				   <div class="u-m-top40">
 					   <?php echo $project_form_comment?>
