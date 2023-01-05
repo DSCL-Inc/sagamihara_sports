@@ -1,0 +1,267 @@
+0000.000 (0) Opened log file at time: Fri, 20 Mar 2020 08:40:25 +0000 on https://sagamihara-sport.or.jp/s-sport
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 2.16.22.24 WP: 5.3.2 PHP: 7.3.15 (apache2handler, FreeBSD www3388.sakura.ne.jp 9.1-RELEASE-p24 FreeBSD 9.1-RELEASE-p24 #0: Mon Dec 26 09:32:38 JST 2016     root@www3388.sakura.ne.jp:/usr/obj/usr/src/sys/SAKURA17 amd64) MySQL: 5.7.28-log WPLANG: ja Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 13.9M | 14M) multisite: N openssl: OpenSSL 1.0.2o  27 Mar 2018 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.024 (0) Free space on disk containing Updraft's temporary directory: 1343474.6 MB
+0000.028 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.037 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.040 (0) Set semaphore last lock (fd) time to 2020-03-20 08:40:25
+0000.041 (0) Semaphore lock (fd) complete
+0000.048 (0) Backup run: resumption=0, nonce=7b9f1b385879, file_nonce=7b9f1b385879 begun at=1584693625 (0s ago), job type=backup
+0000.050 (0) Scheduling a resumption (1) after 300 seconds (1584693925) in case this run gets aborted
+0000.148 (0) Checking if we have a zip executable available
+0000.150 (0) Testing: /usr/local/bin/zip
+0000.156 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.157 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.158 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.160 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.166 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.182 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.184 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.187 (0) Working binary zip found: /usr/local/bin/zip
+0000.189 (0) Zip engine: found/will use a binary zip: /usr/local/bin/zip
+0000.190 (0) Creation of backups of directories: beginning
+0000.195 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0003.006 (0) Total entities for the zip file: 821 directories, 4691 files (0 skipped as non-modified), 54.5 MB
+0003.008 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0003.120 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: size is now: 0.20 MB
+0003.138 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 100 files added (on-disk size: 191 KB)
+0003.154 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 200 files added (on-disk size: 191 KB)
+0003.170 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 300 files added (on-disk size: 191 KB)
+0003.184 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 400 files added (on-disk size: 191 KB)
+0003.202 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 500 files added (on-disk size: 191 KB)
+0003.203 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (13.3 MB, 4691 files batched, 501 (502) added so far); re-opening (prior size: 191 KB)
+0005.347 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: size is now: 3.30 MB
+0005.363 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 600 files added (on-disk size: 3398.5 KB)
+0005.380 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 700 files added (on-disk size: 3398.5 KB)
+0005.395 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 800 files added (on-disk size: 3398.5 KB)
+0005.412 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 900 files added (on-disk size: 3398.5 KB)
+0005.430 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1000 files added (on-disk size: 3398.5 KB)
+0005.431 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (4.6 MB, 4691 files batched, 501 (1003) added so far); re-opening (prior size: 3398.5 KB)
+0008.198 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: size is now: 4.60 MB
+0008.214 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1100 files added (on-disk size: 4695.1 KB)
+0008.228 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1200 files added (on-disk size: 4695.1 KB)
+0008.243 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1300 files added (on-disk size: 4695.1 KB)
+0008.258 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1400 files added (on-disk size: 4695.1 KB)
+0008.275 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1500 files added (on-disk size: 4695.1 KB)
+0008.278 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (3.1 MB, 4691 files batched, 501 (1504) added so far); re-opening (prior size: 4695.1 KB)
+0010.598 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: size is now: 5.60 MB
+0010.615 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1600 files added (on-disk size: 5692.6 KB)
+0010.631 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1700 files added (on-disk size: 5692.6 KB)
+0010.648 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1800 files added (on-disk size: 5692.6 KB)
+0010.661 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 1900 files added (on-disk size: 5692.6 KB)
+0010.676 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2000 files added (on-disk size: 5692.6 KB)
+0010.678 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (8.6 MB, 4691 files batched, 501 (2005) added so far); re-opening (prior size: 5692.6 KB)
+0013.764 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: size is now: 8.50 MB
+0013.780 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2100 files added (on-disk size: 8698.5 KB)
+0013.794 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2200 files added (on-disk size: 8698.5 KB)
+0013.809 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2300 files added (on-disk size: 8698.5 KB)
+0013.823 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2400 files added (on-disk size: 8698.5 KB)
+0013.837 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2500 files added (on-disk size: 8698.5 KB)
+0013.839 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (2.7 MB, 4691 files batched, 501 (2506) added so far); re-opening (prior size: 8698.5 KB)
+0014.973 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2600 files added (on-disk size: 9444.9 KB)
+0014.988 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2700 files added (on-disk size: 9444.9 KB)
+0015.002 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2800 files added (on-disk size: 9444.9 KB)
+0015.018 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 2900 files added (on-disk size: 9444.9 KB)
+0015.032 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3000 files added (on-disk size: 9444.9 KB)
+0015.034 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (2.9 MB, 4691 files batched, 501 (3007) added so far); re-opening (prior size: 9444.9 KB)
+0017.257 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3100 files added (on-disk size: 10362.1 KB)
+0017.271 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3200 files added (on-disk size: 10362.1 KB)
+0017.285 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3300 files added (on-disk size: 10362.1 KB)
+0017.297 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3400 files added (on-disk size: 10362.1 KB)
+0017.309 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3500 files added (on-disk size: 10362.1 KB)
+0017.311 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (4.7 MB, 4691 files batched, 501 (3508) added so far); re-opening (prior size: 10362.1 KB)
+0019.971 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3600 files added (on-disk size: 12086.6 KB)
+0019.984 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3700 files added (on-disk size: 12086.6 KB)
+0019.997 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3800 files added (on-disk size: 12086.6 KB)
+0020.010 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 3900 files added (on-disk size: 12086.6 KB)
+0020.025 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 4000 files added (on-disk size: 12086.6 KB)
+0020.027 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (9.5 MB, 4691 files batched, 501 (4009) added so far); re-opening (prior size: 12086.6 KB)
+0022.853 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: size is now: 14.80 MB
+0022.871 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 4100 files added (on-disk size: 15143.7 KB)
+0022.888 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 4200 files added (on-disk size: 15143.7 KB)
+0022.903 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 4300 files added (on-disk size: 15143.7 KB)
+0022.918 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 4400 files added (on-disk size: 15143.7 KB)
+0022.931 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 4500 files added (on-disk size: 15143.7 KB)
+0022.933 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (3.1 MB, 4691 files batched, 501 (4510) added so far); re-opening (prior size: 15143.7 KB)
+0025.734 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip.tmp: 4600 files added (on-disk size: 16216.7 KB)
+0027.128 (0) Created plugins zip (0) - 16879.7 KB in 26.9 s (627.7 KB/s) (sha1: 7713d0140df7ba148b7e55600141f50747d2edb1, sha256: d533ea0b2dddc485b8cc1ef22fceb61f40f63de4f2a2e2a23edcdaaef8e0774b)
+0027.131 (0) Beginning creation of dump of themes (split every: 400 MB)
+0027.165 (0) Total entities for the zip file: 11 directories, 129 files (0 skipped as non-modified), 8.3 MB
+0027.181 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0027.272 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-themes.zip.tmp: size is now: 8.00 MB
+0027.401 (0) Created themes zip (0) - 8171.2 KB in 0.3 s (32555.6 KB/s) (sha1: c26536816ad77d2fa46b4df5fa18c66900f6b5ea, sha256: b4143f73e85400a68639264785c944e6446db9b77f09b7bb22ea626e553e7653)
+0027.405 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0027.406 (0) Looking for candidates to backup in: /home/s-sports/www/s-sport/s-sport/wp-content/uploads
+0027.407 (0) finding files: 2020: adding to list (1)
+0027.408 (0) finding files: backwpup-fa5568-logs: skipping: excluded by options (glob)
+0027.409 (0) finding files: backwpup-fa5568-temp: skipping: excluded by options (glob)
+0027.410 (0) finding files: wpcf7_uploads: adding to list (2)
+0027.411 (0) finding files: mw-wp-form_uploads: adding to list (3)
+0027.412 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0027.528 (0) Total entities for the zip file: 5 directories, 895 files (0 skipped as non-modified), 85.1 MB
+0027.541 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0027.548 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25.1 MB, 895 files batched, 158 (158) added so far); re-opening (prior size: 0 KB)
+0029.781 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: size is now: 23.80 MB
+0029.785 (0) A useful amount of data was added after this amount of zip processing: 3.3 s (normalised: 3.3 s, rate: 7804 KB/s)
+0029.787 (0) Performance is good - will increase the amount of data we attempt to batch (time=3.2968020439148, normalised_time=3.280377008628, max_time=29.785799980164, data points known=1, old_max_bytes=26214400, new_max_bytes=142815939)
+0029.795 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: 200 files added (on-disk size: 24385.8 KB)
+0029.807 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: 300 files added (on-disk size: 24385.8 KB)
+0029.819 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: 400 files added (on-disk size: 24385.8 KB)
+0029.836 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: 500 files added (on-disk size: 24385.8 KB)
+0029.848 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: 600 files added (on-disk size: 24385.8 KB)
+0029.855 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (41.2 MB, 895 files batched, 501 (659) added so far); re-opening (prior size: 24385.8 KB)
+0033.753 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: size is now: 64.40 MB
+0033.761 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: 700 files added (on-disk size: 65898.1 KB)
+0033.773 (0) Zip: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: 800 files added (on-disk size: 65898.1 KB)
+0036.678 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip.tmp: size is now: 82.30 MB
+0038.150 (0) Created uploads zip (0) - 84317.9 KB in 10.7 s (7866.2 KB/s) (sha1: 5cbdeebdab496b0ae80ebb0adf2e9ee230fff8d2, sha256: aa30200de9e6435f21dd60405c9bb65aa7c8b34b93a45a8f8ab4f477550bad12)
+0038.152 (0) No backup of wpcore: excluded by user's options
+0038.155 (0) Beginning backup of other directories found in the content directory (index: 0)
+0038.156 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0038.157 (0) Looking for candidates to backup in: /home/s-sports/www/s-sport/s-sport/wp-content
+0038.158 (0) finding files: themes: skipping: this is the themes directory
+0038.159 (0) finding files: languages: adding to list (1)
+0038.160 (0) finding files: plugins: skipping: this is the plugins directory
+0038.161 (0) finding files: index.php: adding to list (2)
+0038.162 (0) finding files: uploads: skipping: this is the uploads directory
+0038.163 (0) finding files: upgrade: skipping: excluded by options
+0038.164 (0) finding files: aiowps_backups: skipping: excluded by options (glob)
+0038.166 (0) finding files: updraft: skipping: this is the updraft directory
+0038.211 (0) Total entities for the zip file: 3 directories, 57 files (0 skipped as non-modified), 3.1 MB
+0038.627 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-others.zip.tmp: size is now: 0.90 MB
+0038.647 (0) Created others zip (0) - 899 KB in 0.4 s (2017 KB/s) (sha1: 77aeff9ca448b8221f85f871d7d7980c94b15bae, sha256: ac3b85a74ba9c4a3f1a26ec434244d8f9006c9bbc4555cbb80e3d1bf505fe50b)
+0038.650 (0) No backup of more: excluded by user's options
+0038.655 (0) Saving backup status to database (elements: 8)
+0038.659 (0) Beginning creation of database dump (WordPress DB)
+0038.674 (0) Testing potential mysqldump binary: /usr/local/bin/mysqldump
+0039.919 (0) Output: /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\nDROP TABLE IF EXISTS `wp37edacoptions`;\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\n/*!40101 SET character_set_client = utf8 */ (truncated - 1280 bytes total)
+0039.922 (0) Working binary mysqldump found: /usr/local/bin/mysqldump
+0039.982 (0) Table wp37edacoptions: Total expected rows (approximate): 305
+0039.998 (0) Table wp37edacoptions: Total rows added: 301 in 0.02 seconds
+0040.000 (0) Table wp37edacoptions: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacoptions.table.gz - 22.5 KB)
+0040.004 (0) Table wp37edacusers: Total expected rows (approximate): 0
+0040.008 (0) Table wp37edacusers: Total rows added: 1 in 0.00 seconds
+0040.009 (0) Table wp37edacusers: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacusers.table.gz - 0.6 KB)
+0040.013 (0) Table wp37edacusermeta: Total expected rows (approximate): 64
+0040.017 (0) Table wp37edacusermeta: Total rows added: 66 in 0.00 seconds
+0040.019 (0) Table wp37edacusermeta: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacusermeta.table.gz - 3.6 KB)
+0040.023 (0) Table wp37edaccommentmeta: Total expected rows (approximate): 0
+0040.026 (0) Table wp37edaccommentmeta: Total rows added: 0 in 0.00 seconds
+0040.027 (0) Table wp37edaccommentmeta: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edaccommentmeta.table.gz - 0.4 KB)
+0040.031 (0) Table wp37edaccomments: Total expected rows (approximate): 0
+0040.035 (0) Table wp37edaccomments: Total rows added: 1 in 0.00 seconds
+0040.036 (0) Table wp37edaccomments: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edaccomments.table.gz - 0.9 KB)
+0040.040 (0) Table wp37edaclinks: Total expected rows (approximate): 0
+0040.043 (0) Table wp37edaclinks: Total rows added: 0 in 0.00 seconds
+0040.044 (0) Table wp37edaclinks: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edaclinks.table.gz - 0.4 KB)
+0040.049 (0) Table wp37edacpostmeta: Total expected rows (approximate): 63004
+0041.591 (0) Table wp37edacpostmeta: binary mysqldump finished (writes: 39) in 1.54 seconds
+0041.593 (0) Table wp37edacpostmeta: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacpostmeta.table.gz - 729.6 KB)
+0041.598 (0) Table wp37edacposts: Total expected rows (approximate): 1016
+0041.813 (0) Table wp37edacposts: Total rows added: 1517 in 0.21 seconds
+0041.814 (0) Table wp37edacposts: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacposts.table.gz - 194.6 KB)
+0041.826 (0) Table wp37edacterm_relationships: Total expected rows (approximate): 243
+0041.841 (0) Table wp37edacterm_relationships: Total rows added: 243 in 0.00 seconds
+0041.847 (0) Table wp37edacterm_relationships: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacterm_relationships.table.gz - 1 KB)
+0041.852 (0) Table wp37edacterm_taxonomy: Total expected rows (approximate): 13
+0041.856 (0) Table wp37edacterm_taxonomy: Total rows added: 15 in 0.00 seconds
+0041.858 (0) Table wp37edacterm_taxonomy: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacterm_taxonomy.table.gz - 0.6 KB)
+0041.865 (0) Table wp37edactermmeta: Total expected rows (approximate): 12
+0041.869 (0) Table wp37edactermmeta: Total rows added: 12 in 0.00 seconds
+0041.871 (0) Table wp37edactermmeta: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edactermmeta.table.gz - 0.5 KB)
+0041.876 (0) Table wp37edacterms: Total expected rows (approximate): 13
+0041.880 (0) Table wp37edacterms: Total rows added: 15 in 0.00 seconds
+0041.882 (0) Table wp37edacterms: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacterms.table.gz - 0.9 KB)
+0041.887 (0) Table wp37edacadmin_columns: Total expected rows (approximate): 0
+0041.891 (0) Table wp37edacadmin_columns: Total rows added: 2 in 0.00 seconds
+0041.893 (0) Table wp37edacadmin_columns: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacadmin_columns.table.gz - 0.8 KB)
+0041.898 (0) Table wp37edacaiowps_events: Total expected rows (approximate): 0
+0041.901 (0) Table wp37edacaiowps_events: Total rows added: 0 in 0.00 seconds
+0041.902 (0) Table wp37edacaiowps_events: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_events.table.gz - 0.4 KB)
+0041.907 (0) Table wp37edacaiowps_failed_logins: Total expected rows (approximate): 0
+0041.911 (0) Table wp37edacaiowps_failed_logins: Total rows added: 2 in 0.00 seconds
+0041.912 (0) Table wp37edacaiowps_failed_logins: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_failed_logins.table.gz - 0.5 KB)
+0041.918 (0) Table wp37edacaiowps_global_meta: Total expected rows (approximate): 0
+0041.921 (0) Table wp37edacaiowps_global_meta: Total rows added: 0 in 0.00 seconds
+0041.922 (0) Table wp37edacaiowps_global_meta: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_global_meta.table.gz - 0.4 KB)
+0041.928 (0) Table wp37edacaiowps_login_activity: Total expected rows (approximate): 32
+0041.933 (0) Table wp37edacaiowps_login_activity: Total rows added: 42 in 0.00 seconds
+0041.935 (0) Table wp37edacaiowps_login_activity: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_login_activity.table.gz - 0.9 KB)
+0041.940 (0) Table wp37edacaiowps_login_lockdown: Total expected rows (approximate): 0
+0041.943 (0) Table wp37edacaiowps_login_lockdown: Total rows added: 0 in 0.00 seconds
+0041.944 (0) Table wp37edacaiowps_login_lockdown: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_login_lockdown.table.gz - 0.4 KB)
+0041.951 (0) Table wp37edacaiowps_permanent_block: Total expected rows (approximate): 0
+0041.955 (0) Table wp37edacaiowps_permanent_block: Total rows added: 0 in 0.00 seconds
+0041.956 (0) Table wp37edacaiowps_permanent_block: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_permanent_block.table.gz - 0.4 KB)
+0041.961 (0) Table wp37edacredirection_404: Total expected rows (approximate): 0
+0041.965 (0) Table wp37edacredirection_404: Total rows added: 0 in 0.00 seconds
+0041.966 (0) Table wp37edacredirection_404: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacredirection_404.table.gz - 0.4 KB)
+0041.970 (0) Table wp37edacredirection_groups: Total expected rows (approximate): 2
+0041.975 (0) Table wp37edacredirection_groups: Total rows added: 2 in 0.00 seconds
+0041.976 (0) Table wp37edacredirection_groups: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacredirection_groups.table.gz - 0.5 KB)
+0041.982 (0) Table wp37edacredirection_items: Total expected rows (approximate): 0
+0041.985 (0) Table wp37edacredirection_items: Total rows added: 0 in 0.00 seconds
+0041.986 (0) Table wp37edacredirection_items: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacredirection_items.table.gz - 0.5 KB)
+0041.991 (0) Table wp37edacredirection_logs: Total expected rows (approximate): 0
+0041.994 (0) Table wp37edacredirection_logs: Total rows added: 0 in 0.00 seconds
+0041.996 (0) Table wp37edacredirection_logs: finishing file (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacredirection_logs.table.gz - 0.4 KB)
+0042.001 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacoptions.table.gz (1/23): adding to final database dump
+0042.024 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacusers.table.gz (2/23): adding to final database dump
+0042.025 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacusermeta.table.gz (3/23): adding to final database dump
+0042.027 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edaccommentmeta.table.gz (4/23): adding to final database dump
+0042.029 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edaccomments.table.gz (5/23): adding to final database dump
+0042.031 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edaclinks.table.gz (6/23): adding to final database dump
+0042.032 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacpostmeta.table.gz (7/23): adding to final database dump
+0042.239 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacposts.table.gz (8/23): adding to final database dump
+0042.306 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacterm_relationships.table.gz (9/23): adding to final database dump
+0042.309 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacterm_taxonomy.table.gz (10/23): adding to final database dump
+0042.310 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edactermmeta.table.gz (11/23): adding to final database dump
+0042.311 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacterms.table.gz (12/23): adding to final database dump
+0042.313 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacadmin_columns.table.gz (13/23): adding to final database dump
+0042.314 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_events.table.gz (14/23): adding to final database dump
+0042.315 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_failed_logins.table.gz (15/23): adding to final database dump
+0042.316 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_global_meta.table.gz (16/23): adding to final database dump
+0042.316 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_login_activity.table.gz (17/23): adding to final database dump
+0042.318 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_login_lockdown.table.gz (18/23): adding to final database dump
+0042.319 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacaiowps_permanent_block.table.gz (19/23): adding to final database dump
+0042.320 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacredirection_404.table.gz (20/23): adding to final database dump
+0042.321 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacredirection_groups.table.gz (21/23): adding to final database dump
+0042.322 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacredirection_items.table.gz (22/23): adding to final database dump
+0042.323 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db-table-wp37edacredirection_logs.table.gz (23/23): adding to final database dump
+0042.325 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db.gz: finished writing out complete database file (928 KB)
+0042.370 (0) Total database tables backed up: 23 (backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db.gz, size: 978318, sha1: 99f90ab52cbb3b314ba7f3b9dc12ec10ecb5906b, sha256: 7e22386cd9f30a2054ef3d356fc370e69b22d5f963beb4bed9fba130e39fe56b)
+0042.381 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0042.381 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0042.382 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0042.383 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-others.zip: others: This file has not yet been successfully uploaded: will queue
+0042.384 (0) backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db.gz: db: This file has not yet been successfully uploaded: will queue
+0042.386 (0) Saving backup history. Total backup size: 108.6 MB
+0042.390 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0042.393 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0042.394 (0) No remote despatch: user chose no remote backup service
+0042.395 (0) Recording as successfully uploaded: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-plugins.zip
+0042.398 (0) Recording as successfully uploaded: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-themes.zip
+0042.401 (0) Recording as successfully uploaded: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-uploads.zip
+0042.404 (0) Recording as successfully uploaded: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-others.zip
+0042.406 (0) Recording as successfully uploaded: backup_2020-03-20-1740_sagamiharasportorjp_7b9f1b385879-db.gz
+0042.411 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0042.414 (0) Number of backup sets in history: 2; groups (db): 1
+0042.414 (0) Examining (for databases) backup set with group_id=0, nonce=7b9f1b385879, datestamp=1584693625 (Mar 20 2020 08:40:25)
+0042.415 (0) This backup set is the backup set just made, so will not be deleted.
+0042.415 (0) Examining (for databases) backup set with group_id=0, nonce=7692614e9574, datestamp=1584401293 (Mar 16 2020 23:28:13)
+0042.415 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0042.416 (0) Number of backup sets in history: 2; groups (files): 1
+0042.417 (0) Examining (for files) backup set with nonce=7b9f1b385879, datestamp=1584693625 (Mar 20 2020 08:40:25)
+0042.417 (0) This backup set is the backup set just made, so will not be deleted.
+0042.418 (0) This backup set is the backup set just made, so will not be deleted.
+0042.418 (0) This backup set is the backup set just made, so will not be deleted.
+0042.418 (0) This backup set is the backup set just made, so will not be deleted.
+0042.418 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0042.419 (0) Examining (for files) backup set with nonce=7692614e9574, datestamp=1584401293 (Mar 16 2020 23:28:13)
+0042.419 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0042.420 (0) Retain: saving new backup history (sets now: 2) and finishing retain operation
+0042.423 (0) Resume backup (7b9f1b385879, 0): finish run
+0042.426 (0) Decremented the semaphore (fd) by 1
+0042.428 (0) Semaphore (fd) unlocked
+0042.428 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0042.432 (0) No email will/can be sent - the user has not configured an email address.
+0042.633 (0) The backup apparently succeeded and is now complete
