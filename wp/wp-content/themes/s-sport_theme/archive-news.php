@@ -79,8 +79,7 @@ $the_query = new WP_Query( array(
                       <p
                         class="p-news-list__item-tag p-news-list__item-tag--<?php echo esc_html($term_slug);?>"
                       >
-						   <?php 
-                             
+						   <?php
 								 echo esc_html($term_name);
                             ?>
                       </p>

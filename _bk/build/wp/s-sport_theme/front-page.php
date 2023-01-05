@@ -169,55 +169,55 @@ get_header();
               <div class="p-top-activity__sub">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>supportingmember" class="c-btn">
                   <p class="c-btn__title">
-                    <span class="u-icon-activity--support"></span>
+                    <span class="c-btn-icon u-icon-activity--support"></span>
                     賛助会員
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>award" class="c-btn">
                   <p class="c-btn__title">
-                    <span class="u-icon-activity--award"></span>
+                    <span class="c-btn-icon u-icon-activity--award"></span>
                     表彰
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>character" class="c-btn">
                   <p class="c-btn__title">
-                    <span class="u-icon-activity--character"></span>
+                    <span class="c-btn-icon u-icon-activity--character"></span>
                     マスコットキャラクター
                   </p>
                   <span class="u-icon-link--blue"></span>
                 </a>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>facility" class="c-btn">
                   <p class="c-btn__title">
-                    <span class="u-icon-activity--facility"></span>指定管理者施設
+                    <span class="c-btn-icon u-icon-activity--facility"></span>指定管理者施設
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>volunteer" class="c-btn">
                   <p class="c-btn__title">
-                    <span class="u-icon-activity--volunteer"></span>
+                    <span class="c-btn-icon u-icon-activity--volunteer"></span>
                     スポーツボランティア
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>kanbajji" class="c-btn">
                   <p class="c-btn__title">
-                    <span class="u-icon-activity--badge"></span>
+                    <span class="c-btn-icon u-icon-activity--badge"></span>
                     オリジナル缶バッチ
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>support-activities" class="c-btn">
                   <p class="c-btn__title">
-                    <span class="u-icon-activity--cooperation"></span>
+                    <span class="c-btn-icon u-icon-activity--cooperation"></span>
                     震災支援活動への協力
                   </p>
                   <span class="u-icon-link--blue"> </span>
                 </a>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>magazine" class="c-btn">
                   <p class="c-btn__title">
-                    <span class="u-icon-activity--magazine"></span>
+                    <span class="c-btn-icon u-icon-activity--magazine"></span>
 					  スポーツさがみはら</p>
                   <span class="u-icon-link--blue"> </span>
                 </a>

@@ -5,22 +5,27 @@
 .l-content {
   border-radius: 10px;
   background-color: #fff;
-  padding: 48px;
+  padding: 40px;
   width: 100%;
   overflow: hidden;
+  flex-grow: 1;
+  
   + .l-content {
     margin-top: 60px;
   }
 }
+
 @include mq(xl) {
   .l-content {
     padding: 32px;
   }
 }
+
 @include mq(md) {
   .l-content {
     padding: 20px;
   }
+  
   .c-page-container {
     padding-top: 28px;
   }

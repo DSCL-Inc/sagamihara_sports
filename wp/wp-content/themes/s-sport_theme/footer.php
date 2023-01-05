@@ -73,18 +73,9 @@
         </ul>
       </div>
       <div class="l-footer-top__column__item">
-        <a href="https://www.facebook.com/sagamihara.sport.association/" class="l-footer-top__btn" target="_blank">
-          <p class="l-footer-top__btn__title">
-            <span class="u-icon-facebook"></span>
-            公式Facebookアカウント
-          </p>
-          <span class="u-icon-external"></span>
-        </a>
         <a href="http://www.city.sagamihara.kanagawa.jp/shisetsu/sports/index.html" class="l-footer-top__btn" target="_blank">
-          <p class="l-footer-top__btn__title">
-            <span class="u-icon-facility"></span>
-            市内スポーツ施設
-          </p>
+          <span class="l-footer-top__btn-icon u-icon-facility"></span>
+          <p class="l-footer-top__btn__title">市内スポーツ施設</p>
           <span class="u-icon-external"></span>
         </a>
       </div>

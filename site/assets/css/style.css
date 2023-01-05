@@ -891,7 +891,7 @@ input[type="submit"] {
   color: #1e1e1e; }
   .c-btn:nth-child(n + 5), .c-btn--primary:nth-child(n + 5), .c-btn--primary a:nth-child(n + 5) {
     margin-top: 12px; }
-  .c-btn span, .c-btn--primary span {
+  .c-btn .u-icon-link--blue, .c-btn--primary .u-icon-link--blue {
     width: 32px;
     height: 32px;
     position: absolute;
