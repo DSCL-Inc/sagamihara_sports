@@ -16,8 +16,9 @@ get_header();
             />
           </picture>
         </section>
-        <section class="p-top-banner">
-        <?php if(have_rows('top_mv_under_banner')): ?>
+<!-- bug 修正中
+          <section class="p-top-banner">
+          <?php if(have_rows('top_mv_under_banner')): ?>
           <div class="p-top-banner__slide js-slick">
           <?php while(have_rows('top_mv_under_banner')): the_row(); ?>
           <?php $group_name=get_sub_field('top_mv_under_banner_group'); ?>
@@ -28,6 +29,7 @@ get_header();
           <?php endif; ?>
           <?php endwhile; ?>
           </div>
+
           <?php endif; ?>
           <div class="p-top-banner__btn p-top-banner__btn--prev">
             <span class="u-icon-top-banner--prev"></span>
@@ -36,6 +38,51 @@ get_header();
             <span class="u-icon-top-banner—-next"></span>
           </div>
         </section>
+-->
+
+        <section class="p-top-banner">
+           <div class="p-top-banner__slide js-slick">
+            <a href="https://sagamihara-sport.or.jp/project/16418" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/08相模原駅伝競走大会（R5）-scaled.jpg"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/sasaebito" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/スポーツささえびとインタビュー記事-scaled.jpg"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/tournament" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/p-top_mv-banner_civic-championship.jpg"/>
+            </a>
+            <a href="http://www.a-stadium.jpn.org/" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/相模原ギオンスタジアム.jpg"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/youtube" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/市スポーツ協会YouTubeチャンネル-scaled.jpg"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/動画配信・発信コーナー" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/無題-1.png"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/supportingmember" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/賛助会員募集.jpg"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/project/16415" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/R5辰年-scaled.jpg"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/project/16431" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2023/12/クロスカントリー2024.jpg"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/tour-of-japan2024" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2023/12/TOJ.jpg"/>
+            </a>
+          </div>
+
+          <div class="p-top-banner__btn p-top-banner__btn--prev">
+            <span class="u-icon-top-banner--prev"></span>
+          </div>
+          <div class="p-top-banner__btn p-top-banner__btn--next">
+            <span class="u-icon-top-banner—-next"></span>
+          </div>
+        </section>
+
+
         <div class="l-wrap">
           <section class="p-top-info p-top__section u-flex">
             <div class="p-top-news">
@@ -109,7 +156,10 @@ get_header();
             <div class="p-top-sns">
               <div class="p-top-section__head">
                 <div class="p-top-section__head__title">
-                  公式SNS
+                  <span
+                    class="p-top-section__head__character p-top-section__head__character--sns"
+                  ></span
+                  >公式SNS
                 </div>
               </div>
               <div class="l-content u-shadow">
