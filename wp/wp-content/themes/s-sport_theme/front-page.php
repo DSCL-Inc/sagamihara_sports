@@ -63,9 +63,6 @@ get_header();
             <a href="https://sagamihara-sport.or.jp/supportingmember" class="p-top-banner__slide__item" target="_blank">
               <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/賛助会員募集.jpg"/>
             </a>
-            <a href="https://sagamihara-sport.or.jp/project/16415" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/R5辰年-scaled.jpg"/>
-            </a>
             <a href="https://sagamihara-sport.or.jp/project/16431" class="p-top-banner__slide__item" target="_blank">
               <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2023/12/クロスカントリー2024.jpg"/>
             </a>
