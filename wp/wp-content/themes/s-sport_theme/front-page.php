@@ -72,6 +72,9 @@ get_header();
             <a href="https://sagamihara-sport.or.jp/company-child" class="p-top-banner__slide__item" target="_blank">
               <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2023/12/shinai_kigyo_sports_shien_resize.png"/>
             </a>
+            <a href="https://sagamihara-sport.or.jp/project/16422" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/2024-01-15_sougou_chiiki_sports_pr.png"/>
+            </a>
           </div>
 
           <div class="p-top-banner__btn p-top-banner__btn--prev">
