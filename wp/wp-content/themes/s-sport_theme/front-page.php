@@ -42,9 +42,6 @@ get_header();
 
         <section class="p-top-banner">
            <div class="p-top-banner__slide js-slick">
-            <a href="https://sagamihara-sport.or.jp/project/16418" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/08相模原駅伝競走大会（R5）-scaled.jpg"/>
-            </a>
             <a href="https://sagamihara-sport.or.jp/sasaebito" class="p-top-banner__slide__item" target="_blank">
               <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/スポーツささえびとインタビュー記事-scaled.jpg"/>
             </a>
@@ -74,6 +71,9 @@ get_header();
             </a>
             <a href="https://sagamihara-sport.or.jp/project/16422" class="p-top-banner__slide__item" target="_blank">
               <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/2024-01-15_sougou_chiiki_sports_pr.png"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/青学コンディショニング基礎編.pdf" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/aogaku_conditionning_kiso_2024_2_10.png"/>
             </a>
           </div>
 
