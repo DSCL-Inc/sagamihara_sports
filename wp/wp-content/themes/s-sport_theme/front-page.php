@@ -75,6 +75,12 @@ get_header();
             <a href="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/青学コンディショニング基礎編.pdf" class="p-top-banner__slide__item" target="_blank">
               <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/aogaku_conditionning_kiso_2024_2_10.png"/>
             </a>
+            <a href="https://sagamihara-sport.or.jp/project/16430" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/banner_2024-01-31_chugaku_seminar-scaled.jpg"/>
+            </a>
+            <a href="https://sagamihara-sport.or.jp/project/16432" class="p-top-banner__slide__item" target="_blank">
+              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/banner_2024-01-31_shimin_golf-scaled.jpg"/>
+            </a>
           </div>
 
           <div class="p-top-banner__btn p-top-banner__btn--prev">
