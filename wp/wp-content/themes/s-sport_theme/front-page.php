@@ -16,7 +16,8 @@ get_header();
             />
           </picture>
         </section>
-<!-- bug 修正中
+
+        <!-- ACF でのバナー動作 -->
           <section class="p-top-banner">
           <?php if(have_rows('top_mv_under_banner')): ?>
           <div class="p-top-banner__slide js-slick">
@@ -38,56 +39,7 @@ get_header();
             <span class="u-icon-top-banner—-next"></span>
           </div>
         </section>
--->
-
-        <section class="p-top-banner">
-           <div class="p-top-banner__slide js-slick">
-            <a href="https://sagamihara-sport.or.jp/sasaebito" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/スポーツささえびとインタビュー記事-scaled.jpg"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/tournament" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/p-top_mv-banner_civic-championship.jpg"/>
-            </a>
-            <a href="http://www.a-stadium.jpn.org/" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/相模原ギオンスタジアム.jpg"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/youtube" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/市スポーツ協会YouTubeチャンネル-scaled.jpg"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/動画配信・発信コーナー" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/無題-1.png"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/supportingmember" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/賛助会員募集.jpg"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/project/16431" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2023/12/クロスカントリー2024.jpg"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/tour-of-japan2024" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2023/12/TOJ.jpg"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/company-child" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2023/12/shinai_kigyo_sports_shien_resize.png"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/project/16422" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/2024-01-15_sougou_chiiki_sports_pr.png"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/project/16430" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/banner_2024-01-31_chugaku_seminar-scaled.jpg"/>
-            </a>
-            <a href="https://sagamihara-sport.or.jp/project/16432" class="p-top-banner__slide__item" target="_blank">
-              <img class="u-shadow" src="https://sagamihara-sport.or.jp/s-sport/wp-content/uploads/2020/03/banner_2024-01-31_shimin_golf-scaled.jpg"/>
-            </a>
-          </div>
-
-          <div class="p-top-banner__btn p-top-banner__btn--prev">
-            <span class="u-icon-top-banner--prev"></span>
-          </div>
-          <div class="p-top-banner__btn p-top-banner__btn--next">
-            <span class="u-icon-top-banner—-next"></span>
-          </div>
-        </section>
-
+        <!-- バナー end -->
 
         <div class="l-wrap">
           <section class="p-top-info p-top__section u-flex">
@@ -276,13 +228,15 @@ get_header();
             </div>
             <div class="l-content u-shadow">
               <div class="p-top-relatted-links">
-                <?php if(have_rows('top_related-banner')): ?>
-<?php while(have_rows('top_related-banner')): the_row(); ?>
-<a class="p-top-relatted-links__item" href="<?php the_sub_field('top_related-banner_url'); ?>" target="_blank">
-<img src="<?php the_sub_field('top_related-banner_image'); ?>" >
-                </a>
-<?php endwhile; ?>
-<?php endif; ?>
+                <?php
+                 /* 広告バナー */
+                 if(have_rows('top_related-banner')): ?>
+                <?php while(have_rows('top_related-banner')): the_row(); ?>
+                <a class="p-top-relatted-links__item" href="<?php the_sub_field('top_related-banner_url'); ?>" target="_blank">
+                <img src="<?php the_sub_field('top_related-banner_image'); ?>" >
+                                </a>
+                <?php endwhile; ?>
+                <?php endif; ?>
               </div>
             </div>
           </section>
